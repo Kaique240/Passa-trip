@@ -1,0 +1,41 @@
+<!DOCTYPE html> <html lang="pt-BR"> <head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PASSA TRIP - Procedimento</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head> <body> <header>
+<h1>PASSA TRIP</h1>
+
+<p>Manual interativo do SAP Concur</p>
+
+</header> <main>
+<div class="pagina-procedimento">
+
+
+    <!-- =====================================================
+         BOTÃO VOLTAR
+    ====================================================== -->
+
+    <button class="botao-voltar" onclick="voltarInicio()">
+        ⬅️ Voltar
+    </button>
+
+
+    <!-- =====================================================
+         CONTEÚDO
+    ====================================================== -->
+
+    <div id="conteudo-procedimento">
+
+        <h2>Carregando...</h2>
+
+    </div>
+
+
+</div>
+
+</main> <script> /* ========================================================= PEGAR O PROCEDIMENTO DA URL ========================================================= */ const parametros = new URLSearchParams(window.location.search); const tipo = parametros.get("tipo"); const conteudo = document.getElementById("conteudo-procedimento"); /* ========================================================= ACESSO ========================================================= */ if (tipo === "acesso") { document.title = "PASSA TRIP - Acesso"; conteudo.innerHTML = ` <h2>🔐 Como acessar o SAP Concur</h2> <h3>Passo 1</h3> <p> Copie o link de acesso ao SAP Concur e cole no navegador <strong>Google Chrome</strong>. </p> <p> <a href="https://us2.concursolutions.com/nui/signin/hrd" target="_blank" > Acessar o SAP Concur </a> </p> <img src="Imagens/Acesso/1.png" alt="Acesso ao SAP Concur" > <h3>Passo 2</h3> <p> Insira seu <strong>e-mail corporativo</strong> no campo de acesso. </p> <img src="Imagens/Acesso/2.png" alt="E-mail corporativo" > <h3>Passo 3</h3> <p> Clique em <strong>Seguinte</strong> e, em seguida, clique em <strong>Microsoft Login</strong
