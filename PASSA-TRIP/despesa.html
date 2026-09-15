@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PASSA TRIP - Procedimento</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<header>
+
+    <h1>PASSA TRIP</h1>
+
+    <p>Manual interativo do SAP Concur</p>
+
+</header>
+
+
+<main>
+
+    <div class="pagina-procedimento">
+
+
+        <!-- =====================================================
+             BOTÃO VOLTAR
+        ====================================================== -->
+
+        <button
+            class="botao-voltar"
+            onclick="voltarInicio()"
+        >
+            ⬅️ Voltar
+        </button>
+
+
+        <!-- =====================================================
+             CONTEÚDO
+        ====================================================== -->
+
+        <div id="conteudo-despesa">
+
+            <h2>Carregando...</h2>
+
+        </div>
+
+
+    </div>
+
+</main>
+
+
+<script>
+
+
+/* =========================================================
+   PEGAR O TIPO DA PÁGINA
+========================================================= */
+
+const parametros = new URLSearchParams(window.location.search);
+
+const tipo = parametros.get("tipo");
+
+const conteudo = document.getElementById("conteudo-despesa");
+
+
+/* =========================================================
+   ACESSO
+========================================================= */
+
+if (tipo === "acesso") {
+
+    document.title = "PASSA TRIP - Acesso";
+
+    conteudo.innerHTML = `
+
+        <h2>🔐 Como acessar o SAP Concur</h2>
+
+
+        <h3>Passo 1</h3>
+
+        <p>
+            Copie o link de acesso ao SAP Concur e cole no navegador
+            <strong>Google Chrome</strong>.
+        </p>
+
+        <p>
+
+            <a
+                href="https://us2.concursolutions.com/nui/signin/hrd"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Acessar o SAP Concur
+            </a>
+
+        </p>
+
+        <img
+            src="Imagens/Acesso/1.png"
+            alt="Acesso ao SAP Concur"
+        >
+
+
+        <h3>Passo 2</h3>
+
+        <p>
+            Insira seu <strong>e-mail corporativo</strong>
+            no campo de acesso.
+        </p>
+
+        <img
+            src="Imagens/Acesso/2.png"
+            alt="E-mail corporativo"
+        >
+
+
+        <h3>Passo 3</h3>
+
+        <p>
+            Clique em <strong>Seguinte</strong> e depois em
+            <strong>Microsoft Login</strong>.
+        </p>
+
+        <img
+            src="Imagens/Acesso/3.png"
+            alt="Microsoft Login"
+        >
+
+    `;
+
+}
+
+
+/* =========================================================
+   ADIANTAMENTO
+========================================================= */
+
+else if (tipo === "adiantamento") {
+
+    document.title = "PASSA TRIP - Adiantamento";
+
+    conteudo.innerHTML = `
+
+        <h2>💳 Como criar um adiantamento</h2>
+
+
+        <h3>Passo 1</h3>
+
+        <p>
+            Na página inicial do SAP Concur, clique no menu
+            <strong>Solicitações</strong>, localizado na lateral esquerda.
+        </p>
+
+        <img
+            src="Imagens/Adiantamento/1.png"
+            alt="Menu Solicitações"
+        >
+
+
+        <h3>Passo 2</h3>
+
+        <p>
+            Selecione a opção <strong>Solicitações</strong>.
+        </p>
+
+        <img
+            src="Imagens/Adiantamento/2.png"
+            alt="Solicitações"
+        >
+
+
+        <h3>Passo 3</h3>
+
+        <p>
+            Clique em <strong>Criar solicitação</strong>
+            para iniciar uma nova solicitação.
+        </p>
+
+        <img
+            src="Imagens/Adiantamento/3.png"
+            alt="Criar solicitação"
+        >
+
+
+        <h3>Passo 4</h3>
+
+        <p>
+            Preencha os campos obrigatórios da solicitação,
+            informando o <strong>nome</strong>,
+            o <strong>período da viagem</strong> e o
+            <strong>motivo nos comentários</strong>.
+        </p>
+
+        <p>
+            Em seguida, clique em <strong>Criar solicitação</strong>.
+        </p>
+
+        <img
+            src="Imagens/Adiantamento/4.png"
+            alt="Preenchimento da solicitação"
+        >
+
+
+        <h3>Passo 5</h3>
+
+        <p>
+            No menu <strong>Detalhes da solicitação</strong>,
+            selecione <strong>Adicionar adiantamento</strong>.
+        </p>
+
+        <img
+            src="Imagens/Adiantamento/5.png"
+            alt="Adicionar adiantamento"
+        >
+
+
+        <h3>Passo 6</h3>
+
+        <p>
+            Informe o <strong>valor do adiantamento</strong>,
+            preencha a justificativa e clique em <strong>Salvar</strong>.
+        </p>
+
+        <img
+            src="Imagens/Adiantamento/6.png"
+            alt="Valor do adiantamento"
+        >
+
+
+        <h3>Passo 7</h3>
+
+        <p>
+            Confira as informações e clique em
+            <strong>Enviar solicitação</strong>.
+        </p>
+
+        <img
+            src="Imagens/Adiantamento/7.png"
+            alt="Enviar solicitação"
+        >
+
+    `;
+
+}
+
+
+/* =========================================================
+   REEMBOLSO
+========================================================= */
+
+else if (tipo === "reembolso") {
+
+    document.title = "PASSA TRIP - Reembolso";
+
+    conteudo.innerHTML = `
+
+        <h2>💵 Como criar um reembolso</h2>
+
+
+        <h3>Passo 1</h3>
+
+        <p>
+            Na página inicial do SAP Concur, clique no menu
+            <strong>Despesas</strong>.
+        </p>
+
+        <img
+            src="Imagens/Reembolso/1.png"
+            alt="Menu Despesas"
+        >
+
+
+        <h3>Passo 2</h3>
+
+        <p>
+            Selecione <strong>Gerenciar despesas</strong>.
+        </p>
+
+        <img
+            src="Imagens/Reembolso/2.png"
+            alt="Gerenciar despesas"
+        >
+
+
+        <h3>Passo 3</h3>
+
+        <p>
+            Clique em <strong>Criar relatório de despesas</strong>.
+        </p>
+
+        <img
+            src="Imagens/Reembolso/3.png"
+            alt="Criar relatório"
+        >
+
+
+        <h3>Passo 4</h3>
+
+        <p>
+            Preencha os campos obrigatórios do relatório.
+            Selecione <strong>Não, não preciso de ajuda de custo</strong>
+            e clique em <strong>Criar relatório</strong>.
+        </p>
+
+        <img
+            src="Imagens/Reembolso/4.png"
+            alt="Preenchimento do relatório de reembolso"
+        >
+
+
+        <div class="dica">
+
+            💡 <strong>Importante:</strong>
+            Utilize esta opção para reembolso de despesas quando
+            não houver solicitação de adiantamento vinculada à viagem.
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================================================
+   ALMOÇO
+========================================================= */
+
+else if (tipo === "almoco") {
+
+    document.title = "PASSA TRIP - Almoço";
+
+    conteudo.innerHTML = `
+
+        <h2>🍽️ Como lançar uma despesa de almoço</h2>
+
+
+        <h3>Passo 1</h3>
+
+        <p>
+            Clique em <strong>Criação do Manual de Despesa</strong>.
+        </p>
+
+        <img
+            src="Imagens/Almoço/1.png"
+            alt="Criação do Manual de Despesa"
+        >
+
+
+        <h3>Passo 2</h3>
+
+        <p>
+            Na barra de pesquisa, pesquise por
+            <strong>Almoço</strong> e selecione a opção correspondente.
+        </p>
+
+        <img
+            src="Imagens/Almoço/2.png"
+            alt="Selecionar Almoço"
+        >
+
+
+        <h3>Passo 3</h3>
+
+        <p>
+            Preencha os campos obrigatórios da despesa,
+            como <strong>data da transação</strong>,
+            <strong>valor</strong>,
+            <strong>se veio a Sede ou não</strong>
+            e salve.
+        </p>
+
+        <img
+            src="Imagens/Almoço/3.png"
+            alt="Preencher despesa de almoço"
+        >
+
+
+        <div class="dica">
+
+            💡 <strong>Importante:</strong>
+
+            <br><br>
+
+            Descreva se veio a <strong>Sede</strong> ou não e informe,
+            nos comentários, o motivo da refeição.
+
+            <br><br>
+
+            Conforme a <strong>RC-04/2026</strong>,
+            <strong>não é necessário anexar o comprovante fiscal</strong>
+            para esta despesa.
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================================================
+   BEBIDAS NÃO-ALCOÓLICAS
+========================================================= */
+
+else if (tipo === "bebida") {
+
+    document.title = "PASSA TRIP - Bebidas Não-Alcoólicas";
+
+    conteudo.innerHTML = `
+
+        <h2>🥤 Bebidas Não-Alcoólicas</h2>
+
+
+        <h3>Passo 1</h3>
+
+        <p>
+            Clique em <strong>Criação do Manual de Despesa</strong>.
+        </p>
+
+        <img
+            src="Imagens/Bebidas Não-Alcoólica/1.png"
+            alt="Criação do Manual de Despesa"
+        >
+
+
+        <h3>Passo 2</h3>
+
+        <p>
+            Na criação manual de despesa, pesquise por
+            <strong>Bebida</strong> e selecione
+            <strong>Bebida Não-Alcoólica</strong>.
+        </p>
+
+        <img
+            src="Imagens/Bebidas Não-Alcoólica/2.png"
+            alt="Bebida Não-Alcoólica"
+        >
+
+
+        <h3>Passo 3</h3>
+
+        <p>
+            Preencha os campos obrigatórios da despesa,
+            como <strong>data da transação</strong>,
+            <strong>valor</strong>,
+            <strong>se veio a Sede ou não</strong>
+            e salve.
+        </p>
+
+        <img
+            src="Imagens/Bebidas Não-Alcoólica/3.png"
+            alt="Preenchimento da bebida"
+        >
+
+    `;
+
+}
+
+
+/* =========================================================
+   JANTAR
+========================================================= */
+
+else if (tipo === "jantar") {
+
+    document.title = "PASSA TRIP - Jantar";
+
+    conteudo.innerHTML = `
+
+        <h2>🌙 Como lançar uma despesa de jantar</h2>
+
+
+        <h3>Passo 1</h3>
+
+        <p>
+            Clique em <strong>Criação do Manual de Despesa</strong>.
+        </p>
+
+        <img
+            src="Imagens/Jantar/1.png"
+            alt="Criação do Manual de Despesa"
+        >
+
+
+        <h3>Passo 2</h3>
+
+        <p>
+            Na barra de pesquisa, pesquise por
+            <strong>Jantar</strong> e selecione a opção correspondente.
+        </p>
+
+        <img
+            src="Imagens/Jantar/2.png"
+            alt="Selecionar Jantar"
+        >
+
+
+        <h3>Passo 3</h3>
+
+        <p>
+            Preencha os campos obrigatórios da despesa,
+            como <strong>data da transação</strong>,
+            <strong>valor</strong>,
+            <strong>se veio a Sede ou não</strong>
+            e salve.
+        </p>
+
+        <img
+            src="Imagens/Jantar/3.png"
+            alt="Preencher despesa de jantar"
+        >
+
+
+        <div class="dica">
+
+            💡 <strong>Importante:</strong>
+
+            <br><br>
+
+            Descreva se veio a <strong>Sede</strong> ou não e informe,
+            nos comentários, o motivo da refeição.
+
+            <br><br>
+
+            Conforme a <strong>RC-04/2026</strong>,
+            <strong>não é necessário anexar o comprovante fiscal</strong>
+            para esta despesa.
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================================================
+   CAFÉ DA MANHÃ
+========================================================= */
+
+else if (tipo === "cafe") {
+
+    document.title = "PASSA TRIP - Café da Manhã";
+
+    conteudo.innerHTML = `
+
+        <h2>☕ Como lançar uma despesa de café da manhã</h2>
+
+
+        <h3>Passo 1</h3>
+
+        <p>
+            Clique em <strong>Criação do Manual de Despesa</strong>.
+        </p>
+
+        <img
+            src="Imagens/Café da Manhã/1.png"
+            alt="Criação do Manual de Despesa"
+        >
+
+
+        <h3>Passo 2</h3>
+
+        <p>
+            Na barra de pesquisa, pesquise por
+            <strong>Café da Manhã</strong> e selecione
+            a opção correspondente.
+        </p>
+
+        <img
+            src="Imagens/Café da Manhã/2.png"
+            alt="Selecionar Café da Manhã"
+        >
+
+
+        <h3>Passo 3</h3>
+
+        <p>
+            Preencha os campos obrigatórios da despesa,
+            como <strong>data da transação</strong>,
+            <strong>valor</strong>,
+            <strong>se veio a Sede ou não</strong>
+            e salve.
+        </p>
+
+        <img
+            src="Imagens/Café da Manhã/3.png"
+            alt="Preencher despesa de café da manhã"
+        >
+
+
+        <div class="dica">
+
+            💡 <strong>Importante:</strong>
+
+            <br><br>
+
+            Descreva se veio a <strong>Sede</strong> ou não e informe,
+            nos comentários, o motivo da refeição.
+
+            <br><br>
+
+            Conforme a <strong>RC-04/2026</strong>,
+            <strong>é necessário anexar o comprovante fiscal</strong>
+            para esta despesa.
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================================================
+   QUILOMETRAGEM
+========================================================= */
+
+else if (tipo === "quilometragem") {
+
+    document.title = "PASSA TRIP - Quilometragem";
+
+    conteudo.innerHTML = `
+
+        <h2>📍 Como lançar uma despesa de quilometragem</h2>
+
+
+        <h3>Passo 1</h3>
+
+        <p>
+            Clique em <strong>Criação do Manual de Despesa</strong>.
+        </p>
+
+        <img
+            src="Imagens/Quilometragem/1.png"
+            alt="Criação do Manual de Despesa"
+        >
+
+
+        <h3>Passo 2</h3>
+
+        <p>
+            Na barra de pesquisa, pesquise por
+            <strong>Quilometragem</strong> e selecione
+            a opção correspondente.
+        </p>
+
+        <img
+            src="Imagens/Quilometragem/2.png"
+            alt="Selecionar Quilometragem"
+        >
+
+
+        <h3>Passo 3</h3>
+
+        <p>
+            Cadastre seu <strong>Veículo</strong>.
+        </p>
+
+        <img
+            src="Imagens/Quilometragem/3.png"
+            alt="Cadastrar seu veículo"
+        >
+
+
+        <h3>Passo 4</h3>
+
+        <p>
+            Ao acessar a opção <strong>Quilometragem</strong>,
+            digite os trajetos nos campos indicados.
+        </p>
+
+        <p>
+            Caso seja necessário informar mais de um trajeto,
+            pressione a tecla <strong>TAB</strong> para abrir um novo
+            campo e preencher o próximo trajeto.
+        </p>
+
+        <p>
+            Se o percurso for ida e volta, basta selecionar a opção
+            <strong>“Considerar ida e volta”</strong>.
+            O sistema preencherá automaticamente o trajeto de retorno.
+        </p>
+
+        <p>
+            Após informar todos os trajetos, clique em
+            <strong>“Calcular trajeto”</strong> e, em seguida,
+            em <strong>“Adicionar quilometragem”</strong>.
+        </p>
+
+        <img
+            src="Imagens/Quilometragem/4.png"
+            alt="Informar trajetos e adicionar quilometragem"
+        >
+
+
+        <h3>Passo 5</h3>
+
+        <p>
+            Preencha a <strong>data</strong> e a
+            <strong>finalidade da viagem</strong>.
+            Caso tenha ocorrido algum desvio de rota,
+            informe o motivo no campo <strong>“Comentários”</strong>.
+        </p>
+
+        <img
+            src="Imagens/Quilometragem/5.png"
+            alt="Preencher data e finalidade da viagem"
+        >
+
+
+        <h3>Passo 6</h3>
+
+        <p>
+            Se você esqueceu de informar alguma rota,
+            não se preocupe! Clique em
+            <strong>“Adicionar rota”</strong> e inclua
+            as informações necessárias.
+        </p>
+
+        <p>
+            Caso não haja nenhuma rota adicional,
+            basta clicar em <strong>“Salvar despesa”</strong>.
+        </p>
+
+        <img
+            src="Imagens/Quilometragem/6.png"
+            alt="Adicionar rota ou salvar despesa"
+        >
+
+
+        <div class="dica">
+
+            💡 <strong>Importante:</strong>
+
+            <br><br>
+
+            Para esta despesa, não selecione a opção
+            <strong>“Particular”</strong>, pois, caso essa opção
+            seja marcada, o sistema não realizará o cálculo
+            da quilometragem.
+
+            <br><br>
+
+            De acordo com a <strong>RC-04/2026</strong>,
+            o valor da quilometragem é de
+            <strong>R$ 1,46 por quilômetro</strong>
+            para carros movidos a gasolina, etanol ou diesel.
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================================================
+   PERGUNTE AO PASSA TRIP
+========================================================= */
+
+else if (tipo === "chat") {
+
+    document.title = "PASSA TRIP - Pergunte ao Passa Trip";
+
+    conteudo.innerHTML = `
+
+        <h2>🤖 Pergunte ao Passa Trip</h2>
+
+        <p>
+            Ficou com alguma dúvida sobre o SAP Concur?
+            Informe seu e-mail e escreva sua dúvida.
+        </p>
+
+
+        <form id="formulario-duvida">
+
+
+            <label for="email">
+                E-mail
+            </label>
+
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Digite seu e-mail"
+                required
+            >
+
+
+            <label for="duvida">
+                Sua dúvida
+            </label>
+
+
+            <textarea
+                id="duvida"
+                name="duvida"
+                rows="8"
+                placeholder="Digite sua dúvida aqui..."
+                required
+            ></textarea>
+
+
+            <button
+                type="submit"
+                class="botao-enviar"
+            >
+                ➜
+            </button>
+
+
+        </form>
+
+
+        <div class="dica">
+
+            💡 Sua dúvida será enviada para a equipe de
+            Prestação de Contas, que poderá entrar em contato
+            pelo e-mail informado.
+
+        </div>
+
+    `;
+
+
+    /* =====================================================
+       ENVIO DO FORMULÁRIO
+    ===================================================== */
+
+    const formulario =
+        document.getElementById("formulario-duvida");
+
+
+    formulario.addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+
+            const email =
+                document.getElementById("email").value.trim();
+
+
+            const duvida =
+                document.getElementById("duvida").value.trim();
+
+
+            const destinatario =
+                "contabilidadeprestacaodecontas@sesisenaisp.org.br";
+
+
+            /* A dúvida será o assunto do e-mail. */
+
+            const assunto = duvida;
+
+
+            /* Corpo do e-mail. */
+
+            const corpo =
+                "Poderiam me ajudar com: " +
+                duvida +
+                "\n\n" +
+                "E-mail para retorno: " +
+                email;
+
+
+            /* Monta o e-mail. */
+
+            const linkEmail =
+                "mailto:" +
+                destinatario +
+                "?subject=" +
+                encodeURIComponent(assunto) +
+                "&body=" +
+                encodeURIComponent(corpo);
+
+
+            /* Abre o programa de e-mail. */
+
+            window.location.href = linkEmail;
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   DEMAIS DESPESAS
+========================================================= */
+
+else {
+
+    const nomes = {
+
+        cafe: "☕ Café da Manhã",
+
+        combustivel:
+            "⛽ Combustível Automóvel Alugado",
+
+        conducao:
+            "🚆 Condução Urbana",
+
+        estacionamento:
+            "🅿️ Estacionamento",
+
+        hospedagem:
+            "🏨 Hospedagem",
+
+        jantar:
+            "🌙 Jantar",
+
+        lanche:
+            "🍪 Lanche da Tarde",
+
+        locacao:
+            "🚗 Locação de Veículos",
+
+        outras:
+            "📦 Outras Despesas",
+
+        pedagio:
+            "🛣️ Pedágio",
+
+        quilometragem:
+            "📍 Quilometragem",
+
+        "refeicoes-atletas":
+            "🍽️ Refeições de Atletas",
+
+        "bebidas-atletas":
+            "🥤 Bebidas Não-Alcoólicas — Atletas",
+
+        taxi:
+            "🚕 Táxi"
+
+    };
+
+
+    if (nomes[tipo]) {
+
+        document.title =
+            "PASSA TRIP - " + nomes[tipo];
+
+
+        conteudo.innerHTML = `
+
+            <h2>${nomes[tipo]}</h2>
+
+            <h3>🚧 Procedimento em preparação</h3>
+
+            <p>
+                Estamos preparando o passo a passo completo
+                desta despesa.
+            </p>
+
+        `;
+
+    }
+
+    else {
+
+        conteudo.innerHTML = `
+
+            <h2>❌ Procedimento não encontrado</h2>
+
+            <p>
+                Não foi possível localizar o procedimento solicitado.
+            </p>
+
+        `;
+
+    }
+
+}
+
+
+/* =========================================================
+   VOLTAR
+========================================================= */
+
+function voltarInicio() {
+
+    window.location.href = "index.html";
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

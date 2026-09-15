@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PASSA TRIP</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>PASSA TRIP</h1>
+
+    <p>Seu manual interativo do SAP Concur.</p>
+
+</header>
+
+
+<main>
+
+
+    <!-- =====================================================
+         APRESENTAÇÃO DO PASSA TRIP
+    ====================================================== -->
+
+    <div class="apresentacao-passatrip">
+
+        <div class="mao-animada">
+            👋
+        </div>
+
+        <h2 class="texto-animado">
+            Olá! Eu sou o Passa Trip!
+        </h2>
+
+        <p class="pergunta-animada">
+            O que você deseja aprender?
+        </p>
+
+    </div>
+
+
+    <!-- =====================================================
+         ACESSO
+    ====================================================== -->
+
+    <div class="botao-container botao-animado botao-1">
+
+        <button onclick="abrirPagina('acesso')">
+
+            🔐 Como acessar o SAP Concur
+
+        </button>
+
+    </div>
+
+
+    <!-- =====================================================
+         ADIANTAMENTO
+    ====================================================== -->
+
+    <div class="botao-container botao-animado botao-2">
+
+        <button onclick="abrirPagina('adiantamento')">
+
+            💳 Como criar um adiantamento
+
+        </button>
+
+    </div>
+
+
+    <!-- =====================================================
+         DESPESAS
+    ====================================================== -->
+
+    <div class="botao-container botao-animado botao-3">
+
+        <button onclick="abrirSubmenu('despesas')">
+
+            💰 Despesas
+
+        </button>
+
+
+        <div id="despesas" class="submenu">
+
+
+            <button onclick="abrirDespesa('cafe')">
+
+                ☕ Café da Manhã
+
+            </button>
+
+
+            <button onclick="abrirDespesa('almoco')">
+
+                🍽️ Almoço
+
+            </button>
+
+
+            <button onclick="abrirDespesa('bebida')">
+
+                🥤 Bebidas Não-Alcoólicas
+
+            </button>
+
+
+            <button onclick="abrirDespesa('combustivel')">
+
+                ⛽ Combustível Automóvel Alugado
+
+            </button>
+
+
+            <button onclick="abrirDespesa('conducao')">
+
+                🚆 Condução Urbana
+
+            </button>
+
+
+            <button onclick="abrirDespesa('estacionamento')">
+
+                🅿️ Estacionamento
+
+            </button>
+
+
+            <button onclick="abrirDespesa('hospedagem')">
+
+                🏨 Hospedagem
+
+            </button>
+
+
+            <button onclick="abrirDespesa('jantar')">
+
+                🌙 Jantar
+
+            </button>
+
+
+            <button onclick="abrirDespesa('lanche')">
+
+                🍪 Lanche da Tarde
+
+            </button>
+
+
+            <button onclick="abrirDespesa('locacao')">
+
+                🚗 Locação de Veículos
+
+            </button>
+
+
+            <button onclick="abrirDespesa('outras')">
+
+                📦 Outras Despesas
+
+            </button>
+
+
+            <button onclick="abrirDespesa('pedagio')">
+
+                🛣️ Pedágio
+
+            </button>
+
+
+            <button onclick="abrirDespesa('quilometragem')">
+
+                📍 Quilometragem
+
+            </button>
+
+
+            <!-- =================================================
+                 REFEIÇÃO ATLETAS
+            ================================================== -->
+
+            <button onclick="abrirSubmenu('atletas')">
+
+                🏅 Refeição Atletas
+
+            </button>
+
+
+            <div id="atletas" class="submenu interno">
+
+
+                <button onclick="abrirDespesa('refeicoes-atletas')">
+
+                    🍽️ Refeições
+
+                </button>
+
+
+                <button onclick="abrirDespesa('bebidas-atletas')">
+
+                    🥤 Bebidas Não-Alcoólicas
+
+                </button>
+
+
+            </div>
+
+
+            <button onclick="abrirDespesa('taxi')">
+
+                🚕 Táxi
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         REEMBOLSO
+    ====================================================== -->
+
+    <div class="botao-container botao-animado botao-4">
+
+        <button onclick="abrirPagina('reembolso')">
+
+            💵 Como criar um reembolso
+
+        </button>
+
+    </div>
+
+
+    <!-- =====================================================
+         PERGUNTE AO PASSA TRIP
+    ====================================================== -->
+
+    <div class="botao-container botao-animado botao-5">
+
+        <button onclick="abrirPagina('chat')">
+
+            🤖 Pergunte ao Passa Trip
+
+        </button>
+
+    </div>
+
+
+</main>
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
