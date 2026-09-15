@@ -1,0 +1,1168 @@
+/* =========================================================
+PASSA TRIP
+ESTILO PRINCIPAL
+========================================================= */
+
+body {
+
+background: #F8FAFC;
+
+color: #101828;
+
+font-family: "Inter", sans-serif;
+
+margin: 0;
+
+min-height: 100vh;
+
+}
+
+/* =========================================================
+CABEÇALHO
+========================================================= */
+
+header {
+
+text-align: center;
+
+padding: 40px 20px 20px;
+
+}
+
+header h1 {
+
+background: linear-gradient(
+    135deg,
+    #0F3D75,
+    #2563EB
+);
+
+-webkit-background-clip: text;
+
+-webkit-text-fill-color: transparent;
+
+letter-spacing: 1.5px;
+
+font-size: 42px;
+
+margin-bottom: 10px;
+
+font-weight: bold;
+
+}
+
+header p {
+
+color: #475467;
+
+font-size: 18px;
+
+font-weight: 500;
+
+}
+
+/* =========================================================
+CONTEÚDO PRINCIPAL
+========================================================= */
+
+main {
+
+text-align: center;
+
+padding: 30px 20px 20px;
+
+}
+
+main h2 {
+
+font-size: 30px;
+
+}
+
+/* =========================================================
+APRESENTAÇÃO DO PASSA TRIP
+========================================================= */
+
+.apresentacao-passatrip {
+
+text-align: center;
+
+margin-bottom: 30px;
+
+}
+
+/* =========================================================
+MÃO
+========================================================= */
+
+.mao-animada {
+
+font-size: 48px;
+
+display: inline-block;
+
+}
+
+/* =========================================================
+TEXTOS
+========================================================= */
+
+.texto-animado {
+
+margin-top: 10px;
+
+color: #0F3D75;
+
+font-weight: 700;
+
+}
+
+.pergunta-animada {
+
+color: #475467;
+
+font-size: 18px;
+
+font-weight: 500;
+
+}
+
+/* =========================================================
+ANIMAÇÃO INICIAL
+========================================================= */
+
+body.animar-entrada .mao-animada {
+
+animation:
+    aparecerMao 0.6s ease forwards,
+    acenar 1s ease-in-out 0.6s 2;
+
+}
+
+body.animar-entrada .texto-animado {
+
+animation:
+    aparecerTexto 0.8s ease 1.2s forwards;
+
+}
+
+body.animar-entrada .pergunta-animada {
+
+animation:
+    aparecerTexto 0.8s ease 1.8s forwards;
+
+}
+
+body.animar-entrada .mao-animada {
+
+opacity: 0;
+
+}
+
+body.animar-entrada .texto-animado {
+
+opacity: 0;
+
+}
+
+body.animar-entrada .pergunta-animada {
+
+opacity: 0;
+
+}
+
+/* =========================================================
+ANIMAÇÃO DA MÃO
+========================================================= */
+
+@keyframes aparecerMao {
+
+from {
+
+    opacity: 0;
+
+    transform:
+        translateY(20px)
+        scale(0.7);
+
+}
+
+to {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+}
+
+@keyframes acenar {
+
+0% {
+
+    transform: rotate(0deg);
+
+}
+
+25% {
+
+    transform: rotate(18deg);
+
+}
+
+50% {
+
+    transform: rotate(-12deg);
+
+}
+
+75% {
+
+    transform: rotate(15deg);
+
+}
+
+100% {
+
+    transform: rotate(0deg);
+
+}
+
+}
+
+@keyframes aparecerTexto {
+
+from {
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+}
+
+to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+}
+
+/* =========================================================
+BOTÕES PRINCIPAIS
+========================================================= */
+
+.botao-container {
+
+width: 500px;
+
+max-width: 90%;
+
+margin: 18px auto;
+
+}
+
+/* =========================================================
+ANIMAÇÃO DOS BOTÕES
+========================================================= */
+
+.botao-animado {
+
+opacity: 1;
+
+}
+
+body.animar-entrada .botao-animado {
+
+opacity: 0;
+
+animation:
+    aparecerBotao 0.7s ease forwards;
+
+}
+
+/* =========================================================
+ORDEM DA ANIMAÇÃO
+========================================================= */
+
+body.animar-entrada .botao-1 {
+
+animation-delay: 2.3s;
+
+}
+
+body.animar-entrada .botao-2 {
+
+animation-delay: 2.5s;
+
+}
+
+body.animar-entrada .botao-3 {
+
+animation-delay: 2.7s;
+
+}
+
+body.animar-entrada .botao-4 {
+
+animation-delay: 2.9s;
+
+}
+
+body.animar-entrada .botao-5 {
+
+animation-delay: 3.1s;
+
+}
+
+/* =========================================================
+ANIMAÇÃO DOS BOTÕES
+========================================================= */
+
+@keyframes aparecerBotao {
+
+from {
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+}
+
+to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+}
+
+/* =========================================================
+BOTÕES
+========================================================= */
+
+button {
+
+display: block;
+
+width: 100%;
+
+box-sizing: border-box;
+
+background-color: #FFFFFF;
+
+color: #101828;
+
+border: 1px solid #E4E7EC;
+
+border-radius: 12px;
+
+padding: 20px 25px;
+
+font-size: 18px;
+
+font-weight: 600;
+
+cursor: pointer;
+
+box-shadow:
+    0 4px 12px rgba(16, 24, 40, 0.08);
+
+transition:
+    0.3s ease;
+
+}
+
+button:hover {
+
+background-color: #FFFFFF;
+
+color: #101828;
+
+border-color: #E4E7EC;
+
+transform: translateY(-3px);
+
+box-shadow:
+    0 12px 28px rgba(16, 24, 40, 0.15);
+
+}
+
+/* =========================================================
+ÍCONE DOS BOTÕES
+========================================================= */
+
+.icone-botao {
+
+margin-right: 8px;
+
+}
+
+/* =========================================================
+CORES DOS MÓDULOS
+========================================================= */
+
+.botao-1 button {
+
+border-left: 6px solid #2563EB;
+
+}
+
+.botao-1 .icone-botao {
+
+color: #2563EB;
+
+}
+
+.botao-2 button {
+
+border-left: 6px solid #7C3AED;
+
+}
+
+.botao-2 .icone-botao {
+
+color: #7C3AED;
+
+}
+
+.botao-3 button {
+
+border-left: 6px solid #059669;
+
+}
+
+.botao-3 .icone-botao {
+
+color: #059669;
+
+}
+
+.botao-4 button {
+
+border-left: 6px solid #EA580C;
+
+}
+
+.botao-4 .icone-botao {
+
+color: #EA580C;
+
+}
+
+.botao-5 button {
+
+border-left: 6px solid #DC2626;
+
+}
+
+.botao-5 .icone-botao {
+
+color: #DC2626;
+
+}
+
+/* =========================================================
+MENU DESPESAS
+========================================================= */
+
+.submenu {
+
+display: none;
+
+margin-top: 15px;
+
+padding: 15px;
+
+background-color: #FFFFFF;
+
+border-radius: 15px;
+
+border: 1px solid #EAECF0;
+
+box-shadow:
+    0 6px 18px rgba(16, 24, 40, 0.08);
+
+}
+
+.submenu.aberto {
+
+display: block;
+
+}
+
+.submenu > button {
+
+width: 95%;
+
+margin: 10px auto;
+
+padding: 15px;
+
+font-size: 16px;
+
+}
+
+/* =========================================================
+REFEIÇÃO ATLETAS
+========================================================= */
+
+.submenu.interno {
+
+background-color: #F8FAFC;
+
+margin: 10px 5px;
+
+padding: 10px;
+
+}
+
+.submenu.interno button {
+
+background-color: #FFFFFF;
+
+}
+
+/* =========================================================
+CONTEÚDO
+========================================================= */
+
+.conteudo-procedimento {
+
+display: none;
+
+margin-top: 15px;
+
+padding: 30px;
+
+background-color: #FFFFFF;
+
+border-radius: 15px;
+
+box-shadow:
+    0 6px 18px rgba(16, 24, 40, 0.08);
+
+text-align: left;
+
+}
+
+.conteudo-procedimento.aberto {
+
+display: block;
+
+}
+
+.conteudo-procedimento h2 {
+
+color: #0F3D75;
+
+text-align: center;
+
+}
+
+.conteudo-procedimento h3 {
+
+color: #101828;
+
+margin-top: 30px;
+
+}
+
+.conteudo-procedimento p {
+
+color: #475467;
+
+line-height: 1.6;
+
+}
+
+.conteudo-procedimento ul {
+
+padding-left: 25px;
+
+}
+
+.conteudo-procedimento li {
+
+color: #475467;
+
+margin-bottom: 10px;
+
+line-height: 1.5;
+
+}
+
+/* =========================================================
+PÁGINA DE PROCEDIMENTO
+========================================================= */
+
+.pagina-procedimento {
+
+max-width: 1000px;
+
+margin: 0 auto;
+
+text-align: left;
+
+}
+
+/* =========================================================
+BOTÃO VOLTAR
+========================================================= */
+
+.botao-voltar {
+
+display: inline-block;
+
+width: auto;
+
+padding: 8px 14px;
+
+margin-bottom: 20px;
+
+background-color: #FFFFFF;
+
+color: #101828;
+
+border: 1px solid #E4E7EC;
+
+border-radius: 8px;
+
+font-size: 14px;
+
+font-weight: 600;
+
+cursor: pointer;
+
+box-shadow:
+    0 4px 12px rgba(16, 24, 40, 0.08);
+
+}
+
+.botao-voltar:hover {
+
+background-color: #0F3D75;
+
+color: #FFFFFF;
+
+border-color: #0F3D75;
+
+transform: translateY(-1px);
+
+box-shadow:
+    0 8px 20px rgba(16, 24, 40, 0.15);
+
+}
+
+/* =========================================================
+CONTEÚDO DO MANUAL
+========================================================= */
+
+#conteudo-despesa {
+
+background-color: #FFFFFF;
+
+padding: 30px;
+
+border-radius: 15px;
+
+box-shadow:
+    0 6px 18px rgba(16, 24, 40, 0.08);
+
+text-align: left;
+
+}
+
+#conteudo-despesa h2 {
+
+color: #0F3D75;
+
+text-align: center;
+
+}
+
+#conteudo-despesa h3 {
+
+color: #101828;
+
+margin-top: 30px;
+
+}
+
+#conteudo-despesa p {
+
+color: #475467;
+
+line-height: 1.6;
+
+}
+
+#conteudo-despesa ul {
+
+padding-left: 25px;
+
+}
+
+#conteudo-despesa li {
+
+color: #475467;
+
+margin-bottom: 10px;
+
+line-height: 1.5;
+
+}
+
+/* =========================================================
+IMAGENS DOS PROCEDIMENTOS
+========================================================= */
+
+#conteudo-despesa img {
+
+    cursor: zoom-in;
+
+    transition:
+        box-shadow 0.2s ease;
+
+}
+
+#conteudo-despesa img:hover {
+
+    box-shadow:
+        0 8px 24px rgba(16, 24, 40, 0.15);
+
+}
+
+/* =========================================================
+IMAGEM AMPLIADA
+========================================================= */
+
+.modal-imagem {
+
+    display: none;
+
+    position: fixed;
+
+    z-index: 9999;
+
+    inset: 0;
+
+    background: rgba(15, 23, 42, 0.88);
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    cursor: zoom-out;
+
+}
+
+.modal-imagem img {
+
+    max-width: 95vw;
+
+    max-height: 92vh;
+
+    width: auto;
+
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35);
+
+    background: #FFFFFF;
+
+    cursor: zoom-out;
+
+}
+
+.fechar-imagem {
+
+    position: absolute;
+
+    top: 18px;
+
+    right: 25px;
+
+    color: #FFFFFF;
+
+    font-size: 36px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    line-height: 1;
+
+}
+
+
+/* =========================================================
+LINKS
+========================================================= */
+
+#conteudo-despesa a {
+
+color: #2563EB;
+
+font-weight: 600;
+
+}
+
+/* =========================================================
+DICAS
+========================================================= */
+
+.dica {
+
+background: #FFF8E7;
+
+border-left: 5px solid #F59E0B;
+
+padding: 15px;
+
+margin: 20px 0;
+
+color: #92400E;
+
+}
+
+/* =========================================================
+FORMULÁRIO
+========================================================= */
+
+#formulario-duvida {
+
+margin-top: 25px;
+
+}
+
+#formulario-duvida label {
+
+display: block;
+
+color: #101828;
+
+font-weight: 600;
+
+margin-top: 20px;
+
+margin-bottom: 10px;
+
+}
+
+/* =========================================================
+CAMPO DE E-MAIL
+========================================================= */
+
+#formulario-duvida input[type="email"] {
+
+display: block;
+
+width: 100%;
+
+box-sizing: border-box;
+
+background-color: #FFFFFF;
+
+color: #101828;
+
+border: 2px solid #E4E7EC;
+
+border-radius: 10px;
+
+padding: 15px;
+
+font-family: "Inter", sans-serif;
+
+font-size: 16px;
+
+margin-bottom: 25px;
+
+}
+
+#formulario-duvida input[type="email"]:focus {
+
+outline: none;
+
+border-color: #2563EB;
+
+}
+
+/* =========================================================
+CAMPO DA DÚVIDA
+========================================================= */
+
+#formulario-duvida textarea {
+
+display: block;
+
+width: 100%;
+
+box-sizing: border-box;
+
+background-color: #FFFFFF;
+
+color: #101828;
+
+border: 2px solid #E4E7EC;
+
+border-radius: 10px;
+
+padding: 15px;
+
+font-family: "Inter", sans-serif;
+
+font-size: 16px;
+
+resize: vertical;
+
+}
+
+#formulario-duvida textarea:focus {
+
+outline: none;
+
+border-color: #2563EB;
+
+}
+
+/* =========================================================
+BOTÃO ENVIAR
+========================================================= */
+
+.botao-enviar {
+
+display: inline-block;
+
+width: auto !important;
+
+min-width: 85px;
+
+padding: 10px 16px;
+
+margin-top: 18px;
+
+background-color: #DC2626;
+
+color: #FFFFFF;
+
+border: none;
+
+border-radius: 8px;
+
+font-size: 14px;
+
+font-weight: 600;
+
+line-height: 1;
+
+cursor: pointer;
+
+box-shadow:
+    0 4px 10px rgba(16, 24, 40, 0.15);
+
+transition: 0.2s;
+
+}
+
+.botao-enviar:hover {
+
+background-color: #B91C1C;
+
+color: #FFFFFF;
+
+border-color: #B91C1C;
+
+transform: translateY(-1px);
+
+box-shadow:
+    0 8px 18px rgba(16, 24, 40, 0.15);
+
+}
+
+/* =========================================================
+LOGO
+========================================================= */
+
+footer {
+
+display: flex;
+
+flex-direction: column;
+
+justify-content: center;
+
+align-items: center;
+
+padding: 40px 20px 50px;
+
+}
+
+.logo-card {
+
+background: #FFFFFF;
+
+border: 1px solid #EAECF0;
+
+border-radius: 12px;
+
+padding: 10px;
+
+box-shadow:
+    0 8px 24px rgba(16, 24, 40, 0.08);
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+}
+
+.logo-passatrip {
+
+display: block;
+
+max-width: 220px;
+
+width: 100%;
+
+height: auto;
+
+object-fit: contain;
+
+}
+
+/* =========================================================
+AUTOR
+========================================================= */
+
+.autor-passatrip {
+
+display: block;
+
+margin-top: 8px;
+
+font-size: 7px;
+
+color: #475467;
+
+opacity: 0.35;
+
+text-align: center;
+
+letter-spacing: 0.3px;
+
+}
+
+/* =========================================================
+CELULAR
+========================================================= */
+
+@media (max-width: 600px) {
+
+header {
+
+    padding-top: 30px;
+
+}
+
+header h1 {
+
+    font-size: 32px;
+
+}
+
+main h2 {
+
+    font-size: 24px;
+
+}
+
+.conteudo-procedimento {
+
+    padding: 20px;
+
+}
+
+#conteudo-despesa {
+
+    padding: 20px;
+
+}
+
+#conteudo-despesa img {
+
+    width: 100%;
+
+    height: auto;
+
+    min-height: 250px;
+
+}
+
+.modal-imagem {
+
+    padding: 10px;
+
+}
+
+.modal-imagem img {
+
+    max-width: 96vw;
+
+    max-height: 92vh;
+
+}
+
+.fechar-imagem {
+
+    top: 15px;
+
+    right: 18px;
+
+    font-size: 36px;
+
+}
+
+.botao-voltar {
+
+    font-size: 13px;
+
+    padding: 7px 12px;
+
+}
+
+.logo-card {
+
+    padding: 8px;
+
+}
+
+.logo-passatrip {
+
+    max-width: 180px;
+
+}
+
+.autor-passatrip {
+
+    font-size: 6px;
+
+}
+
+}
