@@ -452,77 +452,96 @@ QUILOMETRAGEM
 
 else if (tipo === "quilometragem") {
 
-document.title = "PASSA TRIP - Quilometragem";
+    document.title = "PASSA TRIP - Quilometragem";
 
-conteudo.innerHTML = `
+    conteudo.innerHTML = `
 
-<h2>📍 Como lançar uma despesa de quilometragem</h2> <h3>Passo 1</h3> <p> Clique em <strong>Criação do Manual de Despesa</strong>. </p>
-<img
-src="Imagens/Quilometragem/1.png"
-alt="Criação do Manual de Despesa"
+    <h2>📍 Como lançar uma despesa de quilometragem</h2>
 
-<h3>Passo 2</h3> <p> Pesquise por <strong>Quilometragem</strong> e selecione a opção exibida. </p>
-<img
-src="Imagens/Quilometragem/2.png"
-alt="Selecionar Quilometragem"
+    <h3>Passo 1</h3>
+    <p>
+        Clique em <strong>Criação do Manual de Despesa</strong>.
+    </p>
+    <img
+        src="Imagens/Quilometragem/1.png"
+        alt="Criação do Manual de Despesa"
+    >
 
-<h3>Passo 3</h3> <p> Cadastre seu <strong>Veículo</strong>. </p>
-<img
-src="Imagens/Quilometragem/3.png"
-alt="Cadastrar seu veículo"
+    <h3>Passo 2</h3>
+    <p>
+        Pesquise por <strong>Quilometragem</strong> e selecione a opção exibida.
+    </p>
+    <img
+        src="Imagens/Quilometragem/2.png"
+        alt="Selecionar Quilometragem"
+    >
 
-<h3>Passo 4</h3> <p> Preencha os trajetos e selecione <strong>Considerar ida e volta</strong>, quando necessário. </p>
-<img
-src="Imagens/Quilometragem/4.png"
-alt="Informar trajetos"
+    <h3>Passo 3</h3>
+    <p>
+        Cadastre seu <strong>Veículo</strong>.
+    </p>
+    <img
+        src="Imagens/Quilometragem/3.png"
+        alt="Cadastrar seu veículo"
+    >
 
-<h3>Passo 5</h3> <p> Clique em <strong>Calcular trajeto</strong>. </p>
-<img
-src="Imagens/Quilometragem/4.png"
-alt="Calcular trajeto"
+    <h3>Passo 4</h3>
+    <p>
+        Preencha todos os trajetos no campo à esquerda e clique em
+        <strong>Calcular Trajeto</strong>.
+    </p>
+    <p>
+        A opção <strong>Considerar ida e volta</strong> é um atalho para não precisar
+        preencher duas vezes os campos com o mesmo endereço.
+        Caso tenha feito mais percursos, será necessário preenchê-los manualmente.
+        Para habilitar outros campos, pressione <strong>TAB</strong> ou
+        <strong>Enter</strong> no seu computador.
+        Não se esqueça de calcular os trajetos ao final.
+    </p>
+    <img
+        src="Imagens/Quilometragem/4.png"
+        alt="Informar trajetos e calcular trajeto"
+    >
 
-<h3>Passo 6</h3> <p> Clique em <strong>Adicionar quilometragem</strong>. </p>
-<img
-src="Imagens/Quilometragem/4.png"
-alt="Adicionar quilometragem"
+    <h3>Passo 5</h3>
+    <p>
+        Preencha a <strong>data</strong> e a <strong>finalidade da viagem</strong>.
+        Caso tenha ocorrido algum desvio de rota, descreva nos comentários o motivo.
+        Depois, clique em <strong>Salvar</strong>.
+    </p>
+    <img
+        src="Imagens/Quilometragem/5.png"
+        alt="Preencher data e finalidade da viagem"
+    >
 
-<h3>Passo 7</h3> <p> Preencha a <strong>data</strong> e a <strong>finalidade da viagem</strong>. </p>
-<img
-src="Imagens/Quilometragem/5.png"
-alt="Preencher data e finalidade da viagem"
+    <h3>Passo 6</h3>
+    <p>
+        Este passo é para caso tenha esquecido de adicionar alguma rota após salvar a
+        <strong>despesa</strong>.
+        Clique em <strong>Adicionar rota</strong> e volte para o <strong>Passo 4</strong>.
+    </p>
+    <img
+        src="Imagens/Quilometragem/6.png"
+        alt="Adicionar rota"
+    >
 
-<h3>Passo 8</h3> <p> Informe o motivo do desvio de rota no campo <strong>Comentários</strong>, quando necessário. </p>
-<img
-src="Imagens/Quilometragem/5.png"
-alt="Comentários da quilometragem"
+    <div class="dica">
+        💡 <strong>Importante</strong>
 
-<h3>Passo 9</h3> <p> Clique em <strong>Adicionar rota</strong>, quando necessário. </p>
-<img
-src="Imagens/Quilometragem/6.png"
-alt="Adicionar rota"
+        <br><br>
 
-<h3>Passo 10</h3> <p> Clique em <strong>Salvar despesa</strong>. </p>
-<img
-src="Imagens/Quilometragem/6.png"
-alt="Salvar despesa"
+        Não selecione a opção <strong>Particular</strong>,
+        pois o sistema não realizará o cálculo da quilometragem.
 
-<div class="dica">
-💡 <strong>Importante</strong>
+        <br><br>
 
-<br><br>
+        Conforme a <strong>RC-04/2026</strong>,
+        o valor da quilometragem é de
+        <strong>R$ 1,46 por quilômetro</strong>
+        para carros movidos a gasolina, etanol ou diesel.
 
-Não selecione a opção <strong>Particular</strong>,
-pois o sistema não realizará o cálculo da quilometragem.
-
-<br><br>
-
-Conforme a <strong>RC-04/2026</strong>,
-o valor da quilometragem é de
-<strong>R$ 1,46 por quilômetro</strong>
-para carros movidos a gasolina, etanol ou diesel.
-
-</div>
-`;
+    </div>
+    `;
 
 }
 
@@ -799,7 +818,7 @@ hospedagem:
 "🏨 Hospedagem",
 
 jantar:
-"🌙 Jantar",
+"🍔 Jantar",
 
 lanche:
 "🍪 Lanche da Tarde",
@@ -816,11 +835,8 @@ pedagio:
 quilometragem:
 "📍 Quilometragem",
 
-"refeicoes-atletas":
-"🍽️ Refeições de Atletas",
-
-"bebidas-atletas":
-"🥤 Bebidas Não-Alcoólicas — Atletas",
+"Refeições de Atletas":
+"🏅 Refeições de Atletas",
 
 taxi:
 "🚕 Táxi"
