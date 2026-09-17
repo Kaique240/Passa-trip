@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-
+<!DOCTYPE html> <html lang="pt-BR"> <head>
 <meta charset="UTF-8">
 
 <meta
@@ -12,24 +8,19 @@
 
 <title>PASSA TRIP</title>
 
-<link rel="stylesheet" href="style.css">
-
-</head>
-
-<body>
-
-<header>
-
+<link
+    rel="stylesheet"
+    href="style.css"
+>
+</head> <body> <header>
 <h1>PASSA TRIP</h1>
 
-<p>Seu manual interativo do SAP Concur.</p>
-
-</header>
-
-<main>
-
+<p>
+    Seu manual interativo do SAP Concur.
+</p>
+</header> <main>
 <!-- =====================================================
-     APRESENTAÇÃO DO PASSA-TRIP
+     APRESENTAÇÃO
 ====================================================== -->
 
 <div class="apresentacao-passatrip">
@@ -57,7 +48,10 @@
 
     <button onclick="abrirPagina('acesso')">
 
-        <span class="icone-botao">🔐</span>
+        <span class="icone-botao">
+            🔐
+        </span>
+
         Acesso
 
     </button>
@@ -73,7 +67,10 @@
 
     <button onclick="abrirPagina('adiantamento')">
 
-        <span class="icone-botao">💳</span>
+        <span class="icone-botao">
+            💳
+        </span>
+
         Adiantamento
 
     </button>
@@ -89,7 +86,10 @@
 
     <button onclick="abrirPagina('reembolso')">
 
-        <span class="icone-botao">💵</span>
+        <span class="icone-botao">
+            💵
+        </span>
+
         Reembolso
 
     </button>
@@ -105,103 +105,88 @@
 
     <button onclick="abrirSubmenu('despesas')">
 
-        <span class="icone-botao">💰</span>
+        <span class="icone-botao">
+            💰
+        </span>
+
         Despesas
 
     </button>
 
 
-    <div id="despesas" class="submenu">
+    <div
+        id="despesas"
+        class="submenu"
+    >
 
 
         <button onclick="abrirDespesa('cafe')">
-
             ☕ Café da Manhã
-
         </button>
 
 
         <button onclick="abrirDespesa('almoco')">
-
             🍽️ Almoço
-
         </button>
 
 
         <button onclick="abrirDespesa('bebida')">
-
             🥤 Bebidas Não-Alcoólicas
-
         </button>
 
 
         <button onclick="abrirDespesa('combustivel')">
-
             ⛽ Combustível Automóvel Alugado
-
         </button>
 
 
         <button onclick="abrirDespesa('conducao')">
-
             🚆 Condução Urbana
-
         </button>
 
 
         <button onclick="abrirDespesa('estacionamento')">
-
             🅿️ Estacionamento
-
         </button>
 
 
         <button onclick="abrirDespesa('hospedagem')">
-
             🏨 Hospedagem
-
         </button>
 
 
         <button onclick="abrirDespesa('jantar')">
-
             🍔 Jantar
-
         </button>
 
 
         <button onclick="abrirDespesa('lanche')">
-
-            🍪 Lanche da Tarde
-
+            🍪 Lanche
         </button>
 
 
         <button onclick="abrirDespesa('locacao')">
-
             🚗 Locação de Veículos
-
         </button>
 
 
         <button onclick="abrirDespesa('outras')">
-
             📦 Outras Despesas
-
         </button>
 
 
         <button onclick="abrirDespesa('pedagio')">
-
             🛣️ Pedágio
+        </button>
 
+
+        <button onclick="abrirDespesa('passagem-rodoviaria')">
+            🚌 Passagem Rodoviária
         </button>
 
 
         <button onclick="abrirDespesa('quilometragem')">
-
             📍 Quilometragem
-
         </button>
 
 
@@ -209,37 +194,14 @@
              REFEIÇÃO ATLETAS
         ================================================== -->
 
-        <button onclick="abrirSubmenu('atletas')">
+        <button onclick="abrirDespesa('Refeição Atletas')">
 
             🏅 Refeição Atletas
+       </button>
 
-        </button>
-
-
-        <div id="atletas" class="submenu interno">
-
-
-            <button onclick="abrirDespesa('refeicoes-atletas')">
-
-                🍽️ Refeições
-
-            </button>
-
-
-            <button onclick="abrirDespesa('bebidas-atletas')">
-
-                🥤 Bebidas Não-Alcoólicas
-
-            </button>
-
-
-        </div>
-
-
+       
         <button onclick="abrirDespesa('taxi')">
-
             🚕 Táxi
-
         </button>
 
 
@@ -249,29 +211,23 @@
 
 
 <!-- =====================================================
-     5 - Pergunte ao PASSA A TRIP
+     5 - PERGUNTE AO PASSA TRIP
 ====================================================== -->
 
 <div class="botao-container botao-animado botao-5">
 
     <button onclick="abrirPagina('chat')">
 
-        <span class="icone-botao">🤖</span>
-        Passa a Trip
+        <span class="icone-botao">
+            🤖
+        </span>
+
+        Pergunte ao Passa Trip
 
     </button>
 
 </div>
-
-</main>
-
-
-<!-- =====================================================
-     LOGO
-====================================================== -->
-
-<footer>
-
+</main> <!-- ===================================================== RODAPÉ ====================================================== --> <footer>
 <div class="logo-card">
 
     <img
@@ -282,15 +238,8 @@
 
 </div>
 
+
 <span class="autor-passatrip">
     Autor: Kaique Albrechete
 </span>
-
-</footer>
-
-
-<script src="script.js"></script>
-
-</body>
-
-</html>
+</footer> <script src="script.js"></script> </body> </html>
