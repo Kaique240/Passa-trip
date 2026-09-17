@@ -3,1466 +3,2662 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<title>PASSA TRIP - Procedimento</title>
+    <title>PASSA TRIP - Procedimento</title>
 
-<link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
-<style>
+    <style>
 
-/* =========================================================
-IMAGENS DOS PROCEDIMENTOS
-========================================================= */
+        /* =====================================================
+           IMAGENS DOS PROCEDIMENTOS
+        ====================================================== */
 
-#conteudo-despesa img {
+        #conteudo-despesa img {
 
-    display: block;
+            display: block;
 
-    max-width: 100%;
-    width: auto;
-    height: auto;
+            max-width: 100%;
 
-    margin: 20px auto;
+            width: auto;
 
-    cursor: zoom-in;
+            height: auto;
 
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+            margin: 20px auto;
 
-}
+            cursor: zoom-in;
 
-#conteudo-despesa img:hover {
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
 
-    transform: scale(1.01);
+        }
 
-    box-shadow:
-        0 8px 24px rgba(16, 24, 40, 0.15);
 
-}
 
-/* =========================================================
-IMAGEM AMPLIADA
-========================================================= */
+        #conteudo-despesa img:hover {
 
-.modal-imagem {
+            transform: scale(1.01);
 
-    display: none;
+            box-shadow:
+                0 8px 24px rgba(16, 24, 40, 0.15);
 
-    position: fixed;
+        }
 
-    z-index: 9999;
 
-    inset: 0;
 
-    background: rgba(15, 23, 42, 0.88);
+        /* =====================================================
+           MODAL DA IMAGEM
+        ====================================================== */
 
-    align-items: center;
+        .modal-imagem {
 
-    justify-content: center;
+            display: none;
 
-    padding: 30px;
+            position: fixed;
 
-    cursor: zoom-out;
+            z-index: 99999;
 
-}
+            inset: 0;
 
-.modal-imagem img {
+            width: 100vw;
 
-    max-width: 95vw;
+            height: 100vh;
 
-    max-height: 92vh;
+            background:
+                rgba(15, 23, 42, 0.88);
 
-    width: auto;
+            align-items: center;
 
-    height: auto;
+            justify-content: center;
 
-    object-fit: contain;
+            padding: 30px;
 
-    border-radius: 10px;
+            box-sizing: border-box;
 
-    box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.35);
+        }
 
-    background: #FFFFFF;
 
-    cursor: zoom-out;
 
-}
+        .modal-imagem.aberta {
 
-.fechar-imagem {
+            display: flex;
 
-    position: absolute;
+        }
 
-    top: 18px;
 
-    right: 25px;
 
-    color: #FFFFFF;
+        .modal-imagem img {
 
-    font-size: 36px;
+            display: block;
 
-    font-weight: 700;
+            max-width: 95vw;
 
-    cursor: pointer;
+            max-height: 92vh;
 
-    line-height: 1;
+            width: auto;
 
-}
+            height: auto;
 
-</style>
+            object-fit: contain;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.35);
+
+            background: #FFFFFF;
+
+            cursor: default;
+
+        }
+
+
+
+        /* =====================================================
+           BOTÃO FECHAR IMAGEM
+        ====================================================== */
+
+        .fechar-imagem {
+
+            position: absolute;
+
+            top: 18px;
+
+            right: 25px;
+
+            color: #FFFFFF;
+
+            font-size: 36px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            line-height: 1;
+
+            z-index: 100000;
+
+        }
+
+    </style>
 
 </head>
 
+
+
 <body>
+
+
 
 <header>
 
-<h1>PASSA TRIP</h1>
+    <h1>PASSA TRIP</h1>
 
-<p>Manual interativo do SAP Concur</p>
+    <p>
+        Manual interativo do SAP Concur
+    </p>
 
 </header>
 
+
+
 <main>
 
-<div class="pagina-procedimento">
+    <div class="pagina-procedimento">
 
-<!-- =====================================================
-     BOTÃO VOLTAR
-====================================================== -->
 
-<button
-    class="botao-voltar"
-    onclick="voltarInicio()"
->
-    ⬅️ Voltar
-</button>
+        <!-- =================================================
+             BOTÃO VOLTAR
+        ================================================== -->
 
-<!-- =====================================================
-     CONTEÚDO
-====================================================== -->
+        <button
+            class="botao-voltar"
+            onclick="voltarInicio()"
+        >
 
-<div id="conteudo-despesa">
+            ⬅️ Voltar
 
-    <h2>Carregando...</h2>
+        </button>
 
-</div>
 
-</div>
+
+        <!-- =================================================
+             CONTEÚDO
+        ================================================== -->
+
+        <div id="conteudo-despesa">
+
+            <h2>Carregando...</h2>
+
+        </div>
+
+
+
+    </div>
 
 </main>
 
+
+
 <!-- =========================================================
-MODAL PARA AMPLIAR IMAGENS
+     MODAL PARA AMPLIAR IMAGENS
 ========================================================= -->
 
 <div
     id="modal-imagem"
     class="modal-imagem"
-    onclick="fecharImagem()"
 >
 
-<span
-    class="fechar-imagem"
-    onclick="fecharImagem()"
->
-    ×
-</span>
+    <span
+        id="fechar-imagem"
+        class="fechar-imagem"
+    >
 
-<img
-    id="imagem-ampliada"
-    src=""
-    alt="Imagem ampliada"
-    onclick="event.stopPropagation()"
->
+        ×
+
+    </span>
+
+
+
+    <img
+        id="imagem-ampliada"
+        src=""
+        alt="Imagem ampliada"
+    >
 
 </div>
+
+
 
 <script>
 
 /* =========================================================
-PEGAR O TIPO DA PÁGINA
+   PEGAR O TIPO DA PÁGINA
 ========================================================= */
 
 const parametros =
-new URLSearchParams(window.location.search);
+    new URLSearchParams(
+        window.location.search
+    );
+
+
 
 const tipo =
-parametros.get("tipo");
+    parametros.get("tipo");
+
+
 
 const conteudo =
-document.getElementById("conteudo-despesa");
+    document.getElementById(
+        "conteudo-despesa"
+    );
+
+
 
 /* =========================================================
-ACESSO
+   FUNÇÃO PARA MOSTRAR PROCEDIMENTO
+========================================================= */
+
+function mostrarProcedimento(titulo, html) {
+
+    document.title =
+        "PASSA TRIP - " + titulo;
+
+    conteudo.innerHTML =
+        html;
+
+}
+
+
+
+/* =========================================================
+   ACESSO
 ========================================================= */
 
 if (tipo === "acesso") {
 
-document.title = "PASSA TRIP - Acesso";
+    mostrarProcedimento(
+        "Acesso",
+        `
 
-conteudo.innerHTML = `
+        <h2>
+            🔐 Como acessar o SAP Concur
+        </h2>
 
-<h2>🔐 Como acessar o SAP Concur</h2>
 
-<h3>Passo 1</h3>
 
-<p>
-    Copie o link de acesso ao SAP Concur e cole no navegador
-    <strong>Google Chrome</strong>.
-</p>
+        <h3>
+            Passo 1
+        </h3>
 
-<p>
-    <a
-        href="https://us2.concursolutions.com/nui/signin/hrd"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        Acessar o SAP Concur
-    </a>
-</p>
+        <p>
+            Copie o link de acesso ao SAP Concur
+            e cole no navegador
+            <strong>Google Chrome</strong>.
+        </p>
 
-<img
-    src="Imagens/Acesso/1.png"
-    alt="Acesso ao SAP Concur"
->
+        <p>
+            <a
+                href="https://us2.concursolutions.com/nui/signin/hrd"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Acessar o SAP Concur
+            </a>
+        </p>
 
-<h3>Passo 2</h3>
+        <img
+            src="Imagens/Acesso/1.png"
+            alt="Acesso ao SAP Concur"
+        >
 
-<p>
-    Preencha seu <strong>e-mail corporativo</strong>
-    no campo de acesso.
-</p>
 
-<img
-    src="Imagens/Acesso/2.png"
-    alt="E-mail corporativo"
->
 
-<h3>Passo 3</h3>
+        <h3>
+            Passo 2
+        </h3>
 
-<p>
-    Clique em <strong>Seguinte</strong> e depois em
-    <strong>Microsoft Login</strong>.
-</p>
+        <p>
+            Preencha seu
+            <strong>e-mail corporativo</strong>
+            no campo de acesso.
+        </p>
 
-<img
-    src="Imagens/Acesso/3.png"
-    alt="Microsoft Login"
->
+        <img
+            src="Imagens/Acesso/2.png"
+            alt="E-mail corporativo"
+        >
 
-`;
+
+
+        <h3>
+            Passo 3
+        </h3>
+
+        <p>
+            Clique em
+            <strong>Seguinte</strong>
+            e depois em
+            <strong>Microsoft Login</strong>.
+        </p>
+
+        <img
+            src="Imagens/Acesso/3.png"
+            alt="Microsoft Login"
+        >
+
+        `
+    );
 
 }
 
+
+
 /* =========================================================
-ADIANTAMENTO
+   ADIANTAMENTO
 ========================================================= */
 
 else if (tipo === "adiantamento") {
 
-document.title = "PASSA TRIP - Adiantamento";
+    mostrarProcedimento(
+        "Adiantamento",
+        `
 
-conteudo.innerHTML = `
+        <h2>
+            💳 Como criar um adiantamento
+        </h2>
 
-<h2>💳 Como criar um adiantamento</h2>
 
-<h3>Passo 1</h3>
 
-<p>
-    Clique nas duas <strong>Setas</strong> indicadas a <strong>Esquerda</strong>.
-</p>
+        <h3>
+            Passo 1
+        </h3>
 
-<img
-    src="Imagens/Adiantamento/1.png"
-    alt="Menu Solicitações"
->
+        <p>
+            Clique em
+            <strong>Solicitações</strong>.
+        </p>
 
-<h3>Passo 2</h3>
+        <img
+            src="Imagens/Adiantamento/1.png"
+            alt="Menu Solicitações"
+        >
 
-<p>
-    Clique em <strong>Solicitações</strong>.
-</p>
 
-<img
-    src="Imagens/Adiantamento/2.png"
-    alt="Solicitações"
->
 
-<h3>Passo 3</h3>
+        <h3>
+            Passo 2
+        </h3>
 
-<p>
-    Clique em <strong>Criar solicitação</strong>.
-</p>
+        <p>
+            Acesse a área de
+            <strong>Solicitações</strong>.
+        </p>
 
-<img
-    src="Imagens/Adiantamento/3.png"
-    alt="Criar solicitação"
->
+        <img
+            src="Imagens/Adiantamento/2.png"
+            alt="Solicitações"
+        >
 
-<h3>Passo 4</h3>
 
-<p>
-    Preencha os campos obrigatórios e clique em
-    <strong>Criar solicitação</strong>.
-</p>
 
-<img
-    src="Imagens/Adiantamento/4.png"
-    alt="Preenchimento da solicitação"
->
+        <h3>
+            Passo 3
+        </h3>
 
-<h3>Passo 5</h3>
+        <p>
+            Clique em
+            <strong>Criar solicitação</strong>.
+        </p>
 
-<p>
-    Clique em <strong>Adicionar adiantamento</strong>.
-</p>
+        <img
+            src="Imagens/Adiantamento/3.png"
+            alt="Criar solicitação"
+        >
 
-<img
-    src="Imagens/Adiantamento/5.png"
-    alt="Adicionar adiantamento"
->
 
-<h3>Passo 6</h3>
 
-<p>
-    Preencha o <strong>valor do adiantamento</strong>,
-    a justificativa e clique em <strong>Salvar</strong>.
-</p>
+        <h3>
+            Passo 4
+        </h3>
 
-<img
-    src="Imagens/Adiantamento/6.png"
-    alt="Valor do adiantamento"
->
+        <p>
+            Preencha os campos obrigatórios
+            e clique em
+            <strong>Criar solicitação</strong>.
+        </p>
 
-<h3>Passo 7</h3>
+        <img
+            src="Imagens/Adiantamento/4.png"
+            alt="Preenchimento da solicitação"
+        >
 
-<p>
-    Revise as informações e clique em
-    <strong>Enviar solicitação</strong>.
-</p>
 
-<img
-    src="Imagens/Adiantamento/7.png"
-    alt="Enviar solicitação"
->
 
-`;
+        <h3>
+            Passo 5
+        </h3>
+
+        <p>
+            Clique em
+            <strong>Adicionar adiantamento</strong>.
+        </p>
+
+        <img
+            src="Imagens/Adiantamento/5.png"
+            alt="Adicionar adiantamento"
+        >
+
+
+
+        <h3>
+            Passo 6
+        </h3>
+
+        <p>
+            Preencha o
+            <strong>valor do adiantamento</strong>
+            e a justificativa.
+            Em seguida, clique em
+            <strong>Salvar</strong>.
+        </p>
+
+        <img
+            src="Imagens/Adiantamento/6.png"
+            alt="Valor do adiantamento"
+        >
+
+
+
+        <h3>
+            Passo 7
+        </h3>
+
+        <p>
+            Revise as informações e clique em
+            <strong>Enviar solicitação</strong>.
+        </p>
+
+        <img
+            src="Imagens/Adiantamento/7.png"
+            alt="Enviar solicitação"
+        >
+
+        `
+    );
 
 }
 
+
+
 /* =========================================================
-REEMBOLSO
+   REEMBOLSO
 ========================================================= */
 
 else if (tipo === "reembolso") {
 
-document.title = "PASSA TRIP - Reembolso";
+    mostrarProcedimento(
+        "Reembolso",
+        `
 
-conteudo.innerHTML = `
+        <h2>
+            💵 Como criar um reembolso
+        </h2>
 
-<h2>💵 Como criar um reembolso</h2>
 
-<h3>Passo 1</h3>
 
-<p>
-    Clique no <strong>Cartão</strong> indicado a <strong>Esquerda</strong>.
-</p>
+        <h3>
+            Passo 1
+        </h3>
 
-<img
-    src="Imagens/Reembolso/1.png"
-    alt="Menu Despesas"
->
+        <p>
+            Clique em
+            <strong>Despesas</strong>.
+        </p>
 
-<h3>Passo 2</h3>
+        <img
+            src="Imagens/Reembolso/1.png"
+            alt="Menu Despesas"
+        >
 
-<p>
-    Clique em Criar <strong>Gerenciar despesas</strong>.
-</p>
 
-<img
-    src="Imagens/Reembolso/2.png"
-    alt="Gerenciar despesas"
->
 
-<h3>Passo 3</h3>
+        <h3>
+            Passo 2
+        </h3>
 
-<p>
-    Clique em <strong>Criar relatório de despesas</strong>.
-</p>
+        <p>
+            Clique em
+            <strong>Gerenciar despesas</strong>.
+        </p>
 
-<img
-    src="Imagens/Reembolso/3.png"
-    alt="Criar relatório"
->
+        <img
+            src="Imagens/Reembolso/2.png"
+            alt="Gerenciar despesas"
+        >
 
-<h3>Passo 4</h3>
 
-<p>
-    Preencha os campos obrigatórios, selecione
-    <strong>Não, não preciso de ajuda de custo</strong>
-    e clique em <strong>Criar relatório</strong>.
-</p>
 
-<img
-    src="Imagens/Reembolso/4.png"
-    alt="Preenchimento do relatório de reembolso"
->
+        <h3>
+            Passo 3
+        </h3>
 
-<div class="dica">
+        <p>
+            Clique em
+            <strong>Criar relatório de despesas</strong>.
+        </p>
 
-    💡 <strong>Importante</strong>
+        <img
+            src="Imagens/Reembolso/3.png"
+            alt="Criar relatório"
+        >
 
-    <br><br>
 
-    Utilize esta opção para reembolso de despesas quando
-    não houver solicitação de adiantamento vinculada à viagem.
 
-</div>
+        <h3>
+            Passo 4
+        </h3>
 
-`;
+        <p>
+            Preencha os campos obrigatórios,
+            selecione
+            <strong>
+                Não, não preciso de ajuda de custo
+            </strong>
+            e clique em
+            <strong>Criar relatório</strong>.
+        </p>
+
+        <img
+            src="Imagens/Reembolso/4.png"
+            alt="Preenchimento do relatório de reembolso"
+        >
+
+
+
+        <div class="dica">
+
+            💡 <strong>Importante</strong>
+
+            <br><br>
+
+            Utilize esta opção para solicitar
+            o reembolso de despesas quando não houver
+            solicitação de adiantamento vinculada à viagem.
+
+        </div>
+
+        `
+    );
 
 }
 
+
+
 /* =========================================================
-ALMOÇO
+   ALMOÇO
 ========================================================= */
 
 else if (tipo === "almoco") {
 
-document.title = "PASSA TRIP - Almoço";
+    mostrarProcedimento(
+        "Almoço",
+        `
 
-conteudo.innerHTML = `
+        <h2>
+            🍽️ Como lançar uma despesa de almoço
+        </h2>
 
-<h2>🍽️ Como lançar uma despesa de almoço</h2>
 
-<h3>Passo 1</h3>
 
-<p>
-    Clique em <strong>Criação do Manual de Despesa</strong>.
-</p>
+        <h3>
+            Passo 1
+        </h3>
 
-<img
-    src="Imagens/Almoço/1.png"
-    alt="Criação do Manual de Despesa"
->
+        <p>
+            Clique em
+            <strong>Criação do Manual de Despesa</strong>.
+        </p>
 
-<h3>Passo 2</h3>
+        <img
+            src="Imagens/Almoço/1.png"
+            alt="Criação do Manual de Despesa"
+        >
 
-<p>
-    Pesquise por <strong>Almoço</strong> e selecione
-    a opção exibida.
-</p>
 
-<img
-    src="Imagens/Almoço/2.png"
-    alt="Selecionar Almoço"
->
 
-<h3>Passo 3</h3>
+        <h3>
+            Passo 2
+        </h3>
 
-<p>
-    Preencha os campos obrigatórios e clique em
-    <strong>Salvar</strong>.
-</p>
+        <p>
+            Pesquise por
+            <strong>Almoço</strong>
+            e selecione a opção exibida.
+        </p>
 
-<div class="dica">
+        <img
+            src="Imagens/Almoço/2.png"
+            alt="Selecionar Almoço"
+        >
 
-    💡 <strong>Importante</strong>
 
-    <br><br>
 
-    Informe no campo <strong>Comentários</strong> se veio
-    a <strong>Sede</strong> e descreva o motivo da refeição.
+        <h3>
+            Passo 3
+        </h3>
 
-    <br><br>
+        <p>
+            Preencha os campos obrigatórios
+            e clique em
+            <strong>Salvar</strong>.
+        </p>
 
-    Conforme a <strong>RC-04/2026</strong>,
-    não é necessário anexar o comprovante fiscal
-    para esta despesa.
+        <img
+            src="Imagens/Almoço/3.png"
+            alt="Preencher despesa de almoço"
+        >
 
-</div>
 
-<img
-    src="Imagens/Almoço/3.png"
-    alt="Preencher despesa de almoço"
->
 
-`;
+        <div class="dica">
+
+            💡 <strong>Importante</strong>
+
+            <br><br>
+
+            Informe no campo
+            <strong>Comentários</strong>
+            se veio à
+            <strong>Sede</strong>
+            e descreva o motivo da refeição.
+
+            <br><br>
+
+            Conforme a
+            <strong>RC-04/2026</strong>,
+            não é necessário anexar o comprovante fiscal
+            para esta despesa.
+
+        </div>
+
+        `
+    );
 
 }
 
+
+
 /* =========================================================
-BEBIDAS NÃO-ALCOÓLICAS
+   BEBIDAS NÃO-ALCOÓLICAS
 ========================================================= */
 
 else if (tipo === "bebida") {
 
-document.title = "PASSA TRIP - Bebidas Não-Alcoólicas";
+    mostrarProcedimento(
+        "Bebidas Não-Alcoólicas",
+        `
 
-conteudo.innerHTML = `
+        <h2>
+            🥤 Como lançar uma despesa de bebida não alcoólica
+        </h2>
 
-<h2>🥤 Como lançar uma despesa de bebida não-alcoólica</h2>
 
-<h3>Passo 1</h3>
 
-<p>
-    Clique em <strong>Criação do Manual de Despesa</strong>.
-</p>
+        <h3>
+            Passo 1
+        </h3>
 
-<img
-    src="Imagens/Bebidas Não-Alcoólica/1.png"
-    alt="Criação do Manual de Despesa"
->
+        <p>
+            Clique em
+            <strong>Criação do Manual de Despesa</strong>.
+        </p>
 
-<h3>Passo 2</h3>
+        <img
+            src="Imagens/Bebidas Não-Alcoólica/1.png"
+            alt="Criação do Manual de Despesa"
+        >
 
-<p>
-    Pesquise por <strong>Bebida</strong> e selecione
-    <strong>Bebida Não-Alcoólica</strong>.
-</p>
 
-<img
-    src="Imagens/Bebidas Não-Alcoólica/2.png"
-    alt="Bebida Não-Alcoólica"
->
 
-<h3>Passo 3</h3>
+        <h3>
+            Passo 2
+        </h3>
 
-<p>
-    Preencha os campos obrigatórios e clique em
-    <strong>Salvar</strong>.
-</p>
+        <p>
+            Pesquise por
+            <strong>Bebida</strong>
+            e selecione
+            <strong>Bebida Não-Alcoólica</strong>.
+        </p>
 
-<img
-    src="Imagens/Bebidas Não-Alcoólica/3.png"
-    alt="Preenchimento da bebida"
->
+        <img
+            src="Imagens/Bebidas Não-Alcoólica/2.png"
+            alt="Bebida Não-Alcoólica"
+        >
 
-<div class="dica">
 
-    💡 <strong>Importante</strong>
 
-    <br><br>
+        <h3>
+            Passo 3
+        </h3>
 
-    O comprovante deve ser anexado em formato <strong>PDF</strong>.
+        <p>
+            Preencha os campos obrigatórios
+            e clique em
+            <strong>Salvar</strong>.
+        </p>
 
-</div>
+        <img
+            src="Imagens/Bebidas Não-Alcoólica/3.png"
+            alt="Preenchimento da bebida"
+        >
 
-`;
+
+
+        <div class="dica">
+
+            💡 <strong>Importante</strong>
+
+            <br><br>
+
+            Conforme a
+            <strong>RC-04/2026</strong>,
+            é necessário anexar o comprovante fiscal
+            para esta despesa.
+
+             <br><br>
+            O comprovante deve ser anexado
+            em formato <strong>PDF</strong>.
+
+        </div>
+
+        `
+    );
 
 }
 
+
+
 /* =========================================================
-JANTAR
+   JANTAR
 ========================================================= */
 
 else if (tipo === "jantar") {
 
-document.title = "PASSA TRIP - Jantar";
+    mostrarProcedimento(
+        "Jantar",
+        `
 
-conteudo.innerHTML = `
+        <h2>
+            🍔 Como lançar uma despesa de jantar
+        </h2>
 
-<h2>🍔 Como lançar uma despesa de jantar</h2>
 
-<h3>Passo 1</h3>
 
-<p>
-    Clique em <strong>Criação do Manual de Despesa</strong>.
-</p>
+        <h3>
+            Passo 1
+        </h3>
 
-<img
-    src="Imagens/Jantar/1.png"
-    alt="Criação do Manual de Despesa"
->
+        <p>
+            Clique em
+            <strong>Criação do Manual de Despesa</strong>.
+        </p>
 
-<h3>Passo 2</h3>
+        <img
+            src="Imagens/Jantar/1.png"
+            alt="Criação do Manual de Despesa"
+        >
 
-<p>
-    Pesquise por <strong>Jantar</strong> e selecione
-    a opção exibida.
-</p>
 
-<img
-    src="Imagens/Jantar/2.png"
-    alt="Selecionar Jantar"
->
 
-<h3>Passo 3</h3>
+        <h3>
+            Passo 2
+        </h3>
 
-<p>
-    Preencha os campos obrigatórios e clique em
-    <strong>Salvar</strong>.
-</p>
+        <p>
+            Pesquise por
+            <strong>Jantar</strong>
+            e selecione a opção exibida.
+        </p>
 
-<img
-    src="Imagens/Jantar/3.png"
-    alt="Preencher despesa de jantar"
->
+        <img
+            src="Imagens/Jantar/2.png"
+            alt="Selecionar Jantar"
+        >
 
-<div class="dica">
 
-    💡 <strong>Importante</strong>
 
-    <br><br>
+        <h3>
+            Passo 3
+        </h3>
 
-    Informe no campo <strong>Comentários</strong> se veio
-    a <strong>Sede</strong> e descreva o motivo da refeição.
+        <p>
+            Preencha os campos obrigatórios
+            e clique em
+            <strong>Salvar</strong>.
+        </p>
 
-    <br><br>
+        <img
+            src="Imagens/Jantar/3.png"
+            alt="Preencher despesa de jantar"
+        >
 
-    Conforme a <strong>RC-04/2026</strong>,
-    não é necessário anexar o comprovante fiscal
-    para esta despesa.
 
-</div>
 
-`;
+        <div class="dica">
+
+            💡 <strong>Importante</strong>
+
+            <br><br>
+
+            Informe no campo
+            <strong>Comentários</strong>
+            se veio à
+            <strong>Sede</strong>
+            e descreva o motivo da refeição.
+
+            <br><br>
+
+            Conforme a
+            <strong>RC-04/2026</strong>,
+            não é necessário anexar o comprovante fiscal
+            para esta despesa.
+
+        </div>
+
+        `
+    );
 
 }
 
 /* =========================================================
-CAFÉ DA MANHÃ
+   LANCHE
 ========================================================= */
 
-else if (tipo === "cafe") {
+else if (tipo === "lanche") {
 
-document.title = "PASSA TRIP - Café da Manhã";
+    mostrarProcedimento(
+        "Lanche",
+        `
 
-conteudo.innerHTML = `
+        <h2>
+            🥪 Como lançar uma despesa de Lanche
+        </h2>
 
-<h2>☕ Como lançar uma despesa de café da manhã</h2>
 
-<h3>Passo 1</h3>
 
-<p>
-    Clique em <strong>Criação do Manual de Despesa</strong>.
-</p>
+        <h3>
+            Passo 1
+        </h3>
 
-<img
-    src="Imagens/Café da Manhã/1.png"
-    alt="Criação do Manual de Despesa"
->
+        <p>
+            Clique em
+            <strong>Criação do Manual de Despesa</strong>.
+        </p>
 
-<h3>Passo 2</h3>
+        <img
+            src="Imagens/Lanche da Tarde/1.png"
+            alt="Criação do Manual de Despesa"
+        >
 
-<p>
-    Pesquise por <strong>Café da Manhã</strong> e selecione
-    a opção exibida.
-</p>
 
-<img
-    src="Imagens/Café da Manhã/2.png"
-    alt="Selecionar Café da Manhã"
->
 
-<h3>Passo 3</h3>
+        <h3>
+            Passo 2
+        </h3>
 
-<p>
-    Preencha os campos obrigatórios e clique em
-    <strong>Salvar</strong>.
-</p>
+        <p>
+            Pesquise por
+            <strong>Lanche</strong>
+            e selecione a opção correspondente.
+        </p>
 
-<img
-    src="Imagens/Café da Manhã/3.png"
-    alt="Preencher despesa de café da manhã"
->
+        <img
+            src="Imagens/Lanche da Tarde/2.png"
+            alt="Selecionar Lanche"
+        >
 
-<div class="dica">
+
+
+        <h3>
+            Passo 3
+        </h3>
+
+        <p>
+            Preencha a
+            <strong>data da transação</strong>,
+            informe o
+            <strong>valor da despesa</strong>
+            e clique em
+            <strong>Salvar</strong>.
+        </p>
+
+        <img
+            src="Imagens/Lanche da Tarde/3.png"
+            alt="Preencher data, valor e salvar despesa"
+        >
+
+
+
+        <div class="dica">
+
+            💡 <strong>Importante</strong>
+
+            <br><br>
+
+            Conforme a <strong>RC-04/2026</strong>, é necessário apresentar
+            <strong>comprovante fiscal</strong> para esta despesa.
+
+            <br><br>
+
+            O <strong>comprovante deve ser anexado em PDF</strong>.
+
+        </div>
+
+        `
+    );
+
+}
+
+
+/* =========================================================
+   LOCAÇÃO DE VEÍCULOS
+========================================================= */
+
+else if (tipo === "locacao") {
+
+    document.title = "PASSA TRIP - Locação de Veículos";
+
+    conteudo.innerHTML = `
+
+        <h2>🚗 Como lançar uma despesa de Locação de Veículos</h2>
+
+
+        <h3>Passo 1</h3>
+
+        <p>
+            Clique em <strong>Criação do Manual de Despesa</strong>.
+        </p>
+
+        <img
+            src="Imagens/Locação de Veículos/1.png"
+            alt="Criação do Manual de Despesa"
+        >
+
+
+        <h3>Passo 2</h3>
+
+        <p>
+            Na barra de pesquisa, pesquise por
+            <strong>Locação de Veículos</strong> e selecione
+            a opção correspondente.
+        </p>
+
+        <img
+            src="Imagens/Locação de Veículos/2.png"
+            alt="Selecionar Locação de Veículos"
+        >
+
+
+        <h3>Passo 3</h3>
+
+        <p>
+            Preencha os campos obrigatórios,
+            como <strong>data da transação</strong>,
+            <strong>valor</strong>
+            e clique em
+            <strong>Salvar</strong>.
+        </p>
+
+        <img
+            src="Imagens/Locação de Veículos/3.png"
+            alt="Preencher despesa de Locação de Veículos"
+        >
+
+
+    <div class="dica">
 
     💡 <strong>Importante</strong>
 
     <br><br>
 
-    Informe no campo <strong>Comentários</strong> se veio
-    a <strong>Sede</strong> e descreva o motivo da refeição.
+    Conforme a <strong>RC-04/2026</strong>, a <strong>locação deve ser autorizada pelo GAF/CAF</strong>, desde que justificada e comprovada a <strong>economicidade</strong> ou a impossibilidade de uso de outros transportes.
 
     <br><br>
 
-    Conforme a <strong>RC-04/2026</strong>,
-    é necessário anexar o comprovante fiscal
-    para esta despesa.
+    Podem ser reembolsados <strong>seguro total e eventuais taxas</strong>, mediante documentos da locadora. 
+    
+     <br><br>
 
-    <br><br>
-
-    O comprovante deve ser anexado em formato <strong>PDF</strong>.
+    O combustível deve ser lançado na <strong>despesa Combustível</strong>. 
+    
+    São aceitos documentos emitidos pela internet por empresas de locação on-line.
 
 </div>
 
-`;
+    `;
 
 }
 
 /* =========================================================
-QUILOMETRAGEM
+   OUTRAS DESPESAS DE VIAGENS
+========================================================= */
+
+else if (tipo === "outras") {
+
+    document.title = "PASSA TRIP - Outras Despesas de Viagens";
+
+    conteudo.innerHTML = `
+
+        <h2>📦 Como lançar uma Despesa de ''Outras Despesas''</h2>
+
+        <h3>Passo 1</h3>
+
+        <p>
+            Clique em <strong>Criação do Manual de Despesa</strong>.
+        </p>
+
+        <img
+            src="Imagens/Outras Despesas/1.png"
+            alt="Criação do Manual de Despesa"
+        >
+
+        <h3>Passo 2</h3>
+
+        <p>
+            Na barra de pesquisa, pesquise por
+            <strong>Outras Despesas de Viagens</strong> e selecione
+            a opção correspondente.
+        </p>
+
+        <img
+            src="Imagens/Outras Despesas/2.png"
+            alt="Selecionar Outras Despesas de Viagens"
+        >
+
+        <h3>Passo 3</h3>
+
+        <p>
+            Preencha os campos obrigatórios da despesa,
+            como <strong>data da transação</strong>,
+            <strong>valor</strong> e descreva no campo
+            <strong>Comentários</strong> do que se trata a despesa.
+            Em seguida, clique em <strong>Salvar</strong>.
+        </p>
+
+        <img
+            src="Imagens/Outras Despesas/3.png"
+            alt="Preencher e salvar Outras Despesas de Viagens"
+        >
+
+        <div class="dica">
+
+            💡 <strong>Importante</strong>
+
+            <br><br>
+
+            Conforme a <strong>RC-04/2026</strong>, é necessário
+            <strong>anexar comprovante</strong> para esta despesa.
+
+        </div>
+
+    `;
+
+}
+
+/* =========================================================
+   PEDÁGIO
+========================================================= */
+
+else if (tipo === "pedagio") {
+
+    document.title = "PASSA TRIP - Pedágio";
+
+    conteudo.innerHTML = `
+
+        <h2>🛣️ Como lançar uma despesa de Pedágio</h2>
+
+        <h3>Passo 1</h3>
+
+        <p>
+            Clique em <strong>Criação do Manual de Despesa</strong>.
+        </p>
+
+        <img
+            src="Imagens/Pedágio/1.png"
+            alt="Criação do Manual de Despesa"
+        >
+
+        <h3>Passo 2</h3>
+
+        <p>
+            Na barra de pesquisa, pesquise por
+            <strong>Pedágio</strong> e selecione
+            a opção correspondente.
+        </p>
+
+        <img
+            src="Imagens/Pedágio/2.png"
+            alt="Selecionar Pedágio"
+        >
+
+        <h3>Passo 3</h3>
+
+        <p>
+            Preencha a <strong>data da transação</strong>,
+            informe o <strong>valor da despesa</strong>. Em seguida,
+            clique em <strong>Salvar</strong>.
+        </p>
+
+        <img
+            src="Imagens/Pedágio/3.png"
+            alt="Preencher e salvar despesa de Pedágio"
+        >
+
+        <div class="dica">
+
+            💡 <strong>Importante</strong>
+
+            <br><br>
+
+            Conforme a <strong>RC-04/2026</strong>, são aceitos
+            <strong>extratos de pedágios</strong>, contendo
+            <strong>nome e valor</strong>, além de
+            <strong>recibo de cabine</strong>.
+
+            <br><br>
+
+            Em caso de <strong>Pedágio em nome de terceiros</strong>,
+            justifique nos <strong>Comentários da Despesa</strong>.
+
+        </div>
+
+    `;
+
+}
+
+/* =========================================================
+   QUILOMETRAGEM
 ========================================================= */
 
 else if (tipo === "quilometragem") {
 
-document.title = "PASSA TRIP - Quilometragem";
+    mostrarProcedimento(
+        "Quilometragem",
+        `
 
-conteudo.innerHTML = `
+        <h2>
+            📍 Como lançar uma despesa de quilometragem
+        </h2>
 
-<h2>📍 Como lançar uma despesa de quilometragem</h2>
 
-<h3>Passo 1</h3>
+        <h3>
+            Passo 1
+        </h3>
 
-<p>
-    Clique em <strong>Criação do Manual de Despesa</strong>.
-</p>
+        <p>
+            Clique em
+            <strong>Criação do Manual de Despesa</strong>.
+        </p>
 
-<img
-    src="Imagens/Quilometragem/1.png"
-    alt="Criação do Manual de Despesa"
->
+        <img
+            src="Imagens/Quilometragem/1.png"
+            alt="Criação do Manual de Despesa"
+        >
 
-<h3>Passo 2</h3>
 
-<p>
-    Pesquise por <strong>Quilometragem</strong> e selecione
-    a opção exibida.
-</p>
+        <h3>
+            Passo 2
+        </h3>
 
-<img
-    src="Imagens/Quilometragem/2.png"
-    alt="Selecionar Quilometragem"
->
+        <p>
+            Pesquise por
+            <strong>Quilometragem</strong>
+            e selecione a opção exibida.
+        </p>
 
-<h3>Passo 3</h3>
+        <img
+            src="Imagens/Quilometragem/2.png"
+            alt="Selecionar Quilometragem"
+        >
 
-<p>
-    Cadastre seu <strong>Veículo</strong>.
-</p>
 
-<img
-    src="Imagens/Quilometragem/3.png"
-    alt="Cadastrar seu veículo"
->
+        <h3>
+            Passo 3
+        </h3>
 
-<h3>Passo 4</h3>
+        <p>
+            Cadastre seu
+            <strong>veículo</strong>.
+        </p>
 
-<p>
-    Preencha os trajetos e selecione
-    <strong>Considerar ida e volta</strong>, quando necessário.
-</p>
+        <img
+            src="Imagens/Quilometragem/3.png"
+            alt="Cadastrar seu veículo"
+        >
 
-<img
-    src="Imagens/Quilometragem/4.png"
-    alt="Informar trajetos"
->
 
-<h3>Passo 5</h3>
+        <h3>
+            Passo 4
+        </h3>
 
-<p>
-    Clique em <strong>Calcular trajeto</strong>.
-</p>
+        <p>
+            Preencha todos os trajetos no campo à esquerda e clique em
+            <strong>Calcular Trajeto</strong>.
+        </p>
 
-<img
-    src="Imagens/Quilometragem/4.png"
-    alt="Calcular trajeto"
->
+        <p>
+            A opção <strong>Considerar ida e volta</strong> é um atalho para não precisar
+            preencher duas vezes os campos com o mesmo endereço.
+            Caso tenha feito mais percursos, será necessário preenchê-los manualmente.
+            Para habilitar outros campos, pressione <strong>TAB</strong> ou
+            <strong>Enter</strong> no seu computador.
+            Não se esqueça de calcular os trajetos e após isso clique em <strong>Adicionar Quilometragem ao Expense</strong>.
+        </p>
 
-<h3>Passo 6</h3>
+        <img
+            src="Imagens/Quilometragem/4.png"
+            alt="Informar trajetos e calcular trajeto"
+        >
 
-<p>
-    Clique em <strong>Adicionar quilometragem</strong>.
-</p>
 
-<img
-    src="Imagens/Quilometragem/4.png"
-    alt="Adicionar quilometragem"
->
+        <h3>
+            Passo 5
+        </h3>
 
-<h3>Passo 7</h3>
+        <p>
+            Preencha a <strong>data</strong> e a
+            <strong>finalidade da viagem</strong>.
+            Caso tenha ocorrido algum desvio de rota, descreva nos comentários o motivo.
+            Depois, clique em <strong>Salvar</strong>.
+        </p>
 
-<p>
-    Preencha a <strong>data</strong> e a
-    <strong>finalidade da viagem</strong>.
-</p>
+        <img
+            src="Imagens/Quilometragem/5.png"
+            alt="Preencher data e finalidade da viagem"
+        >
 
-<img
-    src="Imagens/Quilometragem/5.png"
-    alt="Preencher data e finalidade da viagem"
->
 
-<h3>Passo 8</h3>
+        <h3>
+            Passo 6
+        </h3>
 
-<p>
-    Informe o motivo do desvio de rota no campo
-    <strong>Comentários</strong>, quando necessário.
-</p>
+        <p>
+            Este passo é para caso tenha esquecido de adicionar alguma rota após salvar a
+            <strong>despesa</strong>.
+            Clique em <strong>Adicionar rota</strong> e volte para o
+            <strong>Passo 4</strong>.
+        </p>
 
-<img
-    src="Imagens/Quilometragem/5.png"
-    alt="Comentários da quilometragem"
->
+        <img
+            src="Imagens/Quilometragem/6.png"
+            alt="Adicionar rota"
+        >
 
-<h3>Passo 9</h3>
 
-<p>
-    Clique em <strong>Adicionar rota</strong>, quando necessário.
-</p>
+        <div class="dica">
 
-<img
-    src="Imagens/Quilometragem/6.png"
-    alt="Adicionar rota"
->
+            💡 <strong>Importante</strong>
 
-<h3>Passo 10</h3>
+            <br><br>
 
-<p>
-    Clique em <strong>Salvar despesa</strong>.
-</p>
+            Não selecione a opção
+            <strong>Particular</strong>,
+            pois o sistema não realizará
+            o cálculo da quilometragem.
 
-<img
-    src="Imagens/Quilometragem/6.png"
-    alt="Salvar despesa"
->
+            <br><br>
 
-<div class="dica">
+            Conforme a
+            <strong>RC-04/2026</strong>,
+            o valor da quilometragem é de
+            <strong>R$ 1,46 por quilômetro</strong>
+            para carros movidos a gasolina,
+            etanol ou diesel.
 
-    💡 <strong>Importante</strong>
+        </div>
 
-    <br><br>
-
-    Não selecione a opção <strong>Particular</strong>,
-    pois o sistema não realizará o cálculo da quilometragem.
-
-    <br><br>
-
-    Conforme a <strong>RC-04/2026</strong>,
-    o valor da quilometragem é de
-    <strong>R$ 1,46 por quilômetro</strong>
-    para carros movidos a gasolina, etanol ou diesel.
-
-</div>
-
-`;
+        `
+    );
 
 }
 
+
+
 /* =========================================================
-HOSPEDAGEM
+   HOSPEDAGEM
 ========================================================= */
 
 else if (tipo === "hospedagem") {
 
-document.title = "PASSA TRIP - Hospedagem";
+    mostrarProcedimento(
+        "Hospedagem",
+        `
 
-conteudo.innerHTML = `
+        <h2>
+            🏨 Como lançar uma despesa de hospedagem
+        </h2>
 
-<h2>🏨 Como lançar uma despesa de hospedagem</h2>
 
-<h3>Passo 1</h3>
 
-<p>
-    Clique em <strong>Criação do Manual de Despesa</strong>.
-</p>
+        <h3>
+            Passo 1
+        </h3>
 
-<img
-    src="Imagens/Hospedagem/1.png"
-    alt="Criação do Manual de Despesa"
->
+        <p>
+            Clique em
+            <strong>Criação do Manual de Despesa</strong>.
+        </p>
 
-<h3>Passo 2</h3>
+        <img
+            src="Imagens/Hospedagem/1.png"
+            alt="Criação do Manual de Despesa"
+        >
 
-<p>
-    Pesquise por <strong>Hospedagens</strong> e selecione
-    a opção exibida.
-</p>
 
-<img
-    src="Imagens/Hospedagem/2.png"
-    alt="Selecionar Hospedagens"
->
 
-<h3>Passo 3</h3>
+        <h3>
+            Passo 2
+        </h3>
 
-<p>
-    Preencha as <strong>datas</strong> e os
-    <strong>valores</strong> e clique em
-    <strong>Especificações</strong>.
-</p>
+        <p>
+            Pesquise por
+            <strong>Hospedagens</strong>
+            e selecione a opção exibida.
+        </p>
 
-<img
-    src="Imagens/Hospedagem/3.png"
-    alt="Preencher datas, valores e acessar Especificações"
->
+        <img
+            src="Imagens/Hospedagem/2.png"
+            alt="Selecionar Hospedagens"
+        >
 
-<h3>Passo 4</h3>
 
-<p>
-    Clique em <strong>Adicionar Especificação do Item</strong>.
-</p>
 
-<img
-    src="Imagens/Hospedagem/4.png"
-    alt="Adicionar Especificação do Item"
->
+        <h3>
+            Passo 3
+        </h3>
 
-<h3>Passo 5</h3>
+        <p>
+            Preencha as
+            <strong>datas</strong>
+            e os
+            <strong>valores</strong>
+            e clique em
+            <strong>Especificações</strong>.
+        </p>
 
-<p>
-    Clique em <strong>Criar Especificações Manualmente</strong>.
-</p>
+        <img
+            src="Imagens/Hospedagem/3.png"
+            alt="Preencher datas, valores e acessar Especificações"
+        >
 
-<img
-    src="Imagens/Hospedagem/5.png"
-    alt="Criar Especificações Manualmente"
->
 
-<h3>Passo 6</h3>
 
-<p>
-    Selecione <strong>Mesmo Valor</strong> ou
-    <strong>Valor Diferente</strong>.
-</p>
+        <h3>
+            Passo 4
+        </h3>
 
-<img
-    src="Imagens/Hospedagem/6.png"
-    alt="Selecionar Mesmo Valor ou Valor Diferente"
->
+        <p>
+            Clique em
+            <strong>
+                Adicionar Especificação do Item
+            </strong>.
+        </p>
 
-<h3>Passo 7</h3>
+        <img
+            src="Imagens/Hospedagem/4.png"
+            alt="Adicionar Especificação do Item"
+        >
 
-<p>
-    Preencha os valores das diárias e clique em
-    <strong>Salvar</strong>.
-</p>
 
-<img
-    src="Imagens/Hospedagem/7.png"
-    alt="Informar valores das diárias e salvar"
->
 
-<div class="dica">
+        <h3>
+            Passo 5
+        </h3>
 
-    💡 <strong>Importante</strong>
+        <p>
+            Clique em
+            <strong>
+                Criar Especificações Manualmente
+            </strong>.
+        </p>
 
-    <br><br>
+        <img
+            src="Imagens/Hospedagem/5.png"
+            alt="Criar Especificações Manualmente"
+        >
 
-    Informe os valores das diárias de acordo com os
-    valores apresentados na <strong>Nota</strong>.
 
-    <br><br>
 
-    Caso seja necessário abrir mais de uma despesa,
-    os respectivos valores serão somados automaticamente
-    ao final da <strong>TRIP</strong>.
+        <h3>
+            Passo 6
+        </h3>
 
-    <br><br>
+        <p>
+            Selecione
+            <strong>Mesmo Valor</strong>
+            ou
+            <strong>Valor Diferente</strong>.
+        </p>
 
-    Conforme a <strong>RC-04/2026</strong>,
-    é necessário anexar o comprovante fiscal
-    para esta despesa.
+        <img
+            src="Imagens/Hospedagem/6.png"
+            alt="Selecionar Mesmo Valor ou Valor Diferente"
+        >
 
-    <br><br>
 
-    O comprovante deve ser anexado em formato <strong>PDF</strong>.
 
-</div>
+        <h3>
+            Passo 7
+        </h3>
 
-`;
+        <p>
+            Preencha os valores das diárias
+            e clique em
+            <strong>Salvar</strong>.
+        </p>
+
+        <img
+            src="Imagens/Hospedagem/7.png"
+            alt="Informar valores das diárias e salvar"
+        >
+
+
+
+        <div class="dica">
+
+            💡 <strong>Importante</strong>
+
+            <br><br>
+
+            Informe os valores das diárias de acordo
+            com os valores apresentados na
+            <strong>Nota</strong>.
+
+            <br><br>
+
+            Caso seja necessário abrir mais de uma despesa,
+            os respectivos valores serão somados
+            automaticamente ao final da
+            <strong>TRIP</strong>.
+
+            <br><br>
+
+            Conforme a
+            <strong>RC-04/2026</strong>,
+            é necessário anexar o comprovante fiscal
+            para esta despesa.
+
+            <br><br>
+
+            O comprovante deve ser anexado
+            em formato <strong>PDF</strong>.
+
+        </div>
+
+        `
+    );
 
 }
 
+
+
 /* =========================================================
-COMBUSTÍVEL AUTOMÓVEL ALUGADO
+   COMBUSTÍVEL
 ========================================================= */
 
 else if (tipo === "combustivel") {
 
-document.title = "PASSA TRIP - Combustível Automóvel Alugado";
+    mostrarProcedimento(
+        "Combustível Automóvel Alugado",
+        `
 
-conteudo.innerHTML = `
+        <h2>
+            ⛽ Como lançar uma despesa de combustível
+        </h2>
 
-<h2>⛽ Como lançar uma despesa de combustível</h2>
 
-<h3>Passo 1</h3>
 
-<p>
-    Clique em <strong>Criação do Manual de Despesa</strong>.
-</p>
+        <h3>
+            Passo 1
+        </h3>
 
-<img
-    src="Imagens/Combustivel Automovel Alugado/1.png"
-    alt="Criação do Manual de Despesa"
->
+        <p>
+            Clique em
+            <strong>Criação do Manual de Despesa</strong>.
+        </p>
 
-<h3>Passo 2</h3>
+        <img
+            src="Imagens/Combustivel Automovel Alugado/1.png"
+            alt="Criação do Manual de Despesa"
+        >
 
-<p>
-    Pesquise por <strong>Combustível</strong> e selecione
-    a opção exibida.
-</p>
 
-<img
-    src="Imagens/Combustivel Automovel Alugado/2.png"
-    alt="Selecionar Combustível"
->
 
-<h3>Passo 3</h3>
+        <h3>
+            Passo 2
+        </h3>
 
-<p>
-    Preencha os campos obrigatórios e clique em
-    <strong>Salvar Despesa</strong>.
-</p>
+        <p>
+            Pesquise por
+            <strong>Combustível</strong>
+            e selecione a opção exibida.
+        </p>
 
-<img
-    src="Imagens/Combustivel Automovel Alugado/3.png"
-    alt="Preencher despesa de combustível"
->
+        <img
+            src="Imagens/Combustivel Automovel Alugado/2.png"
+            alt="Selecionar Combustível"
+        >
 
-<div class="dica">
 
-    💡 <strong>Importante</strong>
 
-    <br><br>
+        <h3>
+            Passo 3
+        </h3>
 
-    Esta despesa é somente para quando o carro for
-    <strong>alugado</strong>.
+        <p>
+            Preencha os campos obrigatórios
+            e clique em
+            <strong>Salvar Despesa</strong>.
+        </p>
 
-    <br><br>
+        <img
+            src="Imagens/Combustivel Automovel Alugado/3.png"
+            alt="Preencher despesa de combustível"
+        >
 
-    Informe o motivo da despesa no campo
-    <strong>Comentários</strong>.
 
-    <br><br>
 
-    Conforme a <strong>RC-04/2026</strong>,
-    é necessário anexar o comprovante fiscal
-    para esta despesa.
+        <div class="dica">
 
-    <br><br>
+            💡 <strong>Importante</strong>
 
-    O comprovante deve ser anexado em formato <strong>PDF</strong>.
+            <br><br>
 
-</div>
+            Esta despesa é somente para quando
+            o carro for <strong>alugado</strong>.
 
-`;
+            <br><br>
+
+            Informe o motivo da despesa
+            no campo
+            <strong>Comentários</strong>.
+
+            <br><br>
+
+            Conforme a
+            <strong>RC-04/2026</strong>,
+            é necessário anexar o comprovante fiscal
+            para esta despesa.
+
+            <br><br>
+
+            O comprovante deve ser anexado
+            em formato <strong>PDF</strong>.
+
+        </div>
+
+        `
+    );
 
 }
 
+
+
 /* =========================================================
-CONDUÇÃO URBANA
+   CONDUÇÃO URBANA
 ========================================================= */
 
 else if (tipo === "conducao") {
 
-document.title = "PASSA TRIP - Condução Urbana";
+    mostrarProcedimento(
+        "Condução Urbana",
+        `
 
-conteudo.innerHTML = `
+        <h2>
+            🚆 Como lançar uma despesa de condução urbana
+        </h2>
 
-<h2>🚆 Como lançar uma despesa de condução urbana</h2>
 
-<h3>Passo 1</h3>
 
-<p>
-    Clique em <strong>Criação do Manual de Despesa</strong>.
-</p>
+        <h3>
+            Passo 1
+        </h3>
 
-<img
-    src="Imagens/Condução Urbana/1.png"
-    alt="Criação do Manual de Despesa"
->
+        <p>
+            Clique em
+            <strong>Criação do Manual de Despesa</strong>.
+        </p>
 
-<h3>Passo 2</h3>
+        <img
+            src="Imagens/Condução Urbana/1.png"
+            alt="Criação do Manual de Despesa"
+        >
 
-<p>
-    Pesquise por <strong>Condução Urbana</strong> e selecione
-    a opção exibida.
-</p>
 
-<img
-    src="Imagens/Condução Urbana/2.png"
-    alt="Selecionar Condução Urbana"
->
 
-<h3>Passo 3</h3>
+        <h3>
+            Passo 2
+        </h3>
 
-<p>
-    Preencha a <strong>data da transação</strong>, informe
-    o <strong>valor da despesa</strong> e descreva no campo
-    <strong>Comentários</strong> que se trata de uma despesa
-    de <strong>Condução Urbana</strong>, informando também os
-    <strong>trajetos realizados</strong> e clique em
-    <strong>Salvar</strong>.
-</p>
+        <p>
+            Pesquise por
+            <strong>Condução Urbana</strong>
+            e selecione a opção exibida.
+        </p>
 
-<img
-    src="Imagens/Condução Urbana/3.png"
-    alt="Preencher data, valor, comentários e salvar despesa"
->
+        <img
+            src="Imagens/Condução Urbana/2.png"
+            alt="Selecionar Condução Urbana"
+        >
 
-<div class="dica">
 
-    💡 <strong>Importante</strong>
 
-    <br><br>
+        <h3>
+            Passo 3
+        </h3>
 
-    Informe no campo <strong>Comentários</strong> que trata-se
-    de <strong>Condução Urbana</strong>.
+        <p>
+            Preencha a
+            <strong>data da transação</strong>,
+            informe o
+            <strong>valor da despesa</strong>
+            e descreva no campo
+            <strong>Comentários</strong>
+            que se trata de uma despesa de
+            <strong>Condução Urbana</strong>.
 
-    <br><br>
+            Informe também os
+            <strong>trajetos realizados</strong>
+            e clique em
+            <strong>Salvar</strong>.
+        </p>
 
-    O comprovante deve ser anexado em formato <strong>PDF</strong>.
+        <img
+            src="Imagens/Condução Urbana/3.png"
+            alt="Preencher data, valor, comentários e salvar despesa"
+        >
 
-    <br><br>
 
-    Conforme a <strong>RC-04/2026</strong>, é necessário anexar
-    o comprovante de trajeto para esta despesa.
 
-</div>
+        <div class="dica">
 
-`;
+            💡 <strong>Importante</strong>
+
+            <br><br>
+
+            Informe no campo
+            <strong>Comentários</strong>
+            que se trata de uma despesa de
+            <strong>Condução Urbana</strong>.
+
+            <br><br>
+
+            Conforme a
+            <strong>RC-04/2026</strong>,
+            é necessário anexar o comprovante
+            de trajeto para esta despesa.
+
+            <br><br>
+
+            O comprovante deve ser anexado
+            em formato <strong>PDF</strong>.
+
+        </div>
+
+        `
+    );
+
+}
+
+
+
+/* =========================================================
+   ESTACIONAMENTO
+========================================================= */
+
+else if (tipo === "estacionamento") {
+
+    mostrarProcedimento(
+        "Estacionamento",
+        `
+
+        <h2>
+            🅿️ Como lançar uma despesa de estacionamento
+        </h2>
+
+
+
+        <h3>
+            Passo 1
+        </h3>
+
+        <p>
+            Clique em
+            <strong>Criação do Manual de Despesa</strong>.
+        </p>
+
+        <img
+            src="Imagens/Estacionamento/1.png"
+            alt="Criação do Manual de Despesa"
+        >
+
+
+
+        <h3>
+            Passo 2
+        </h3>
+
+        <p>
+            Pesquise por
+            <strong>Estacionamento</strong>
+            e selecione a opção exibida.
+        </p>
+
+        <img
+            src="Imagens/Estacionamento/2.png"
+            alt="Selecionar Estacionamento"
+        >
+
+
+
+        <h3>
+            Passo 3
+        </h3>
+
+        <p>
+            Preencha os campos obrigatórios
+            com a
+            <strong>data</strong>,
+            o
+            <strong>valor da despesa</strong>
+            e as demais informações solicitadas.
+            Em seguida, clique em
+            <strong>Salvar</strong>.
+        </p>
+
+        <img
+            src="Imagens/Estacionamento/3.png"
+            alt="Preencher despesa de estacionamento"
+        >
+
+
+
+        <div class="dica">
+
+            💡 <strong>Importante</strong>
+
+            <br><br>
+
+            Conforme <strong>RC-04/2026</strong> para esta despesa deve ser apresentado <strong>Comprovante Fiscal</strong>.
+            <br><br>
+            <strong>RPS não é aceito</strong> como comprovante.
+            <br><br>
+            O comprovante deve ser anexado
+            em formato <strong>PDF</strong>.
+
+        </div>
+
+        `
+    );
+
+}
+
+
+/* =========================================================
+   PASSAGEM RODOVIÁRIA
+========================================================= */
+
+else if (tipo === "passagem-rodoviaria") {
+
+    mostrarProcedimento(
+        "Passagem Rodoviária",
+        `
+
+        <h2>
+            🚌 Como lançar uma despesa de Passagem Rodoviária
+        </h2>
+
+
+        <h3>
+            Passo 1
+        </h3>
+
+        <p>
+            Clique em
+            <strong>Criação do Manual de Despesa</strong>.
+        </p>
+
+        <img
+            src="Imagens/Passagem Rodoviaria/1.png"
+            alt="Criação do Manual de Despesa"
+        >
+
+
+        <h3>
+            Passo 2
+        </h3>
+
+        <p>
+            Pesquise por
+            <strong>Passagem Rodoviária</strong>
+            e selecione a opção correspondente.
+        </p>
+
+        <img
+            src="Imagens/Passagem Rodoviaria/2.png"
+            alt="Selecionar Passagem Rodoviária"
+        >
+
+
+        <h3>
+            Passo 3
+        </h3>
+
+        <p>
+            Preencha a <strong>data</strong> e o <strong>valor</strong> da passagem
+            e clique em <strong>Salvar</strong>.
+        </p>
+
+        <img
+            src="Imagens/Passagem Rodoviaria/3.png"
+            alt="Preencher dados da passagem"
+        >
+
+
+        <div class="dica">
+
+            💡 <strong>Importante</strong>
+
+            <br><br>
+
+            Anexar o <strong>bilhete da viagem</strong> e, são aceitas, as <strong>taxas de embarque</strong>,
+            <strong>seguro</strong> e <strong>taxa de administração</strong>.
+
+            <br><br>
+
+            Compras via <strong>internet</strong>, o Bilhete deve ser anexado em <strong>PDF</strong>.
+
+        </div>
+
+        `
+    );
 
 }
 
 /* =========================================================
-PERGUNTE AO PASSA TRIP
+   REFEIÇÃO DE ATLETAS
+========================================================= */
+
+else if (tipo === "Refeição Atletas") {
+
+    document.title = "PASSA TRIP - Refeição de Atletas";
+
+    conteudo.innerHTML = `
+
+        <h2>🍽️ Como lançar uma despesa de Refeição de Atletas</h2>
+
+        <h3>Passo 1</h3>
+
+        <p>
+            Clique em <strong>Criação do Manual de Despesa</strong>.
+        </p>
+
+        <img
+            src="Imagens/Refeição Atletas/1.png"
+            alt="Criação do Manual de Despesa"
+        >
+
+        <h3>Passo 2</h3>
+
+        <p>
+            Pesquise por <strong>Refeição Atletas</strong> e selecione
+            uma das opções exibidas.
+        </p>
+
+        <img
+            src="Imagens/Refeição Atletas/2.png"
+            alt="Selecionar Refeição Atletas"
+        >
+
+        <h3>Passo 3</h3>
+
+        <p>
+            Selecione a <strong>Categoria do Atleta</strong>,
+            informe a <strong>Data da transação</strong> e o
+            <strong>Valor</strong>. Em seguida, clique em
+            <strong>Participantes</strong>.
+        </p>
+
+        <img
+            src="Imagens/Refeição Atletas/3.png"
+            alt="Selecionar categoria, data, valor e participantes"
+        >
+
+        <h3>Passo 4</h3>
+
+        <p>
+            Selecione <strong>Opções Avançadas</strong> para
+            cadastrar os participantes.
+        </p>
+
+        <img
+            src="Imagens/Refeição Atletas/4.png"
+            alt="Opções Avançadas para cadastrar participantes"
+        >
+
+        <h3>Passo 5</h3>
+
+        <p>
+            Selecione <strong>Funcionários Fora do Concur</strong>.
+        </p>
+
+        <img
+            src="Imagens/Refeição Atletas/5.png"
+            alt="Selecionar Funcionários Fora do Concur"
+        >
+
+        <h3>Passo 6</h3>
+
+        <p>
+            Digite o <strong>Nome</strong>, <strong>Sobrenome</strong>
+            do atleta e o <strong>Título do Participante</strong>.
+            Após isso, clique em <strong>Criar Participante</strong>.
+        </p>
+
+        <img
+            src="Imagens/Refeição Atletas/6.png"
+            alt="Cadastrar participante atleta"
+        >
+
+        <h3>Passo 7</h3>
+
+        <p>
+            Clique em <strong>Criar Participante</strong> e repita
+            o procedimento para <strong>todos os atletas</strong>
+            incluídos na despesa.
+        </p>
+
+        <img
+            src="Imagens/Refeição Atletas/7.png"
+            alt="Criar participantes para todos os atletas"
+        >
+
+        <h3>Passo 8</h3>
+
+        <p>
+            <strong>Selecione no quadrado à esquerda</strong> os
+            participantes que estiverem na despesa e clique em
+            <strong>Salvar</strong>.
+             </p>
+
+            A opção <strong>Criar Grupo</strong> permite deixar salvo os nomes dos atletas para utilização em <strong>viagens recorrentes com a mesma equipe</strong>.
+        </p>
+
+        <img
+            src="Imagens/Refeição Atletas/8.png"
+            alt="Selecionar participantes e salvar"
+        >
+
+        <h3>Passo 9</h3>
+
+        <p>
+            Verifique os <strong>valores</strong> e a
+            <strong>data</strong>. No campo <strong>Comentários</strong>,
+            informe qual é a despesa.
+        </p>
+
+        <img
+            src="Imagens/Refeição Atletas/9.png"
+            alt="Verificar valores, data e informar a despesa nos comentários"
+        >
+
+        <div class="dica">
+
+            💡 <strong>Dicas</strong>
+
+            <br><br>
+
+            Conforme a <strong>RC-04/2026</strong>, é necessário
+            anexar <strong>comprovante fiscal</strong> para esta despesa.
+
+            <br><br>
+
+            Para <strong>Atletas</strong>, o mesmo método pode ser utilizado
+            para as despesas de <strong>Bebidas Não Alcoólicas</strong> e
+            <strong>Café da Manhã</strong>.
+
+            <br><br>
+
+            Entretanto, cada refeição do atleta deve ser lançada em sua
+            <strong>respectiva despesa</strong>. Não é permitido reunir
+            todas as refeições em uma única despesa.
+
+        </div>
+
+    `;
+
+}
+
+/* =========================================================
+   TÁXI
+========================================================= */
+
+else if (tipo === "taxi") {
+
+    mostrarProcedimento(
+        "Táxi",
+        `
+
+        <h2>
+            🚕 Como lançar uma despesa de Táxi
+        </h2>
+
+
+
+        <h3>
+            Passo 1
+        </h3>
+
+        <p>
+            Clique em
+            <strong>Criação do Manual de Despesa</strong>.
+        </p>
+
+        <img
+            src="Imagens/Táxi/1.png"
+            alt="Criação do Manual de Despesa"
+        >
+
+
+
+        <h3>
+            Passo 2
+        </h3>
+
+        <p>
+            Pesquise por
+            <strong>Táxi</strong>
+            e selecione a opção correspondente.
+        </p>
+
+        <img
+            src="Imagens/Táxi/2.png"
+            alt="Selecionar Táxi"
+        >
+
+
+
+        <h3>
+            Passo 3
+        </h3>
+
+        <p>
+            Preencha a
+            <strong>data da transação</strong>,
+            informe o
+            <strong>valor da despesa</strong>
+            e descreva no campo
+            <strong>Comentários</strong>
+            que se trata de uma despesa de
+            <strong>Táxi</strong>
+            e clique em
+            <strong>Salvar</strong>.
+        </p>
+
+        <img
+            src="Imagens/Táxi/3.png"
+            alt="Preencher data, valor, comentários e salvar despesa"
+        >
+
+
+
+        <div class="dica">
+
+            💡 <strong>Importante</strong>
+
+            <br><br>
+
+            Conforme a <strong>RC-04/2026</strong>, para corridas de
+            <strong>Táxi realizadas por aplicativos</strong>, como
+            <strong>Uber, 99, BlaBlaCar, inDrive, entre outros</strong>,
+            é necessário anexar o <strong>comprovante da corrida</strong>.
+
+            <br><br>
+
+            Para corridas de Táxi,
+            <strong>não são permitidos recibos de papel</strong>.
+            É necessário anexar o
+            <strong>comprovante fiscal</strong>
+            correspondente à despesa.
+
+        </div>
+
+        `
+    );
+
+}
+
+
+/* =========================================================
+   PERGUNTE AO PASSA TRIP
 ========================================================= */
 
 else if (tipo === "chat") {
 
-document.title = "PASSA TRIP - Pergunte ao Passa Trip";
+    document.title =
+        "PASSA TRIP - Pergunte ao Passa Trip";
 
-conteudo.innerHTML = `
 
-<h2>🤖 Pergunte ao Passa Trip</h2>
 
-<p>
-    Ficou com alguma dúvida sobre o SAP Concur?
-    Informe seu e-mail e escreva sua dúvida.
-</p>
+    conteudo.innerHTML = `
 
-<form id="formulario-duvida">
+        <h2>
+            🤖 Pergunte ao Passa Trip
+        </h2>
 
-    <label for="email">
-        E-mail
-    </label>
 
-    <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="Digite seu e-mail"
-        required
-    >
 
-    <label for="duvida">
-        Sua dúvida
-    </label>
+        <p>
+            Ficou com alguma dúvida sobre o SAP Concur?
+            Informe seu e-mail e escreva sua dúvida.
+        </p>
 
-    <textarea
-        id="duvida"
-        name="duvida"
-        rows="8"
-        placeholder="Digite sua dúvida aqui..."
-        required
-    ></textarea>
 
-    <button
-        type="submit"
-        class="botao-enviar"
-    >
-        ➜
-    </button>
 
-</form>
+        <form id="formulario-duvida">
 
-<div class="dica">
+            <label for="email">
+                E-mail
+            </label>
 
-    💡 Sua dúvida será enviada para a equipe de
-    Prestação de Contas, que poderá entrar em contato
-    pelo e-mail informado.
 
-</div>
 
-`;
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Digite seu e-mail"
+                required
+            >
 
-const formulario =
-document.getElementById("formulario-duvida");
 
-formulario.addEventListener(
-"submit",
-function(event) {
 
-    event.preventDefault();
+            <label for="duvida">
+                Sua dúvida
+            </label>
 
-    const email =
-        document.getElementById("email").value.trim();
 
-    const duvida =
-        document.getElementById("duvida").value.trim();
 
-    const destinatario =
-        "contabilidadeprestacaodecontas@sesisenaisp.org.br";
+            <textarea
+                id="duvida"
+                name="duvida"
+                rows="8"
+                placeholder="Digite sua dúvida aqui..."
+                required
+            ></textarea>
 
-    const assunto = duvida;
 
-    const corpo =
-        "Poderiam me ajudar com: " +
-        duvida +
-        "\n\n" +
-        "E-mail para retorno: " +
-        email;
 
-    const linkEmail =
-        "mailto:" +
-        destinatario +
-        "?subject=" +
-        encodeURIComponent(assunto) +
-        "&body=" +
-        encodeURIComponent(corpo);
+            <button
+                type="submit"
+                class="botao-enviar"
+            >
+                ➜
+            </button>
 
-    window.location.href = linkEmail;
+        </form>
+
+
+
+        <div class="dica">
+
+            💡 Sua dúvida será enviada para a equipe de
+            Prestação de Contas, que poderá entrar em contato
+            pelo e-mail informado.
+
+        </div>
+
+    `;
+
+
+
+    const formulario =
+        document.getElementById(
+            "formulario-duvida"
+        );
+
+
+
+    formulario.addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+
+
+            const email =
+                document
+                    .getElementById("email")
+                    .value
+                    .trim();
+
+
+
+            const duvida =
+                document
+                    .getElementById("duvida")
+                    .value
+                    .trim();
+
+
+
+            const destinatario =
+                "contabilidadeprestacaodecontas@sesisenaisp.org.br";
+
+
+
+            const assunto =
+                duvida;
+
+
+
+            const corpo =
+                "Poderiam me ajudar com: " +
+                duvida +
+                "\n\n" +
+                "E-mail para retorno: " +
+                email;
+
+
+
+            const linkEmail =
+                "mailto:" +
+                destinatario +
+                "?subject=" +
+                encodeURIComponent(assunto) +
+                "&body=" +
+                encodeURIComponent(corpo);
+
+
+
+            window.location.href =
+                linkEmail;
+
+        }
+    );
 
 }
 
-);
 
-}
 
 /* =========================================================
-DEMAIS DESPESAS
+   DEMAIS DESPESAS
 ========================================================= */
 
 else {
 
-const nomes = {
+    const nomes = {
 
-cafe:
-    "☕ Café da Manhã",
+        estacionamento:
+            "🅿️ Estacionamento",
 
-combustivel:
-    "⛽ Combustível Automóvel Alugado",
+        lanche:
+            "🍪 Lanche da Tarde",
 
-conducao:
-    "🚆 Condução Urbana",
+        locacao:
+            "🚗 Locação de Veículos",
 
-estacionamento:
-    "🅿️ Estacionamento",
+        outras:
+            "📦 Outras Despesas",
 
-hospedagem:
-    "🏨 Hospedagem",
+        pedagio:
+            "🛣️ Pedágio",
 
-jantar:
-    "🍔 Jantar",
+        "Refeição Atletas":
+            "🍽️ Refeições de Atletas",
 
-lanche:
-    "🍪 Lanche da Tarde",
+        taxi:
+            "🚕 Táxi",
 
-locacao:
-    "🚗 Locação de Veículos",
+        passagem:
+            "🚌 Passagem Rodoviária"
 
-outras:
-    "📦 Outras Despesas",
+    };
 
-pedagio:
-    "🛣️ Pedágio",
 
-quilometragem:
-    "📍 Quilometragem",
 
-"refeicoes-atletas":
-    "🍽️ Refeições de Atletas",
+    if (nomes[tipo]) {
 
-"bebidas-atletas":
-    "🥤 Bebidas Não-Alcoólicas — Atletas",
+        document.title =
+            "PASSA TRIP - " +
+            nomes[tipo];
 
-taxi:
-    "🚕 Táxi"
 
-};
 
-if (nomes[tipo]) {
+        conteudo.innerHTML = `
 
-document.title =
-    "PASSA TRIP - " + nomes[tipo];
+            <h2>
+                ${nomes[tipo]}
+            </h2>
 
-conteudo.innerHTML = `
 
-    <h2>${nomes[tipo]}</h2>
 
-    <h3>🚧 Procedimento em preparação</h3>
+            <h3>
+                🚧 Procedimento em preparação
+            </h3>
 
-    <p>
-        Estamos preparando o passo a passo completo
-        desta despesa.
-    </p>
 
-`;
+
+            <p>
+                Estamos preparando o passo a passo
+                completo desta despesa.
+            </p>
+
+        `;
+
+    }
+
+    else {
+
+        conteudo.innerHTML = `
+
+            <h2>
+                ❌ Procedimento não encontrado
+            </h2>
+
+
+
+            <p>
+                Não foi possível localizar
+                o procedimento solicitado.
+            </p>
+
+        `;
+
+    }
 
 }
 
-else {
 
-conteudo.innerHTML = `
-
-    <h2>❌ Procedimento não encontrado</h2>
-
-    <p>
-        Não foi possível localizar o procedimento solicitado.
-    </p>
-
-`;
-
-}
-
-}
 
 /* =========================================================
-AMPLIAR IMAGEM
+   AMPLIAR IMAGEM
 ========================================================= */
 
 function abrirImagem(imagem) {
 
-const modal =
-    document.getElementById("modal-imagem");
-
-const imagemAmpliada =
-    document.getElementById("imagem-ampliada");
-
-if (!modal || !imagemAmpliada || !imagem) {
-
-    return;
-
-}
-
-imagemAmpliada.src =
-    imagem.currentSrc ||
-    imagem.src;
-
-imagemAmpliada.alt =
-    imagem.alt || "Imagem ampliada";
-
-modal.style.display =
-    "flex";
-
-document.body.style.overflow =
-    "hidden";
-
-}
-
-/* =========================================================
-FECHAR IMAGEM
-========================================================= */
-
-function fecharImagem() {
-
-const modal =
-    document.getElementById("modal-imagem");
-
-const imagemAmpliada =
-    document.getElementById("imagem-ampliada");
-
-if (!modal) {
-
-    return;
-
-}
-
-modal.style.display =
-    "none";
-
-document.body.style.overflow =
-    "";
-
-if (imagemAmpliada) {
-
-    imagemAmpliada.src =
-        "";
-
-}
-
-}
-
-/* =========================================================
-ATIVAR CLIQUE NAS IMAGENS
-========================================================= */
-
-document.addEventListener(
-"click",
-function(event) {
-
-    const imagem =
-        event.target.closest(
-            "#conteudo-despesa img"
+    const modal =
+        document.getElementById(
+            "modal-imagem"
         );
 
-    if (!imagem) {
+
+
+    const imagemAmpliada =
+        document.getElementById(
+            "imagem-ampliada"
+        );
+
+
+
+    if (
+        !modal ||
+        !imagemAmpliada ||
+        !imagem
+    ) {
 
         return;
 
     }
 
-    event.preventDefault();
 
-    abrirImagem(imagem);
+
+    imagemAmpliada.src =
+        imagem.currentSrc ||
+        imagem.src;
+
+
+
+    imagemAmpliada.alt =
+        imagem.alt ||
+        "Imagem ampliada";
+
+
+
+    modal.classList.add(
+        "aberta"
+    );
+
+
+
+    document.body.style.overflow =
+        "hidden";
 
 }
 
-);
+
 
 /* =========================================================
-FECHAR AO CLICAR FORA DA IMAGEM
+   FECHAR IMAGEM
 ========================================================= */
 
-document.getElementById(
-"modal-imagem"
-).addEventListener(
-"click",
-function(event) {
+function fecharImagem() {
 
-    if (
-        event.target === this ||
-        event.target.classList.contains("fechar-imagem")
-    ) {
+    const modal =
+        document.getElementById(
+            "modal-imagem"
+        );
 
-        fecharImagem();
+
+
+    const imagemAmpliada =
+        document.getElementById(
+            "imagem-ampliada"
+        );
+
+
+
+    if (!modal) {
+
+        return;
+
+    }
+
+
+
+    modal.classList.remove(
+        "aberta"
+    );
+
+
+
+    document.body.style.overflow =
+        "";
+
+
+
+    if (imagemAmpliada) {
+
+        imagemAmpliada.src =
+            "";
 
     }
 
 }
 
-);
+
 
 /* =========================================================
-FECHAR COM ESC
+   CLIQUE NAS IMAGENS
 ========================================================= */
 
 document.addEventListener(
-"keydown",
-function(event) {
+    "click",
+    function(event) {
 
-    if (event.key === "Escape") {
+        const imagem =
+            event.target.closest(
+                "#conteudo-despesa img"
+            );
 
-        fecharImagem();
+
+
+        if (!imagem) {
+
+            return;
+
+        }
+
+
+
+        event.preventDefault();
+
+
+
+        abrirImagem(imagem);
 
     }
+);
+
+
+
+/* =========================================================
+   FECHAR CLICANDO NO FUNDO
+========================================================= */
+
+const modalImagem =
+    document.getElementById(
+        "modal-imagem"
+    );
+
+
+
+if (modalImagem) {
+
+    modalImagem.addEventListener(
+        "click",
+        function(event) {
+
+            if (
+                event.target === this
+            ) {
+
+                fecharImagem();
+
+            }
+
+        }
+    );
 
 }
 
-);
+
 
 /* =========================================================
-VOLTAR
+   FECHAR NO X
+========================================================= */
+
+const botaoFechar =
+    document.getElementById(
+        "fechar-imagem"
+    );
+
+
+
+if (botaoFechar) {
+
+    botaoFechar.addEventListener(
+        "click",
+        function(event) {
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+            fecharImagem();
+
+        }
+    );
+
+}
+
+
+
+/* =========================================================
+   NÃO FECHAR AO CLICAR NA IMAGEM AMPLIADA
+========================================================= */
+
+const imagemAmpliada =
+    document.getElementById(
+        "imagem-ampliada"
+    );
+
+
+
+if (imagemAmpliada) {
+
+    imagemAmpliada.addEventListener(
+        "click",
+        function(event) {
+
+            event.stopPropagation();
+
+        }
+    );
+
+}
+
+
+
+/* =========================================================
+   FECHAR COM ESC
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            fecharImagem();
+
+        }
+
+    }
+);
+
+
+
+/* =========================================================
+   VOLTAR PARA O INÍCIO
 ========================================================= */
 
 function voltarInicio() {
 
-window.location.href =
-    "index.html";
+    window.location.href =
+        "index.html";
 
 }
 
 </script>
 
+
+
 </body>
 
 </html>
-
