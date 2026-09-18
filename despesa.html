@@ -603,7 +603,87 @@ else if (tipo === "reembolso") {
 
 }
 
+/* =========================================================
+   CAFÉ DA MANHÃ
+========================================================= */
 
+else if (tipo === "cafe") {
+
+    mostrarProcedimento(
+        "Café da Manhã",
+        `
+
+        <h2>
+            ☕ Como lançar uma despesa de café da manhã
+        </h2>
+
+        <h3>
+            Passo 1
+        </h3>
+
+        <p>
+            Clique em
+            <strong>Criação do Manual de Despesa</strong>.
+        </p>
+
+        <img
+            src="Imagens/Café da Manhã/1.png"
+            alt="Criação do Manual de Despesa"
+        >
+
+        <h3>
+            Passo 2
+        </h3>
+
+        <p>
+            Na barra de pesquisa, pesquise por
+            <strong>Café da Manhã</strong>
+            e selecione a opção correspondente.
+        </p>
+
+        <img
+            src="Imagens/Café da Manhã/2.png"
+            alt="Selecionar Café da Manhã"
+        >
+
+        <h3>
+            Passo 3
+        </h3>
+
+        <p>
+            Preencha os campos obrigatórios da despesa,
+            como <strong>data da transação</strong>,
+            <strong>valor</strong> e se
+            <strong>veio a Sede ou não</strong>.
+            Depois, salve.
+        </p>
+
+        <img
+            src="Imagens/Café da Manhã/3.png"
+            alt="Preencher despesa de café da manhã"
+        >
+
+        <div class="dica">
+
+            💡 <strong>Importante:</strong>
+
+            <br><br>
+
+            Descreva se veio a <strong>Sede</strong> ou não
+            e informe, nos comentários, o motivo da refeição.
+
+            <br><br>
+
+            Conforme a <strong>RC-04/2026</strong>,
+            <strong>é necessário anexar o comprovante fiscal</strong>
+            para esta despesa.
+
+        </div>
+
+        `
+    );
+
+}
 
 /* =========================================================
    ALMOÇO
@@ -2150,249 +2230,222 @@ else if (tipo === "taxi") {
 
 }
 
-
 /* =========================================================
-   PERGUNTE AO PASSA TRIP
+   Rateio
 ========================================================= */
+else if (tipo === "Rateio") {
+    mostrarProcedimento(
+        "Rateio",
+        `
+        <h2>📈 Como Realizar um Rateio</h2>
 
-else if (tipo === "chat") {
-
-    document.title =
-        "PASSA TRIP - Pergunte ao Passa Trip";
-
-
-
-    conteudo.innerHTML = `
-
-        <h2>
-            🤖 Pergunte ao Passa Trip
-        </h2>
-
-
+        <h3>Passo 1 — Selecionar a despesa</h3>
 
         <p>
-            Ficou com alguma dúvida sobre o SAP Concur?
-            Informe seu e-mail e escreva sua dúvida.
+            Selecione a linha correspondente da despesa que deseja realizar o
+            <strong>rateio</strong> ou clique nos <strong>três pontinhos</strong>, após isso clique em <strong>Alocar</strong>.
         </p>
 
+        <img src="Imagens/Rateio/1.png">
 
+        <h3>Passo 2 — Selecionar Valor ou Porcentagem</h3>
 
-        <form id="formulario-duvida">
+        <p>
+            Selecionar <strong>Valor</strong> ou <strong>Porcentagem</strong>
+            e depois clique em <strong>Adicionar</strong>.
+        </p>
 
-            <label for="email">
-                E-mail
-            </label>
+        <img src="Imagens/Rateio/2.png">
 
+        <h3>Passo 3 — Selecionar o Objeto de Custo</h3>
 
+        <p>
+            Em <strong>Objeto de Custo</strong>, selecione o
+            <strong>Centro de Custo</strong> desejado e depois clique em
+            <strong>Salvar</strong>.
+        </p>
 
-            <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Digite seu e-mail"
-                required
-            >
+        <img src="Imagens/Rateio/3.png">
 
+        <h3>Passo 4 — Incluir a porcentagem ou valor</h3>
 
+        <p>
+            Inclua a <strong>Porcentagem ou Valor</strong> correspondente à
+            despesa e clique em <strong>Adicionar</strong>.
+        </p>
 
-            <label for="duvida">
-                Sua dúvida
-            </label>
+        <p>
+            Tem a opção de <strong>Salvar como Favorita</strong> caso queira deixar no
+            histórico para futuros rateios.
+        </p>
 
-
-
-            <textarea
-                id="duvida"
-                name="duvida"
-                rows="8"
-                placeholder="Digite sua dúvida aqui..."
-                required
-            ></textarea>
-
-
-
-            <button
-                type="submit"
-                class="botao-enviar"
-            >
-                ➜
-            </button>
-
-        </form>
-
-
+        <img src="Imagens/Rateio/4.png">
 
         <div class="dica">
 
-            💡 Sua dúvida será enviada para a equipe de
-            Prestação de Contas, que poderá entrar em contato
-            pelo e-mail informado.
+            💡 <strong>Dicas</strong>
+
+            <br><br>
+
+            Cada despesa possui um rateio <strong>Individual</strong>, portanto,
+            o rateio realizado em uma despesa, <strong>Não</strong> será aplicado
+            <strong>Automaticamente às demais despesas</strong>, necessário realizar o mesmo processo.
 
         </div>
+        `
+    );
+}
 
-    `;
+/* =========================================================
+   Delegar
+========================================================= */
 
+else if (tipo === "Delegar") {
 
+    mostrarProcedimento(
+        "Delegar",
+        `
+        <h2>👤 Como Delegar a Trip para outra pessoa</h2>
 
-    const formulario =
-        document.getElementById(
-            "formulario-duvida"
-        );
+        <p>
+            Quando o colaborador precisa que outra pessoa, como o ASA ou Responsável,
+            realize a prestação de contas em seu nome, é necessário fazer a delegação de despesas.
+        </p>
 
+        <p>
+            <strong>Importante:</strong> se o próprio colaborador for realizar a sua prestação de contas,
+            não é necessário fazer a delegação.
+        </p>
 
+        <h3>Passo 1 – Acesse as configurações</h3>
 
-    formulario.addEventListener(
-        "submit",
-        function(event) {
+        <p>
+            Clique no ícone de usuário, localizado no canto superior direito,
+            e depois selecione <strong>Configurações</strong>.
+        </p>
 
-            event.preventDefault();
+        <img src="Imagens/Delegar/1.png">
 
+        <h3>Passo 2 – Acesse Delegado de Despesas</h3>
 
+        <p>
+            Dentro das configurações, localize e clique em
+            <strong>Delegado de Despesas</strong>.
+        </p>
 
-            const email =
-                document
-                    .getElementById("email")
-                    .value
-                    .trim();
+        <img src="Imagens/Delegar/2.png">
 
+        <h3>Passo 3 – Adicione um delegado</h3>
 
+        <p>
+            Clique em <strong>Adicionar</strong> para incluir a pessoa que ficará responsável
+            pela realização das despesas.
+        </p>
 
-            const duvida =
-                document
-                    .getElementById("duvida")
-                    .value
-                    .trim();
+        <img src="Imagens/Delegar/3.png">
 
+        <h3>Passo 4 – Localize a pessoa</h3>
 
+        <p>
+            Pesquise a pessoa utilizando o <strong>NIF sem SN/SS</strong>,
+            o <strong>Nome</strong> ou o <strong>e-mail</strong>.
+        </p>
 
-            const destinatario =
-                "contabilidadeprestacaodecontas@sesisenaisp.org.br";
+        <img src="Imagens/Delegar/4.png">
 
+        <h3>Passo 5 – Selecione e salve</h3>
 
+        <p>
+            Selecione a pessoa desejada, marque os campos de delegação necessários
+            e clique em <strong>Salvar</strong>.
+        </p>
 
-            const assunto =
-                duvida;
-
-
-
-            const corpo =
-                "Poderiam me ajudar com: " +
-                duvida +
-                "\n\n" +
-                "E-mail para retorno: " +
-                email;
-
-
-
-            const linkEmail =
-                "mailto:" +
-                destinatario +
-                "?subject=" +
-                encodeURIComponent(assunto) +
-                "&body=" +
-                encodeURIComponent(corpo);
-
-
-
-            window.location.href =
-                linkEmail;
-
-        }
+        <img src="Imagens/Delegar/5.png">
+        `
     );
 
 }
 
-
-
 /* =========================================================
-   DEMAIS DESPESAS
+   Delegados
 ========================================================= */
+else if (tipo === "Delegados") {
+    mostrarProcedimento(
+        "Delegados",
+        `
+        <h2>👤 Função Delegados</h2>
 
-else {
+        <h3>Passo 1 — Acessar “Atuar como Outro Usuário”</h3>
 
-    const nomes = {
+        <p>
+            Após receber uma <strong>delegação de acesso</strong> de um funcionário,
+            essa opção ficará habilitada para o usuário que irá realizar a
+            <strong>prestação de contas</strong> em nome dessa pessoa,
+            como o <strong>ASA ou Gestor da despesa</strong>.
+        </p>
 
-        estacionamento:
-            "🅿️ Estacionamento",
+        <p>
+            No SAP Concur, clique na opção
+            <strong>“Atuar como Outro Usuário”</strong>.
+        </p>
 
-        lanche:
-            "🍪 Lanche da Tarde",
+        <img src="Imagens/Delegados/1.png">
 
-        locacao:
-            "🚗 Locação de Veículos",
+        <h3>Passo 2 — Selecionar a opção</h3>
 
-        outras:
-            "📦 Outras Despesas",
+        <p>
+            Na tela seguinte, selecione a <strong>segunda opção</strong>.
+        </p>
 
-        pedagio:
-            "🛣️ Pedágio",
+        <p>
+            Em seguida, informe o <strong>Nome ou NIF</strong> da pessoa para a
+            qual deseja realizar a prestação de contas.
+        </p>
 
-        "Refeição Atletas":
-            "🍽️ Refeições de Atletas",
+        <img src="Imagens/Delegados/2.png">
 
-        taxi:
-            "🚕 Táxi",
+        <h3>Passo 3 — Selecionar a pessoa</h3>
 
-        passagem:
-            "🚌 Passagem Rodoviária"
+        <p>
+            Após localizar a pessoa desejada, clique sobre o
+            <strong>Nome dela</strong> para acessá-la.
+        </p>
 
-    };
+        <img src="Imagens/Delegados/3.png">
 
+        <h3>Passo 4 — Atuar em nome de outra pessoa</h3>
 
+        <p>
+            Assim que selecionar a pessoa, o SAP Concur será alterado e exibirá
+            a indicação <strong>“Atuando como”</strong>, seguida do nome da
+            pessoa selecionada.
+        </p>
 
-    if (nomes[tipo]) {
+        <p>
+            A partir desse momento, você poderá realizar
+            <strong>Uma Trip em nome de outra pessoa</strong>.
+        </p>
 
-        document.title =
-            "PASSA TRIP - " +
-            nomes[tipo];
+        <img src="Imagens/Delegados/4.png">
 
-
-
-        conteudo.innerHTML = `
-
-            <h2>
-                ${nomes[tipo]}
-            </h2>
-
-
-
-            <h3>
-                🚧 Procedimento em preparação
-            </h3>
-
-
-
-            <p>
-                Estamos preparando o passo a passo
-                completo desta despesa.
-            </p>
-
-        `;
-
-    }
-
-    else {
-
-        conteudo.innerHTML = `
-
-            <h2>
-                ❌ Procedimento não encontrado
-            </h2>
-
-
+        <div class="dica">
+            <strong>💡 DICA</strong>
 
             <p>
-                Não foi possível localizar
-                o procedimento solicitado.
+                Só é possível realizar a Prestação de Contas de outra pessoa
+                quando ela tiver <strong>delegado essa função a você</strong>.
             </p>
 
-        `;
-
-    }
-
+            <p>
+                A função <strong>Delegar</strong> permite que o funcionário
+                autorize outra pessoa a ser responsável por
+                <strong>Realizar a Trip e/ou executar a prestação de contas
+                em seu nome</strong>, conforme a permissão concedida.
+            </p>
+        </div>
+        `
+    );
 }
-
-
 
 /* =========================================================
    AMPLIAR IMAGEM
