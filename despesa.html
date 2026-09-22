@@ -2448,6 +2448,113 @@ else if (tipo === "Delegados") {
 }
 
 /* =========================================================
+   PERGUNTE AO PASSA TRIP
+========================================================= */
+
+else if (tipo === "chat") {
+
+    mostrarProcedimento(
+        "Pergunte ao Passa Trip",
+        `
+
+        <h2>
+            🤖 Pergunte ao Passa Trip
+        </h2>
+
+        <p>
+            Ficou com alguma dúvida sobre o SAP Concur?
+            Informe seu e-mail e escreva sua dúvida.
+        </p>
+
+        <form id="formulario-duvida">
+
+            <label for="email">
+                E-mail
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Digite seu e-mail"
+                required
+            >
+
+            <label for="duvida">
+                Sua dúvida
+            </label>
+
+            <textarea
+                id="duvida"
+                name="duvida"
+                rows="8"
+                placeholder="Digite sua dúvida aqui..."
+                required
+            ></textarea>
+
+            <button
+                type="submit"
+                class="botao-enviar"
+            >
+                ➜
+            </button>
+
+        </form>
+
+        <div class="dica">
+
+            💡 Sua dúvida será enviada para a equipe de
+            Prestação de Contas, que poderá entrar em contato
+            pelo e-mail informado.
+
+        </div>
+
+        `
+    );
+
+    const formulario =
+        document.getElementById("formulario-duvida");
+
+    formulario.addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+            const email =
+                document.getElementById("email").value.trim();
+
+            const duvida =
+                document.getElementById("duvida").value.trim();
+
+            const destinatario =
+                "contabilidadeprestacaodecontas@sesisenaisp.org.br";
+
+            const assunto = duvida;
+
+            const corpo =
+                "Poderiam me ajudar com: " +
+                duvida +
+                "\n\n" +
+                "E-mail para retorno: " +
+                email;
+
+            const linkEmail =
+                "mailto:" +
+                destinatario +
+                "?subject=" +
+                encodeURIComponent(assunto) +
+                "&body=" +
+                encodeURIComponent(corpo);
+
+            window.location.href = linkEmail;
+
+        }
+    );
+
+}
+
+/* =========================================================
    AMPLIAR IMAGEM
 ========================================================= */
 
