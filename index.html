@@ -65,15 +65,31 @@
 
 <div class="botao-container botao-animado botao-2">
 
-    <button onclick="abrirPagina('adiantamento')">
+    <button onclick="abrirSubmenu('submenu-adiantamento')">
 
-        <span class="icone-botao">
-            💳
-        </span>
-
+        <span class="icone-botao">💳</span>
         Adiantamento
 
     </button>
+
+    <div id="submenu-adiantamento" class="submenu">
+
+        <button onclick="abrirPagina('adiantamento')">
+            <span class="icone-botao">💶</span>
+            Adiantamento
+        </button>
+
+        <button onclick="abrirPagina('prestacao-contas')">
+            <span class="icone-botao">📋</span>
+            Prestação de Contas
+        </button>
+
+        <button onclick="abrirPagina('f44')">
+            <span class="icone-botao">↔️</span>
+            F-44
+        </button>
+
+    </div>
 
 </div>
 
@@ -240,6 +256,48 @@
 
 </div>
 
+<!-- =====================================================
+     VIAGEM INTERNACIONAL
+====================================================== -->
+
+<div class="botao-container botao-animado botao-viagem">
+
+    <button onclick="abrirSubmenu('submenu-viagem-internacional')">
+
+        <span class="icone-botao icone-viagem-internacional">
+            ✈️
+        </span>
+
+        Viagem Internacional
+
+    </button>
+
+    <div id="submenu-viagem-internacional" class="submenu">
+
+        <button onclick="abrirPagina('viagem-internacional')">
+            🌎 Viagem Internacional
+        </button>
+
+        <button onclick="abrirPagina('valores-fora-rc')">
+            💱 Valores fora da RC
+        </button>
+
+    </div>
+
+</div>
+
+<!-- =====================================================
+     RC-04/2026
+====================================================== -->
+
+<div class="botao-container botao-animado botao-rc-04">
+
+    <button onclick="abrirPagina('rc-04-2026')">
+        <span class="icone-botao">🏦</span>
+        RC-04/2026
+    </button>
+
+</div>
 
 <!-- =====================================================
      5 - PERGUNTE AO CONCUR GUIDE
