@@ -500,6 +500,415 @@ else if (tipo === "adiantamento") {
 }
 
 
+/* =========================================================
+   PRESTAÇÃO DE CONTAS
+========================================================= */
+
+else if (tipo === "prestacao-contas") {
+
+    mostrarProcedimento(
+        "Prestação de Contas",
+        `
+
+        <h2>
+            📋 Como realizar a Prestação de Contas
+        </h2>
+
+        <h3>
+            Passo 1 – Acessar os relatórios
+        </h3>
+
+        <p>
+            Clique em <strong>Solicitações</strong> e, em seguida,
+            em <strong>Gerenciar Solicitações</strong>.
+        </p>
+
+        <img
+            src="Imagens/Prestação de Contas/1.png"
+            alt="Acessar Gerenciar Relatórios"
+        >
+
+        <h3>
+            Passo 2 – Selecionar o adiantamento
+        </h3>
+
+        <p>
+            Clique no <strong>card</strong> correspondente
+            ao adiantamento que deseja prestar contas.
+        </p>
+
+        <img
+            src="Imagens/Prestação de Contas/2.png"
+            alt="Selecionar o adiantamento correspondente"
+        >
+
+        <h3>
+            Passo 3 – Criar o relatório de despesas
+        </h3>
+
+        <p>
+            Clique em <strong>Criar relatório de despesa</strong>.
+        </p>
+
+        <div style="
+            background-color: #F3F4F6;
+            border: 1px solid #D1D5DB;
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 20px 0 25px;
+            color: #344054;
+        ">
+
+            <p style="margin: 0; line-height: 1.6;">
+                <strong>⚠️ Atenção:</strong> não clique em
+                <strong>Fechar solicitação</strong>.
+                Utilize somente a opção
+                <strong>Criar relatório de despesa</strong>.
+            </p>
+
+        </div>
+
+        <img
+            src="Imagens/Prestação de Contas/3.png"
+            alt="Criar relatório de despesa"
+        >
+
+        <h3>
+            Passo 4 – Adicionar as despesas
+        </h3>
+
+        <p>
+            Observe que o adiantamento já estará vinculado
+            ao relatório. Clique em <strong>Adicionar despesas</strong>
+            para incluir os lançamentos.
+        </p>
+
+        <p>
+            Caso tenha dúvidas sobre como lançar as despesas,
+            volte à tela anterior e acesse a seção
+            <strong>Despesas</strong>, onde encontrará o passo a passo
+            de cada procedimento.
+        </p>
+
+        <img
+            src="Imagens/Prestação de Contas/4.png"
+            alt="Adicionar despesas ao relatório"
+        >
+
+        <h3>
+            Passo 5 – Conferir a necessidade de devolução
+        </h3>
+
+        <p>
+            Após incluir todas as despesas, confira se existe
+            algum valor a ser devolvido à empresa.
+        </p>
+
+        <p>
+            Caso exista valor a devolver, será necessário adicionar
+            a despesa <strong>Devolução de adiantamento</strong>.
+            Caso contrário, basta enviar o relatório.
+        </p>
+
+        <img
+            src="Imagens/Prestação de Contas/5.png"
+            alt="Conferir a necessidade de devolução"
+        >
+
+        <h3>
+            Passo 6 – Adicionar a devolução de adiantamento
+        </h3>
+
+        <p>
+            Clique em <strong>Adicionar despesa</strong> e procure
+            pela opção <strong>Devolução de adiantamento</strong>.
+        </p>
+
+        <p>
+            Essa opção fica habilitada somente quando há necessidade
+            de devolver valores à empresa.
+        </p>
+
+        <img
+            src="Imagens/Prestação de Contas/6.png"
+            alt="Adicionar despesa de devolução de adiantamento"
+        >
+
+        <h3>
+            Passo 7 – Preencher os dados da devolução
+        </h3>
+
+        <p>
+            Informe a <strong>data</strong> em que o depósito foi realizado
+            e o <strong>valor exato</strong> que está sendo devolvido.
+        </p>
+
+        <p>
+            O valor informado deve corresponder exatamente ao saldo
+            devido. Não informe valores acima ou abaixo do necessário.
+        </p>
+
+        <p>
+            Anexe o <strong>comprovante de Depósito</strong> e clique
+            em <strong>Salvar</strong>.
+        </p>
+
+        <img
+            src="Imagens/Prestação de Contas/7.png"
+            alt="Preencher os dados e anexar o comprovante de depósito"
+        >
+
+        <h3>
+            Passo 8 – Enviar o relatório
+        </h3>
+
+        <p>
+            Após adicionar a devolução, clique em
+            <strong>Enviar relatório</strong>.
+        </p>
+
+        <img
+            src="Imagens/Prestação de Contas/8.png"
+            alt="Enviar relatório de despesas"
+        >
+
+        <h3>
+            Passo 9 – Concluir o envio
+        </h3>
+
+        <p>
+            Na tela seguinte, clique em <strong>Continuar</strong>
+            para finalizar o procedimento.
+        </p>
+
+        <img
+            src="Imagens/Prestação de Contas/9.png"
+            alt="Continuar para finalizar o envio"
+        >
+
+        <div class="dica">
+
+            💡 <strong>Dicas importantes</strong>
+
+            <br><br>
+
+            Realize a <strong>Prestação de Contas</strong>
+            o quanto antes.
+
+            <br><br>
+
+            Anexe sempre o comprovante do <strong>Depósito</strong>
+            e informe a data em que ele foi efetivamente realizado.
+
+        </div>
+
+        `
+    );
+
+}
+
+
+/* =========================================================
+   F-44 — BAIXA DE DEVOLUÇÃO DE ADIANTAMENTO
+========================================================= */
+
+else if (tipo === "f44") {
+
+    mostrarProcedimento(
+        "F-44 — Baixa de Devolução de Adiantamento",
+        `
+
+        <h2>
+            ↔️ Como realizar a baixa de devolução de adiantamento — F-44
+        </h2>
+
+        <div style="
+            background-color: #F3F4F6;
+            border: 1px solid #D1D5DB;
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 20px 0 25px;
+            color: #344054;
+        ">
+
+            <p style="margin: 0; line-height: 1.6;">
+                <strong>ℹ️ A transação F-44</strong> deve ser realizada
+                exclusivamente quando o <strong>funcionário</strong>
+                efetuar a <strong>Devolução</strong> de valores à
+                <strong>Empresa</strong>.
+            </p>
+
+        </div>
+
+        <h3>
+            Passo 1 – Identificar o funcionário e consultar os itens
+        </h3>
+
+        <p>
+            Preencha os campos conforme as orientações:
+        </p>
+
+        <ul>
+            <li><strong>BP:</strong> informe o BP do funcionário.</li>
+            <li><strong>Empresa:</strong> informe 1000 (SENAI) ou 2000 (SESI).</li>
+            <li><strong>Viagem:</strong> informe a letra V.</li>
+            <li><strong>PA Normais:</strong> mantenha a opção marcada.</li>
+            <li><strong>Seleção:</strong> escolha a opção Nenhum.</li>
+            <li><strong>Data:</strong> informe sempre a data em que o <strong>Depósito</strong> foi realizado.</li>
+        </ul>
+
+        <p>
+            Após preencher os campos, clique em
+            <strong>Processar PA</strong>.
+        </p>
+
+        <img
+            src="Imagens/F-44/1.png"
+            alt="Identificar funcionário e consultar itens na F-44"
+        >
+
+        <h3>
+            Passo 2 – Selecionar o valor devolvido
+        </h3>
+
+        <p>
+            Na tela apresentada, selecione a linha correspondente
+            ao valor devolvido, deixando-a destacada em azul.
+        </p>
+
+        <p>
+            Em seguida, clique em
+            <strong>Dar baixa à diferença</strong>.
+        </p>
+
+        <img
+            src="Imagens/F-44/2.png"
+            alt="Selecionar o valor devolvido"
+        >
+
+        <h3>
+            Passo 3 – Informar a chave e a conta contábil
+        </h3>
+
+        <p>
+            Preencha os campos conforme a empresa:
+        </p>
+
+        <ul>
+            <li><strong>Chave:</strong> 40.</li>
+            <li><strong>Conta contábil SENAI:</strong> 12011.</li>
+            <li><strong>Conta contábil SESI:</strong> 11011.</li>
+        </ul>
+
+        <p>
+            Após preencher as informações, clique em
+            <strong>Processar PA</strong>.
+        </p>
+
+        <img
+            src="Imagens/F-44/3.png"
+            alt="Informar chave e conta contábil"
+        >
+
+        <h3>
+            Passo 4 – Preencher os dados da devolução
+        </h3>
+
+        <p>
+            Informe os seguintes dados:
+        </p>
+
+        <ul>
+            <li><strong>Montante:</strong> valor efetivamente devolvido pelo funcionário.</li>
+            <li><strong>Local de negócio:</strong> informe o local correspondente.</li>
+            <li><strong>Data efetiva:</strong> informe a data em que o <strong>Depósito</strong> foi realizado.</li>
+            <li><strong>Texto:</strong> Devolução de Adiantamento.</li>
+        </ul>
+
+        <p>
+            Após preencher todos os campos, clique em
+            <strong>Processar PA</strong>.
+        </p>
+
+        <img
+            src="Imagens/F-44/4.png"
+            alt="Preencher os dados da devolução"
+        >
+
+        <h3>
+            Passo 5 – Simular o documento
+        </h3>
+
+        <p>
+            Verifique se o saldo apresentado está zerado.
+        </p>
+
+        <p>
+            Em seguida, acesse <strong>Documento</strong>
+            e clique em <strong>Simular</strong>.
+        </p>
+
+        <img
+            src="Imagens/F-44/5.png"
+            alt="Conferir saldo e simular documento"
+        >
+
+        <h3>
+            Passo 6 – Selecionar a linha do documento
+        </h3>
+
+        <p>
+            Na tela de simulação, dê duplo clique sobre
+            a linha destacada em azul.
+        </p>
+
+        <img
+            src="Imagens/F-44/6.png"
+            alt="Selecionar linha do documento"
+        >
+
+        <h3>
+            Passo 7 – Salvar o documento
+        </h3>
+
+        <p>
+            Clique em <strong>Salvar</strong>.
+        </p>
+
+        <p>
+            Após a gravação, será exibida uma mensagem
+            de confirmação. Pressione <strong>Enter</strong>
+            para finalizar o procedimento.
+        </p>
+
+        <img
+            src="Imagens/F-44/7.png"
+            alt="Salvar documento da F-44"
+        >
+
+        <div class="dica">
+
+            💡 <strong>Dicas importantes</strong>
+
+            <br><br>
+
+            Não se esqueça de <strong>anexar</strong> o comprovante de
+            <strong>Depósito</strong> na transação
+            <strong>FB03</strong>.
+
+            <br><br>
+
+            Realize sempre a F-44 considerando a data
+            em que o <strong>Depósito</strong> foi efetuado.
+
+        </div>
+
+        `
+    );
+
+}
+
+
 
 /* =========================================================
    REEMBOLSO
@@ -1803,7 +2212,6 @@ else if (tipo === "conducao") {
 }
 
 
-
 /* =========================================================
    ESTACIONAMENTO
 ========================================================= */
@@ -2448,314 +2856,698 @@ else if (tipo === "Delegados") {
 }
 
 /* =========================================================
-   PERGUNTE AO CONCUR GUIDE
+   VIAGEM INTERNACIONAL
 ========================================================= */
 
-else if (tipo === "chat") {
+else if (tipo === "viagem-internacional") {
 
     mostrarProcedimento(
-        "Pergunte ao Concur Guide",
+        "Viagem Internacional",
         `
 
         <h2>
-            🤖 Pergunte ao Concur Guide
+            🌎 Como criar um relatório de viagem internacional
         </h2>
 
+        <h3>Valores de diária</h3>
+
         <p>
-            Ficou com alguma dúvida sobre o SAP Concur?
-            Informe seu e-mail e escreva sua dúvida.
+            A diária destinada ao funcionário em missão no exterior
+            contempla despesas com <strong>hospedagem, alimentação
+            e transporte local</strong>, conforme a localidade de destino.
         </p>
 
-        <form id="formulario-duvida">
+        <table>
+            <thead>
+                <tr>
+                    <th>Localidade</th>
+                    <th>Grupo Único</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Países da América Latina</td>
+                    <td><strong>US$ 320,00</strong></td>
+                </tr>
+                <tr>
+                    <td>Países da Zona do Euro</td>
+                    <td><strong>€ 310,00</strong></td>
+                </tr>
+                <tr>
+                    <td>Demais países</td>
+                    <td><strong>US$ 400,00</strong></td>
+                </tr>
+            </tbody>
+        </table>
 
-            <label for="email">
-                E-mail
-            </label>
+        <h3>Passo 1 – Criar relatório de despesa</h3>
 
-            <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Digite seu e-mail"
-                required
-            >
+        <p>
+            Clique em <strong>Criar Relatório de Despesa</strong>
+            para iniciar o processo de prestação de contas
+            da viagem internacional.
+        </p>
 
-            <label for="duvida">
-                Sua dúvida
-            </label>
+        <img
+            src="Imagens/Viagem Internacional/1.png"
+            alt="Criar relatório de despesa"
+        >
 
-            <textarea
-                id="duvida"
-                name="duvida"
-                rows="8"
-                placeholder="Digite sua dúvida aqui..."
-                required
-            ></textarea>
+        <h3>Passo 2 – Preencher os dados do relatório</h3>
 
-            <button
-                type="submit"
-                class="botao-enviar"
-            >
-                ➜
-            </button>
+        <p>
+            Preencha todos os campos obrigatórios, como
+            <strong>Nome, Data, Internacional e Comentário</strong>.
+            No campo <strong>Ajuda de Custo</strong>,
+            selecione a opção <strong>Sim</strong>.
+        </p>
 
-        </form>
+        <img
+            src="Imagens/Viagem Internacional/2.png"
+            alt="Preencher os dados do relatório internacional"
+        >
+
+        <h3>Passo 3 – Informar os dados do deslocamento</h3>
+
+        <p>
+            Informe os dados do trajeto, preenchendo:
+        </p>
+
+        <ul>
+            <li><strong>Local de partida</strong>, data e horário;</li>
+            <li><strong>Local de chegada</strong>, data e horário;</li>
+            <li><strong>Local de destino</strong>, data e horário.</li>
+        </ul>
+
+        <p>
+            Após preencher todas as informações,
+            clique em <strong>Seguinte</strong>.
+        </p>
+
+        <img
+            src="Imagens/Viagem Internacional/3.png"
+            alt="Informar os dados do deslocamento"
+        >
+
+        <h3>Passo 4 – Informar hospedagem e refeição</h3>
+
+        <p>
+            Nesta etapa, serão apresentados os dias da viagem
+            e as opções de <strong>Hospedagem</strong> e
+            <strong>Refeição</strong>.
+        </p>
+
+        <p>
+            Marque as opções correspondentes, conforme o
+            alinhamento e as condições autorizadas para a viagem.
+            Em seguida, clique em <strong>Concluído</strong>.
+        </p>
+
+        <img
+            src="Imagens/Viagem Internacional/4.png"
+            alt="Selecionar hospedagem e refeição"
+        >
+
+        <h3>Passo 5 – Percentual de hospedagem</h3>
+
+        <p>
+            Ao selecionar a opção <strong>Hospedagem</strong>,
+            o sistema considera <strong>40% do valor da diária</strong>.
+        </p>
+
+        <img
+            src="Imagens/Viagem Internacional/5.png"
+            alt="Percentual de hospedagem"
+        >
+
+        <h3>Passo 6 – Percentual de refeição</h3>
+
+        <p>
+            Ao selecionar a opção <strong>Refeição</strong>,
+            o sistema considera <strong>20% do valor da diária</strong>.
+        </p>
+
+        <img
+            src="Imagens/Viagem Internacional/6.png"
+            alt="Percentual de refeição"
+        >
+
+        <h3>Passo 7 – Conferir os valores e enviar o relatório</h3>
+
+        <p>
+            Após o preenchimento, confira se os valores foram
+            apresentados em <strong>USD (dólar americano)</strong>,
+            conforme a moeda aplicável à viagem.
+        </p>
+
+        <p>
+            O <strong>alerta amarelo</strong> exibido pelo sistema
+            tem caráter informativo e serve apenas como lembrete.
+        </p>
+
+        <p>
+            Estando todas as informações corretas,
+            clique em <strong>Enviar o Relatório</strong>.
+        </p>
+
+        <img
+            src="Imagens/Viagem Internacional/7.png"
+            alt="Conferir valores e enviar relatório"
+        >
 
         <div class="dica">
 
-            💡 Sua dúvida será enviada para a equipe de
-            Prestação de Contas, que poderá entrar em contato
-            pelo e-mail informado.
+            💡 <strong>Dicas importantes</strong>
+
+            <br><br>
+
+            Anexe a <strong>Autorização de Viagem</strong>,
+            conforme estabelecido na <strong>RC-04/2026</strong>.
+
+            <br><br>
+
+            Respeite os <strong>valores e as regras aplicáveis
+            às viagens internacionais</strong>, conforme
+            a <strong>RC-04/2026</strong>.
 
         </div>
 
         `
     );
 
-    const formulario =
-        document.getElementById("formulario-duvida");
+}
 
-    formulario.addEventListener(
-        "submit",
-        function(event) {
 
-            event.preventDefault();
+/* =========================================================
+   VALORES FORA DA RC
+========================================================= */
 
-            const email =
-                document.getElementById("email").value.trim();
+else if (tipo === "valores-fora-rc") {
 
-            const duvida =
-                document.getElementById("duvida").value.trim();
+    mostrarProcedimento(
+        "Valores fora da RC",
+        `
 
-            const destinatario =
-                "contabilidadeprestacaodecontas@sesisenaisp.org.br";
+        <h2>
+            💱 Como lançar valores fora da RC
+        </h2>
 
-            const assunto = duvida;
+        <h3>Valores de diária</h3>
 
-            const corpo =
-                "Poderiam me ajudar com: " +
-                duvida +
-                "\n\n" +
-                "E-mail para retorno: " +
-                email;
+        <p>
+            A diária destinada ao funcionário em missão no exterior
+            contempla despesas com <strong>hospedagem, alimentação
+            e transporte local</strong>, conforme a localidade de destino.
+        </p>
 
-            const linkEmail =
-                "mailto:" +
-                destinatario +
-                "?subject=" +
-                encodeURIComponent(assunto) +
-                "&body=" +
-                encodeURIComponent(corpo);
+        <table>
+            <thead>
+                <tr>
+                    <th>Localidade</th>
+                    <th>Grupo Único</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Países da América Latina</td>
+                    <td><strong>US$ 320,00</strong></td>
+                </tr>
+                <tr>
+                    <td>Países da Zona do Euro</td>
+                    <td><strong>€ 310,00</strong></td>
+                </tr>
+                <tr>
+                    <td>Demais países</td>
+                    <td><strong>US$ 400,00</strong></td>
+                </tr>
+            </tbody>
+        </table>
 
-            window.location.href = linkEmail;
+        <h3>Passo 1 – Criar relatório de despesa</h3>
 
-        }
+        <p>
+            Clique em <strong>Criar Relatório de Despesa</strong>
+            para iniciar o processo de prestação de contas
+            da viagem internacional.
+        </p>
+
+        <img
+            src="Imagens/Valores fora da RC/1.png"
+            alt="Criar relatório de despesa"
+        >
+
+        <h3>Passo 2 – Preencher os dados do relatório</h3>
+
+        <p>
+            Preencha todos os campos obrigatórios, como
+            <strong>Nome, Data, Internacional e Comentário</strong>.
+            No campo <strong>Ajuda de Custo</strong>,
+            selecione a opção <strong>Não</strong> e clique em
+            <strong>Seguinte</strong>.
+        </p>
+
+        <img
+            src="Imagens/Valores fora da RC/2.png"
+            alt="Preencher os dados do relatório"
+        >
+
+        <h3>Passo 3 – Criar despesa manual</h3>
+
+        <p>
+            Clique na opção <strong>Criar Manual despesa</strong>
+            para iniciar o lançamento da diária internacional.
+        </p>
+
+        <img
+            src="Imagens/Valores fora da RC/3.png"
+            alt="Criar despesa manual"
+        >
+
+        <h3>Passo 4 – Pesquisar a despesa</h3>
+
+        <p>
+            No campo de pesquisa, digite
+            <strong>Diária Internacional</strong> e selecione
+            a opção correspondente.
+        </p>
+
+        <img
+            src="Imagens/Valores fora da RC/4.png"
+            alt="Pesquisar diária internacional"
+        >
+
+        <h3>Passo 5 – Preencher as informações da despesa</h3>
+
+<p>
+    Preencha os campos solicitados, incluindo a
+    <strong>Data</strong> e o <strong>Valor da Diária</strong>.
+</p>
+
+<p>
+    Lembre-se de informar o valor na moeda correspondente.
+    Após inserir o <strong>Valor</strong>, o sistema realizará
+    automaticamente a <strong>Conversão</strong>.
+</p>
+
+<p>
+    No campo <strong>Comentários</strong>, descreva o motivo
+    da viagem. Após preencher todas as informações,
+    clique em <strong>Salvar Despesa</strong>.
+</p>
+
+        <img
+            src="Imagens/Valores fora da RC/5.png"
+            alt="Preencher as informações da despesa"
+        >
+
+        <h3>Passo 6 – Conferir e enviar o relatório</h3>
+
+        <p>
+            Após o preenchimento, confira se os valores foram
+            apresentados em <strong>USD (dólar americano)</strong>,
+            conforme a moeda aplicável à viagem.
+        </p>
+
+        <p>
+            O <strong>alerta amarelo</strong> exibido pelo sistema
+            tem caráter informativo e serve apenas como lembrete.
+        </p>
+
+        <p>
+            Estando todas as informações corretas,
+            clique em <strong>Enviar o Relatório</strong>.
+        </p>
+
+        <img
+            src="Imagens/Valores fora da RC/6.png"
+            alt="Conferir e enviar o relatório"
+        >
+
+        <div class="dica">
+
+            💡 <strong>Dicas importantes</strong>
+
+            <br><br>
+
+            Anexe a <strong>Autorização de Viagem</strong>,
+            conforme estabelecido na <strong>RC-04/2026</strong>.
+
+            <br><br>
+
+            Respeite os <strong>valores e as regras aplicáveis
+            às viagens internacionais</strong>, conforme
+            a <strong>RC-04/2026</strong>.
+
+        </div>
+
+        `
     );
 
 }
 
 /* =========================================================
-   AMPLIAR IMAGEM
+   CONSULTA RÁPIDA — RC-04/2026
 ========================================================= */
 
-function abrirImagem(imagem) {
+else if (tipo === "rc-04-2026") {
 
-    const modal =
-        document.getElementById(
-            "modal-imagem"
-        );
+    mostrarProcedimento(
+        "Consulta rápida — RC-04/2026",
+        `
 
+<h2>🔎 Consulta rápida — RC-04/2026</h2>
 
+<p>
+    Pesquise uma despesa, palavra ou assunto para
+    encontrar rapidamente as principais orientações
+    da <strong>RC-04/2026</strong>.
+</p>
 
-    const imagemAmpliada =
-        document.getElementById(
-            "imagem-ampliada"
-        );
+<div class="rc04-busca-container">
+    <input
+        type="text"
+        id="busca-rc04"
+        class="rc04-busca"
+        placeholder="🔎 Ex.: jantar, quilometragem, hotel, Uber..."
+        oninput="filtrarRC04()"
+    >
+    <p class="rc04-instrucao">
+        Digite o que deseja consultar. Os resultados
+        serão filtrados automaticamente.
+    </p>
+</div>
 
+<div id="resultados-rc04">
 
+    <div class="rc04-item"
+         data-termos="cafe café da manhã desayuno hotel alimentação refeição manhã">
+        <h3>☕ Café da manhã</h3>
+        <p>
+            É permitido quando o serviço começa até as
+            <strong>6h</strong> ou quando a diária do hotel
+            não inclui café da manhã.
+        </p>
+        <p>
+            Limite: <strong>R$ 45,00 na SEDE</strong> e
+            <strong>R$ 35,00 nas demais localidades</strong>.
+        </p>
+    </div>
 
-    if (
-        !modal ||
-        !imagemAmpliada ||
-        !imagem
-    ) {
+    <div class="rc04-item"
+         data-termos="almoco almoço refeição vale refeição dia útil dia não útil alimentação">
+        <h3>🍽️ Almoço</h3>
+        <p>
+            Em dias não úteis, conforme a escala de trabalho,
+            o reembolso é limitado ao valor do vale-refeição.
+        </p>
+        <p>
+            Limites de referência:
+            <strong>R$ 63,00 na SEDE, Brasília e Rio de Janeiro</strong>
+            e <strong>R$ 49,23 nas demais localidades</strong>.
+        </p>
+        <p>
+            Para situações específicas envolvendo funcionários
+            de outras unidades em atividade na SEDE, aplica-se
+            a regra de complementação prevista na RC-04/2026.
+        </p>
+    </div>
 
+    <div class="rc04-item"
+         data-termos="jantar refeição noite alimentação pernoite hospedagem 20 horas">
+        <h3>🍔 Jantar</h3>
+        <p>
+            É permitido para funcionários do turno diurno
+            quando houver pernoite e o jantar não estiver
+            incluído na hospedagem, ou quando a atividade
+            terminar <strong>às 20h ou depois</strong>.
+        </p>
+        <p>
+            O limite para reembolso é de
+            <strong>R$ 63,00 na SEDE</strong> e
+            <strong>R$ 49,23 nas unidades</strong>.
+        </p>
+    </div>
+
+    <div class="rc04-item"
+         data-termos="bebida bebidas não alcoólicas agua água suco refrigerante intervalo">
+        <h3>🥤 Bebidas não alcoólicas</h3>
+        <p>
+            Inclui água, sucos e refrigerantes consumidos
+            nos intervalos das refeições.
+        </p>
+        <p>
+            O limite é de até <strong>50% do valor de uma
+            refeição por dia</strong>, observadas as regras
+            de comprovação da RC-04/2026.
+        </p>
+    </div>
+
+    <div class="rc04-item"
+         data-termos="quilometragem km carro veículo veiculo próprio gasolina etanol diesel elétrico eletrico">
+        <h3>📍 Quilometragem — veículo próprio</h3>
+        <p>
+            Para veículos próprios, os valores por quilômetro são:
+        </p>
+        <ul>
+            <li><strong>R$ 1,46/km:</strong> gasolina, etanol e diesel.</li>
+            <li><strong>R$ 1,37/km:</strong> veículo totalmente elétrico.</li>
+        </ul>
+        <p>
+            O cálculo é realizado pelo SAP Concur, considerando
+            o deslocamento entre o local de trabalho e o destino,
+            incluindo o retorno.
+        </p>
+        <p>
+            O uso dessa modalidade não é permitido para
+            motocicletas, bicicletas elétricas e similares.
+        </p>
+    </div>
+
+    <div class="rc04-item"
+         data-termos="hospedagem hotel diária diaria pernoite nota fiscal lavanderia">
+        <h3>🏨 Hospedagem</h3>
+        <p>
+            O reembolso considera o valor efetivamente gasto,
+            respeitando os limites estabelecidos:
+        </p>
+        <ul>
+            <li><strong>R$ 660,00:</strong> Rio de Janeiro e Brasília.</li>
+            <li><strong>R$ 600,00:</strong> São Paulo e demais estados.</li>
+        </ul>
+        <p>
+            A nota deve apresentar a quantidade de diárias,
+            o valor unitário e o período da hospedagem.
+        </p>
+        <p>
+            A lavanderia é reembolsável somente em viagens
+            com duração de <strong>15 dias consecutivos ou mais</strong>.
+        </p>
+    </div>
+
+    <div class="rc04-item"
+         data-termos="estacionamento parar carro vaga nota fiscal nfse nfs-e rps entrada saída">
+        <h3>🅿️ Estacionamento</h3>
+        <p>
+            Para reembolso, é necessário apresentar
+            <strong>NFS-e</strong> com data e horários
+            de entrada e saída.
+        </p>
+        <p>
+            <strong>RPS não é aceito.</strong>
+        </p>
+    </div>
+
+    <div class="rc04-item"
+         data-termos="pedágio pedagio rodovia estrada tarifa comprovante terceiro terceiros nome comentários comentarios despesa">
+        <h3>🛣️ Pedágio</h3>
+        <p>
+            As despesas com pedágio podem ser reembolsadas
+            mediante apresentação de comprovante aceito
+            pelas regras da RC-04/2026.
+        </p>
+        <p>
+            Quando o pedágio estiver em nome de terceiros,
+            informe nos <strong>comentários da despesa</strong>
+            de quem se trata.
+        </p>
+    </div>
+
+    <div class="rc04-item"
+         data-termos="taxi táxi uber 99 aplicativo transporte urbano deslocamento recibo manual comprovante eletrônico corrida motorista condutor placa">
+        <h3>🚕 Táxi e Transporte por Aplicativo</h3>
+        <p>
+            O uso de táxi ou transporte por aplicativo é permitido
+            durante viagens e atividades externas, dando preferência
+            à categoria econômica.
+        </p>
+        <p>
+            <strong>🧾 Recibos de Táxi:</strong> Os recibos manuais
+            somente serão aceitos em municípios que não exigirem
+            outro documento fiscal, desde que preenchidos com o
+            nome do condutor, a origem, o destino, o valor e a
+            placa do veículo, e regularizados conforme a legislação municipal.
+        </p>
+        <p>
+            Também serão aceitos documentos fiscais eletrônicos
+            ou comprovantes eletrônicos de corrida emitidos por
+            cooperativas, plataformas digitais ou prestadores de
+            serviço de táxi ou transporte individual remunerado
+            de passageiros, desde que autorizados pelo município
+            competente e contendo, no mínimo, a identificação do
+            prestador, a data, a origem, o destino e o valor da corrida.
+        </p>
+    </div>
+
+    <div class="rc04-item"
+         data-termos="viagem nacional deslocamento municipio município 50 km distância distancia hospedagem">
+        <h3>🧳 Viagem nacional</h3>
+        <p>
+            O deslocamento deve ocorrer para fora do município
+            do local de trabalho, respeitando a distância mínima
+            de <strong>50 km</strong> entre o local de trabalho
+            e o destino para caracterização da viagem prevista
+            na norma.
+        </p>
+        <p>
+            A viagem nacional exige <strong>aprovação prévia
+            do Gestor de Despesas</strong>.
+        </p>
+    </div>
+
+    <div class="rc04-item"
+         data-termos="passagem aérea avião voo 300 km passagem">
+        <h3>✈️ Passagem aérea nacional</h3>
+        <p>
+            A aprovação de passagens aéreas nacionais pode
+            ocorrer para trajetos de pelo menos
+            <strong>300 km</strong>, conforme a RC-04/2026.
+        </p>
+    </div>
+
+    <div class="rc04-item"
+         data-termos="internacional exterior outro país diaria diária dólar euro viagem fora brasil">
+        <h3>🌎 Viagem internacional</h3>
+        <p>
+            A viagem internacional exige aprovação prévia
+            da autoridade competente.
+        </p>
+        <ul>
+            <li><strong>América Latina:</strong> US$ 320,00.</li>
+            <li><strong>Zona do Euro:</strong> € 310,00.</li>
+            <li><strong>Demais países:</strong> US$ 400,00.</li>
+        </ul>
+        <p>
+            A diária contempla hospedagem, alimentação
+            e transporte local.
+        </p>
+        <p>
+            Quando a hospedagem for custeada por terceiros,
+            aplica-se o percentual de <strong>40%</strong>.
+            Quando hospedagem e refeições forem custeadas
+            por terceiros, aplica-se <strong>20%</strong>.
+        </p>
+    </div>
+
+    <div class="rc04-item"
+         data-termos="adiantamento prestação contas prestação de contas prazo sap concur comprovante pdf">
+        <h3>📋 Adiantamento e prestação de contas</h3>
+        <p>
+            Adiantamentos, prestações de contas e reembolsos
+            devem ser realizados exclusivamente pelo
+            <strong>SAP Concur</strong>.
+        </p>
+        <p>
+            Os documentos devem ser anexados de forma legível,
+            em formato <strong>PDF</strong>.
+        </p>
+        <p>
+            A prestação de contas nacional deve ocorrer no mês
+            da despesa ou em até <strong>3 dias úteis</strong>
+            após o encerramento da atividade ou viagem.
+        </p>
+        <p>
+            Para viagens internacionais, o prazo é de
+            <strong>5 dias úteis após o retorno</strong>.
+        </p>
+        <p>
+            Um novo adiantamento fica bloqueado enquanto
+            houver prestação de contas anterior pendente.
+        </p>
+    </div>
+
+    <div class="rc04-item"
+         data-termos="devolução devolucao saldo dinheiro sobra adiantamento pagamento">
+        <h3>💰 Devolução de saldo e pagamento</h3>
+        <p>
+            Caso haja saldo não utilizado do adiantamento,
+            a devolução deve ocorrer no mesmo dia da prestação
+            de contas, com o comprovante anexado.
+        </p>
+        <p>
+            O pagamento ocorre em até
+            <strong>5 dias úteis após a aprovação</strong>.
+        </p>
+    </div>
+
+</div>
+
+<p id="nenhum-resultado-rc04" class="rc04-sem-resultado">
+    Nenhum resultado encontrado. Tente outra palavra.
+</p>
+
+        `
+    );
+
+}
+
+/* =========================================================
+   PESQUISA — RC-04/2026
+========================================================= */
+
+function filtrarRC04() {
+
+    const campo = document.getElementById("busca-rc04");
+
+    const itens = document.querySelectorAll(".rc04-item");
+
+    const mensagem = document.getElementById("nenhum-resultado-rc04");
+
+    if (!campo || !mensagem) {
         return;
-
     }
 
+    const pesquisa = campo.value
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
 
+    let encontrados = 0;
 
-    imagemAmpliada.src =
-        imagem.currentSrc ||
-        imagem.src;
+    itens.forEach(function(item) {
 
+        const texto = (
+            item.innerText + " " +
+            item.getAttribute("data-termos")
+        )
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
 
+        const corresponde = texto.includes(pesquisa);
 
-    imagemAmpliada.alt =
-        imagem.alt ||
-        "Imagem ampliada";
+        item.style.display = corresponde ? "block" : "none";
 
-
-
-    modal.classList.add(
-        "aberta"
-    );
-
-
-
-    document.body.style.overflow =
-        "hidden";
-
-}
-
-
-
-/* =========================================================
-   FECHAR IMAGEM
-========================================================= */
-
-function fecharImagem() {
-
-    const modal =
-        document.getElementById(
-            "modal-imagem"
-        );
-
-
-
-    const imagemAmpliada =
-        document.getElementById(
-            "imagem-ampliada"
-        );
-
-
-
-    if (!modal) {
-
-        return;
-
-    }
-
-
-
-    modal.classList.remove(
-        "aberta"
-    );
-
-
-
-    document.body.style.overflow =
-        "";
-
-
-
-    if (imagemAmpliada) {
-
-        imagemAmpliada.src =
-            "";
-
-    }
-
-}
-
-
-
-/* =========================================================
-   CLIQUE NAS IMAGENS
-========================================================= */
-
-document.addEventListener(
-    "click",
-    function(event) {
-
-        const imagem =
-            event.target.closest(
-                "#conteudo-despesa img"
-            );
-
-
-
-        if (!imagem) {
-
-            return;
-
+        if (corresponde) {
+            encontrados++;
         }
 
+    });
 
-
-        event.preventDefault();
-
-
-
-        abrirImagem(imagem);
-
-    }
-);
-
-
-
-/* =========================================================
-   FECHAR CLICANDO NO FUNDO
-========================================================= */
-
-const modalImagem =
-    document.getElementById(
-        "modal-imagem"
-    );
-
-
-
-if (modalImagem) {
-
-    modalImagem.addEventListener(
-        "click",
-        function(event) {
-
-            if (
-                event.target === this
-            ) {
-
-                fecharImagem();
-
-            }
-
-        }
-    );
+    mensagem.style.display =
+        encontrados === 0 ? "block" : "none";
 
 }
-
-
-
-/* =========================================================
-   FECHAR NO X
-========================================================= */
-
-const botaoFechar =
-    document.getElementById(
-        "fechar-imagem"
-    );
-
-
-
-if (botaoFechar) {
-
-    botaoFechar.addEventListener(
-        "click",
-        function(event) {
-
-            event.preventDefault();
-
-            event.stopPropagation();
-
-            fecharImagem();
-
-        }
-    );
-
-}
-
-
 
 /* =========================================================
    NÃO FECHAR AO CLICAR NA IMAGEM AMPLIADA
