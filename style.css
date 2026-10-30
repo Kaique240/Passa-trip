@@ -343,42 +343,42 @@ body.animar-entrada .botao-4 {
 
 body.animar-entrada .botao-5 {
 
-    animation-delay: 3.7s;
+    animation-delay: 4.1s;
 
 }
-
 
 /* =========================================================
-ANIMAÇÃO DOS 3 NOVOS BOTÕES
+   ANIMAÇÃO DOS BOTÕES NOVOS
 ========================================================= */
 
+/* Rateio */
 body.animar-entrada .botao-container:nth-of-type(6) button {
-
     opacity: 0;
-
-    animation:
-        aparecerBotao 0.7s ease 3.1s forwards;
-
+    animation: aparecerBotao 0.7s ease 3.1s forwards;
 }
 
-
+/* Delegar */
 body.animar-entrada .botao-container:nth-of-type(7) button {
-
     opacity: 0;
-
-    animation:
-        aparecerBotao 0.7s ease 3.3s forwards;
-
+    animation: aparecerBotao 0.7s ease 3.3s forwards;
 }
 
-
+/* Delegados */
 body.animar-entrada .botao-container:nth-of-type(8) button {
-
     opacity: 0;
+    animation: aparecerBotao 0.7s ease 3.5s forwards;
+}
 
-    animation:
-        aparecerBotao 0.7s ease 3.5s forwards;
+/* Viagem Internacional */
+body.animar-entrada .botao-viagem > button {
+    opacity: 0;
+    animation: aparecerBotao 0.7s ease 3.7s forwards;
+}
 
+/* RC-04/2026 */
+body.animar-entrada .botao-rc-04 > button {
+    opacity: 0;
+    animation: aparecerBotao 0.7s ease 3.9s forwards;
 }
 
 
@@ -545,6 +545,39 @@ CORES DOS MÓDULOS
 }
 
 
+/* =====================================================
+   VIAGEM INTERNACIONAL — CORES DOS BOTÕES
+====================================================== */
+
+/* Botão principal */
+.botao-container.botao-viagem > button {
+    border-left: 6px solid #C49A32;
+    border-radius: 12px;
+}
+
+/* Botões do submenu */
+#submenu-viagem-internacional > button {
+    border-left: 6px solid #C49A32;
+    border-radius: 12px;
+}
+
+/* Avião animado */
+.icone-viagem-internacional {
+    display: inline-block;
+    transition: transform 0.4s ease;
+}
+
+.botao-container.botao-viagem > button:hover
+.icone-viagem-internacional {
+    transform: translate(5px, -3px) rotate(-10deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .icone-viagem-internacional {
+        transition: none;
+    }
+}
+
 /* =========================================================
 CORES DOS 3 NOVOS BOTÕES
 ========================================================= */
@@ -590,6 +623,17 @@ CORES DOS 3 NOVOS BOTÕES
 
 }
 
+/* =========================================================
+   RC-04/2026 — COR PRATA
+========================================================= */
+
+.botao-container.botao-rc-04 > button {
+    border-left: 6px solid #A7A9AC;
+}
+
+.botao-container.botao-rc-04 .icone-botao {
+    color: #A7A9AC;
+}
 
 /* =========================================================
 MENU DESPESAS
@@ -1341,3 +1385,179 @@ CELULAR
 }
 ```
 
+
+/* =====================================================
+   CONSULTA RÁPIDA — RC-04/2026
+   Visual limpo, caixas individuais e azul institucional
+===================================================== */
+
+.rc04-busca-container {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #d5e8fa;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 10px;
+    background: #ffffff;
+}
+
+.rc04-busca-container h2 {
+    color: #0753a6;
+}
+
+.rc04-busca {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 14px;
+    border: 1px solid #c9def4;
+    border-radius: 12px;
+    outline: none;
+    font-size: 14px;
+    color: #174b85;
+    background: #ffffff;
+}
+
+.rc04-busca:focus {
+    border-color: #2385d1;
+    box-shadow: 0 0 0 3px rgba(35, 133, 209, 0.10);
+}
+
+.rc04-instrucao {
+    color: #527da8;
+    font-size: 13px;
+    margin: 8px 0 0;
+}
+
+/* Resultados */
+
+#resultados-rc04 {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+}
+
+/* Caixas individuais */
+
+.rc04-item {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: 0;
+    box-sizing: border-box;
+    padding: 12px 16px;
+    margin: 0;
+    border: 1px solid #d2e6fa;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #174b85;
+    text-align: left;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.rc04-item h3 {
+    color: #0753a6;
+    font-size: 15px;
+    margin: 0 0 4px;
+    padding: 0;
+    white-space: normal;
+}
+
+.rc04-item p {
+    color: #174b85;
+    font-size: 13px;
+    line-height: 1.4;
+    margin: 3px 0;
+    padding: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.rc04-item ul {
+    margin: 4px 0;
+    padding-left: 22px;
+    color: #174b85;
+    font-size: 13px;
+    line-height: 1.4;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.rc04-item strong {
+    color: #064b96;
+}
+
+/* Mensagem sem resultados */
+
+.rc04-sem-resultado {
+    display: none;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    border: 1px solid #d2e6fa;
+    border-radius: 12px;
+    color: #527da8;
+    background: #ffffff;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* Telas menores */
+
+@media (max-width: 600px) {
+    .rc04-busca-container {
+        padding: 12px;
+    }
+
+    .rc04-item {
+        padding: 10px 12px;
+    }
+
+    .rc04-item h3 {
+        font-size: 14px;
+    }
+
+    .rc04-item p,
+    .rc04-item ul {
+        font-size: 12px;
+    }
+}
+
+/* =====================================================
+   CORREÇÃO DE ESPAÇAMENTO — CARDS RC-04/2026
+===================================================== */
+
+#conteudo-despesa .rc04-item {
+    padding: 10px 14px;
+}
+
+#conteudo-despesa .rc04-item h3 {
+    margin: 0 0 5px;
+    padding: 0;
+    line-height: 1.3;
+}
+
+#conteudo-despesa .rc04-item p {
+    margin: 3px 0;
+    line-height: 1.4;
+}
+
+#conteudo-despesa .rc04-item ul {
+    margin: 4px 0;
+    padding-left: 22px;
+}
+
+#conteudo-despesa .rc04-item li {
+    margin-bottom: 3px;
+    line-height: 1.4;
+}
