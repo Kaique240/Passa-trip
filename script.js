@@ -25,7 +25,7 @@ if (!sessionStorage.getItem("passaTripJaAbriu")) {
    ABRIR SUBMENU
 ========================================================= */
 
-function abrirSubmenu(nome) {
+function abrirSubmenu(nome, botao) {
 
     const submenu = document.getElementById(nome);
 
@@ -34,6 +34,14 @@ function abrirSubmenu(nome) {
     }
 
     submenu.classList.toggle("aberto");
+
+    const seta = botao ? botao.querySelector(".seta-submenu") : null;
+
+    if (seta) {
+        seta.textContent = submenu.classList.contains("aberto")
+            ? "▼"
+            : "▶";
+    }
 
 }
 
