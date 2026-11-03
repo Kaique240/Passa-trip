@@ -1,335 +1,236 @@
-<!DOCTYPE html> <html lang="pt-BR"> <head>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
 <meta charset="UTF-8">
-
 <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
 >
-
 <title>CONCUR GUIDE</title>
-
 <link
     rel="stylesheet"
     href="style.css"
 >
-</head> <body> <header>
+</head>
+<body>
+<header>
 <h1>CONCUR GUIDE</h1>
-
 <p>
     Seu manual interativo do SAP Concur.
 </p>
-</header> <main>
+</header>
+<main>
 <!-- =====================================================
      APRESENTAÇÃO
 ====================================================== -->
-
 <div class="apresentacao-concurguide">
-
     <div class="mao-animada">
         👋
     </div>
-
     <h2 class="texto-animado">
         Bem-vindo ao CONCUR GUIDE!
     </h2>
-
     <p class="pergunta-animada">
         Encontre o que precisa em poucos cliques.
     </p>
-
 </div>
-
 
 <!-- =====================================================
      1 - ACESSO
 ====================================================== -->
-
 <div class="botao-container botao-animado botao-1">
-
     <button onclick="abrirPagina('acesso')">
-
         <span class="icone-botao">
             🔐
         </span>
-
         Acesso
-
     </button>
-
 </div>
-
 
 <!-- =====================================================
      2 - ADIANTAMENTO
 ====================================================== -->
-
 <div class="botao-container botao-animado botao-2">
-
-    <button onclick="abrirSubmenu('submenu-adiantamento')">
-
+    <button onclick="abrirSubmenu('submenu-adiantamento', this)">
+        <span class="seta-submenu">▶</span>
         <span class="icone-botao">💳</span>
         Adiantamento
-
     </button>
-
     <div id="submenu-adiantamento" class="submenu">
-
         <button onclick="abrirPagina('adiantamento')">
             <span class="icone-botao">💶</span>
             Adiantamento
         </button>
-
         <button onclick="abrirPagina('prestacao-contas')">
             <span class="icone-botao">📋</span>
             Prestação de Contas
         </button>
-
         <button onclick="abrirPagina('f44')">
             <span class="icone-botao">↔️</span>
             F-44
         </button>
-
     </div>
-
 </div>
-
 
 <!-- =====================================================
      3 - REEMBOLSO
 ====================================================== -->
-
 <div class="botao-container botao-animado botao-3">
-
     <button onclick="abrirPagina('reembolso')">
-
         <span class="icone-botao">
             💵
         </span>
-
         Reembolso
-
     </button>
-
 </div>
-
 
 <!-- =====================================================
      4 - DESPESAS
 ====================================================== -->
-
 <div class="botao-container botao-animado botao-4">
-
-    <button onclick="abrirSubmenu('despesas')">
-
+    <button onclick="abrirSubmenu('despesas', this)">
+        <span class="seta-submenu">▶</span>
         <span class="icone-botao">
             💰
         </span>
-
         Despesas
-
     </button>
-
-
     <div
         id="despesas"
         class="submenu"
     >
-
-
         <button onclick="abrirDespesa('cafe')">
             ☕ Café da Manhã
         </button>
-
-
         <button onclick="abrirDespesa('almoco')">
             🍽️ Almoço
         </button>
-
-
         <button onclick="abrirDespesa('bebida')">
             🥤 Bebidas Não-Alcoólicas
         </button>
-
-
         <button onclick="abrirDespesa('combustivel')">
             ⛽ Combustível Automóvel Alugado
         </button>
-
-
         <button onclick="abrirDespesa('conducao')">
             🚆 Condução Urbana
         </button>
-
-
         <button onclick="abrirDespesa('estacionamento')">
             🅿️ Estacionamento
         </button>
-
-
         <button onclick="abrirDespesa('hospedagem')">
             🏨 Hospedagem
         </button>
-
-
         <button onclick="abrirDespesa('jantar')">
             🍔 Jantar
         </button>
-
-
         <button onclick="abrirDespesa('lanche')">
             🥪 Lanche
         </button>
-
-
         <button onclick="abrirDespesa('locacao')">
             🚗 Locação de Veículos
         </button>
-
-
         <button onclick="abrirDespesa('outras')">
             📦 Outras Despesas
         </button>
-
-
         <button onclick="abrirDespesa('pedagio')">
             🛣️ Pedágio
         </button>
-
-
         <button onclick="abrirDespesa('passagem-rodoviaria')">
             🚌 Passagem Rodoviária
         </button>
-
-
         <button onclick="abrirDespesa('quilometragem')">
             📍 Quilometragem
         </button>
-
-
         <!-- =================================================
              REFEIÇÃO ATLETAS
         ================================================== -->
-
         <button onclick="abrirDespesa('Refeição Atletas')">
-
             🏅 Refeição Atletas
-       </button>
-
-       
+        </button>
         <button onclick="abrirDespesa('taxi')">
             🚕 Táxi
         </button>
-
-
     </div>
-
 </div>
-
 
 <!-- =====================================================
      NOVOS BOTÕES
 ====================================================== -->
-
 <div class="botao-container botao-animado">
-
-        <button onclick="abrirPagina('Rateio')">
-            📈 Rateio
-    </Button>
-
-</div>
-
-
-<div class="botao-container botao-animado">
-
-       <button onclick="abrirPagina('Delegar')">
-           👤 Delegar
+    <button onclick="abrirPagina('Rateio')">
+        📈 Rateio
     </button>
-
 </div>
-
-
 <div class="botao-container botao-animado">
-
-       <button onclick="abrirPagina('Delegados')">
-            👥 Delegados
- </Button>
-
+    <button onclick="abrirPagina('Delegar')">
+        👤 Delegar
+    </button>
+</div>
+<div class="botao-container botao-animado">
+    <button onclick="abrirPagina('Delegados')">
+        👥 Delegados
+    </button>
 </div>
 
 <!-- =====================================================
      VIAGEM INTERNACIONAL
 ====================================================== -->
-
 <div class="botao-container botao-animado botao-viagem">
-
-    <button onclick="abrirSubmenu('submenu-viagem-internacional')">
-
+    <button onclick="abrirSubmenu('submenu-viagem-internacional', this)">
+        <span class="seta-submenu">▶</span>
         <span class="icone-botao icone-viagem-internacional">
             ✈️
         </span>
-
         Viagem Internacional
-
     </button>
-
     <div id="submenu-viagem-internacional" class="submenu">
-
         <button onclick="abrirPagina('viagem-internacional')">
             🌎 Viagem Internacional
         </button>
-
         <button onclick="abrirPagina('valores-fora-rc')">
             💱 Valores fora da RC
         </button>
-
     </div>
-
 </div>
 
 <!-- =====================================================
      RC-04/2026
 ====================================================== -->
-
 <div class="botao-container botao-animado botao-rc-04">
-
     <button onclick="abrirPagina('rc-04-2026')">
         <span class="icone-botao">🏦</span>
         RC-04/2026
     </button>
-
 </div>
 
 <!-- =====================================================
      5 - PERGUNTE AO CONCUR GUIDE
 ====================================================== -->
-
 <div class="botao-container botao-animado botao-5">
-
     <button onclick="abrirPagina('chat')">
-
         <span class="icone-botao">
             🤖
         </span>
-
         Pergunte ao Concur Guide
-
     </button>
-
 </div>
-</main> <!-- ===================================================== RODAPÉ ====================================================== --> <footer>
-<div class="logo-card">
+</main>
 
+<!-- =====================================================
+     RODAPÉ
+====================================================== -->
+<footer>
+<div class="logo-card">
     <img
         src="Imagens/Logo/1.png"
         alt="Logo PASSA TRIP"
         class="logo-passatrip"
     >
-
 </div>
-
-
 <span class="autor-passatrip">
     Autor: Kaique Albrechete
 </span>
-</footer> <script src="script.js"></script> </body> </html>
-
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
