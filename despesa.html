@@ -2889,6 +2889,339 @@ else if (tipo === "Rateio") {
 }
 
 /* =========================================================
+   Delegar
+========================================================= */
+
+else if (tipo === "Delegar") {
+
+    mostrarProcedimento(
+        "Delegar",
+        `
+        <h2>👤 Como Delegar um Adiantamento/Reembolso para outra pessoa</h2>
+
+        <p>
+            Quando o colaborador precisa que outra pessoa, como o ASA ou Responsável,
+            realize a prestação de contas em seu nome, é necessário fazer a delegação de despesas.
+        </p>
+
+        <p>
+            <strong>Importante:</strong> se o próprio colaborador for realizar a sua prestação de contas,
+            não é necessário fazer a delegação.
+        </p>
+
+        <h3>Passo 1 – Acesse as configurações</h3>
+
+        <p>
+            Clique no ícone de usuário, localizado no canto superior direito,
+            e depois selecione <strong>Configurações</strong>.
+        </p>
+
+        <img src="Imagens/Delegar/1.png">
+
+        <h3>Passo 2 – Acesse Delegado de Despesas</h3>
+
+        <p>
+            Dentro das configurações, localize e clique em
+            <strong>Delegado de Despesas</strong>.
+        </p>
+
+        <img src="Imagens/Delegar/2.png">
+
+        <h3>Passo 3 – Adicione um delegado</h3>
+
+        <p>
+            Clique em <strong>Adicionar</strong> para incluir a pessoa que ficará responsável
+            pela realização das despesas.
+        </p>
+
+        <img src="Imagens/Delegar/3.png">
+
+        <h3>Passo 4 – Localize a pessoa</h3>
+
+        <p>
+            Pesquise a pessoa utilizando o <strong>NIF sem SN/SS</strong>,
+            o <strong>Nome</strong> ou o <strong>e-mail</strong>.
+        </p>
+
+        <img src="Imagens/Delegar/4.png">
+
+        <h3>Passo 5 – Selecione e salve</h3>
+
+        <p>
+            Selecione a pessoa desejada, marque os campos de delegação necessários
+            e clique em <strong>Salvar</strong>.
+        </p>
+
+        <img src="Imagens/Delegar/5.png">
+        `
+    );
+
+}
+
+/* =========================================================
+   Delegados
+========================================================= */
+else if (tipo === "Delegados") {
+    mostrarProcedimento(
+        "Delegados",
+        `
+        <h2>👤 Como Realizar um Adiantamento/Reembolso para alguém</h2>
+
+        <h3>Passo 1 — Acessar “Atuar como Outro Usuário”</h3>
+
+        <p>
+            Após receber uma <strong>delegação de acesso</strong> de um funcionário,
+            essa opção ficará habilitada para o usuário que irá realizar a
+            <strong>prestação de contas</strong> em nome dessa pessoa,
+            como o <strong>ASA ou Gestor da despesa</strong>.
+        </p>
+
+        <p>
+            No SAP Concur, clique na opção
+            <strong>“Atuar como Outro Usuário”</strong>.
+        </p>
+
+        <img src="Imagens/Delegados/1.png">
+
+        <h3>Passo 2 — Selecionar a opção</h3>
+
+        <p>
+            Na tela seguinte, selecione a <strong>segunda opção</strong>.
+        </p>
+
+        <p>
+            Em seguida, informe o <strong>Nome ou NIF</strong> da pessoa para a
+            qual deseja realizar a prestação de contas.
+        </p>
+
+        <img src="Imagens/Delegados/2.png">
+
+        <h3>Passo 3 — Selecionar a pessoa</h3>
+
+        <p>
+            Após localizar a pessoa desejada, clique sobre o
+            <strong>Nome dela</strong> para acessá-la.
+        </p>
+
+        <img src="Imagens/Delegados/3.png">
+
+        <h3>Passo 4 — Atuar em nome de outra pessoa</h3>
+
+        <p>
+            Assim que selecionar a pessoa, o SAP Concur será alterado e exibirá
+            a indicação <strong>“Atuando como”</strong>, seguida do nome da
+            pessoa selecionada.
+        </p>
+
+        <p>
+            A partir desse momento, você poderá realizar
+            <strong>Um Adiantamento/Reembolso em nome de outra pessoa</strong>.
+        </p>
+
+        <img src="Imagens/Delegados/4.png">
+
+        <div class="dica">
+            <strong>💡 DICA</strong>
+
+            <p>
+                Só é possível realizar a Prestação de Contas de outra pessoa
+                quando ela tiver <strong>delegado essa função a você</strong>.
+            </p>
+
+            <p>
+                A função <strong>Delegar</strong> permite que o funcionário
+                autorize outra pessoa a ser responsável por
+                <strong>Realizar um Adiantamento/Reembolso e/ou executar a prestação de contas
+                em seu nome</strong>, conforme a permissão concedida.
+            </p>
+        </div>
+        `
+    );
+}
+
+/* =========================================================
+   VIAGEM INTERNACIONAL
+========================================================= */
+
+else if (tipo === "viagem-internacional") {
+
+    mostrarProcedimento(
+        "Viagem Internacional",
+        `
+
+        <h2>
+            🌎 Como criar um relatório de viagem internacional
+        </h2>
+
+        <h3>Valores de diária</h3>
+
+        <p>
+            A diária destinada ao funcionário em missão no exterior
+            contempla despesas com <strong>hospedagem, alimentação
+            e transporte local</strong>, conforme a localidade de destino.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Localidade</th>
+                    <th>Grupo Único</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Países da América Latina</td>
+                    <td><strong>US$ 320,00</strong></td>
+                </tr>
+                <tr>
+                    <td>Países da Zona do Euro</td>
+                    <td><strong>€ 310,00</strong></td>
+                </tr>
+                <tr>
+                    <td>Demais países</td>
+                    <td><strong>US$ 400,00</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Passo 1 – Criar relatório de despesa</h3>
+
+        <p>
+            Clique em <strong>Criar Relatório de Despesa</strong>
+            para iniciar o processo de prestação de contas
+            da viagem internacional.
+        </p>
+
+        <img
+            src="Imagens/Viagem Internacional/1.png"
+            alt="Criar relatório de despesa"
+        >
+
+        <h3>Passo 2 – Preencher os dados do relatório</h3>
+
+        <p>
+            Preencha todos os campos obrigatórios, como
+            <strong>Nome, Data, Internacional e Comentário</strong>.
+            No campo <strong>Ajuda de Custo</strong>,
+            selecione a opção <strong>Sim</strong>.
+        </p>
+
+        <img
+            src="Imagens/Viagem Internacional/2.png"
+            alt="Preencher os dados do relatório internacional"
+        >
+
+        <h3>Passo 3 – Informar os dados do deslocamento</h3>
+
+        <p>
+            Informe os dados do trajeto, preenchendo:
+        </p>
+
+        <ul>
+            <li><strong>Local de partida</strong>, data e horário;</li>
+            <li><strong>Local de chegada</strong>, data e horário;</li>
+            <li><strong>Local de destino</strong>, data e horário.</li>
+        </ul>
+
+        <p>
+            Após preencher todas as informações,
+            clique em <strong>Seguinte</strong>.
+        </p>
+
+        <img
+            src="Imagens/Viagem Internacional/3.png"
+            alt="Informar os dados do deslocamento"
+        >
+
+        <h3>Passo 4 – Informar hospedagem e refeição</h3>
+
+        <p>
+            Nesta etapa, serão apresentados os dias da viagem
+            e as opções de <strong>Hospedagem</strong> e
+            <strong>Refeição</strong>.
+        </p>
+
+        <p>
+            Marque as opções correspondentes, conforme o
+            alinhamento e as condições autorizadas para a viagem.
+            Em seguida, clique em <strong>Concluído</strong>.
+        </p>
+
+        <img
+            src="Imagens/Viagem Internacional/4.png"
+            alt="Selecionar hospedagem e refeição"
+        >
+
+        <h3>Passo 5 – Percentual de hospedagem</h3>
+
+        <p>
+            Ao selecionar a opção <strong>Hospedagem</strong>,
+            o sistema considera <strong>40% do valor da diária</strong>.
+        </p>
+
+        <img
+            src="Imagens/Viagem Internacional/5.png"
+            alt="Percentual de hospedagem"
+        >
+
+        <h3>Passo 6 – Percentual de refeição</h3>
+
+        <p>
+            Ao selecionar a opção <strong>Refeição</strong>,
+            o sistema considera <strong>20% do valor da diária</strong>.
+        </p>
+
+        <img
+            src="Imagens/Viagem Internacional/6.png"
+            alt="Percentual de refeição"
+        >
+
+        <h3>Passo 7 – Conferir os valores e enviar o relatório</h3>
+
+        <p>
+            Após o preenchimento, confira se os valores foram
+            apresentados em <strong>USD (dólar americano)</strong>,
+            conforme a moeda aplicável à viagem.
+        </p>
+
+        <p>
+            O <strong>alerta amarelo</strong> exibido pelo sistema
+            tem caráter informativo e serve apenas como lembrete.
+        </p>
+
+        <p>
+            Estando todas as informações corretas,
+            clique em <strong>Enviar o Relatório</strong>.
+        </p>
+
+        <img
+            src="Imagens/Viagem Internacional/7.png"
+            alt="Conferir valores e enviar relatório"
+        >
+
+        <div class="dica">
+
+            💡 <strong>Dicas importantes</strong>
+
+            <br><br>
+
+            Anexe a <strong>Autorização de Viagem</strong>,
+            conforme estabelecido na <strong>RC-04/2026</strong>.
+
+            <br><br>
+
+            Respeite os <strong>valores e as regras aplicáveis
+            às viagens internacionais</strong>, conforme
+            a <strong>RC-04/2026</strong>.
+
+        </div>
+
+        `
+    );
+
+}
+
+/* =========================================================
    VALORES FORA DA RC
 ========================================================= */
 
