@@ -363,7 +363,6 @@ if (tipo === "acesso") {
 }
 
 
-
 /* =========================================================
    ADIANTAMENTO
 ========================================================= */
@@ -378,15 +377,10 @@ else if (tipo === "adiantamento") {
             💳 Como criar um adiantamento
         </h2>
 
-
-
-        <h3>
-            Passo 1
-        </h3>
+        <h3>Passo 1</h3>
 
         <p>
-            Clique em
-            <strong>Solicitações</strong>.
+            Clique em <strong>Solicitações</strong>.
         </p>
 
         <img
@@ -394,15 +388,10 @@ else if (tipo === "adiantamento") {
             alt="Menu Solicitações"
         >
 
-
-
-        <h3>
-            Passo 2
-        </h3>
+        <h3>Passo 2</h3>
 
         <p>
-            Acesse a área de
-            <strong>Solicitações</strong>.
+            Acesse a área de <strong>Solicitações</strong>.
         </p>
 
         <img
@@ -410,15 +399,10 @@ else if (tipo === "adiantamento") {
             alt="Solicitações"
         >
 
-
-
-        <h3>
-            Passo 3
-        </h3>
+        <h3>Passo 3</h3>
 
         <p>
-            Clique em
-            <strong>Criar solicitação</strong>.
+            Clique em <strong>Criar solicitação</strong>.
         </p>
 
         <img
@@ -426,16 +410,11 @@ else if (tipo === "adiantamento") {
             alt="Criar solicitação"
         >
 
-
-
-        <h3>
-            Passo 4
-        </h3>
+        <h3>Passo 4</h3>
 
         <p>
             Preencha os campos obrigatórios
-            e clique em
-            <strong>Criar solicitação</strong>.
+            e clique em <strong>Criar solicitação</strong>.
         </p>
 
         <img
@@ -443,15 +422,10 @@ else if (tipo === "adiantamento") {
             alt="Preenchimento da solicitação"
         >
 
-
-
-        <h3>
-            Passo 5
-        </h3>
+        <h3>Passo 5</h3>
 
         <p>
-            Clique em
-            <strong>Adicionar adiantamento</strong>.
+            Clique em <strong>Adicionar adiantamento</strong>.
         </p>
 
         <img
@@ -459,17 +433,11 @@ else if (tipo === "adiantamento") {
             alt="Adicionar adiantamento"
         >
 
-
-
-        <h3>
-            Passo 6
-        </h3>
+        <h3>Passo 6</h3>
 
         <p>
-            Preencha o
-            <strong>valor do adiantamento</strong>
-            e a justificativa.
-            Em seguida, clique em
+            Preencha o <strong>valor do adiantamento</strong>
+            e a justificativa. Em seguida, clique em
             <strong>Salvar</strong>.
         </p>
 
@@ -478,11 +446,7 @@ else if (tipo === "adiantamento") {
             alt="Valor do adiantamento"
         >
 
-
-
-        <h3>
-            Passo 7
-        </h3>
+        <h3>Passo 7</h3>
 
         <p>
             Revise as informações e clique em
@@ -499,6 +463,118 @@ else if (tipo === "adiantamento") {
 
 }
 
+/* =========================================================
+   CONSULTA DE ADIANTAMENTOS EM ABERTO - F-44
+========================================================= */
+
+else if (tipo === "consulta-f44") {
+
+    mostrarProcedimento(
+        "Consulta de Adiantamentos em Aberto (F-44)",
+        `
+
+        <h2>
+            🔎 Como consultar adiantamentos em aberto para realizar a F-44
+        </h2>
+
+        <h3>
+            Passo 1 — Acessar a transação
+        </h3>
+
+        <p>
+            Acesse a transação <strong>ZFI0107</strong>
+            e preencha os campos conforme as orientações:
+        </p>
+
+        <p>
+            <strong>Empresa:</strong> 1000 ou 2000
+            <br>
+            <strong>Exercício:</strong> 2026
+            <br>
+            <strong>Tipo de Documento:</strong> C5
+            <br>
+            <strong>Local de Negócio:</strong> informe o correspondente à sua unidade.
+        </p>
+
+        <p>
+            Após preencher os campos, clique em
+            <strong>Executar</strong> (ícone do relógio).
+        </p>
+
+        <img
+            src="Imagens/Consulta F-44 em Aberto/1.png"
+            alt="Preenchimento dos campos da transação ZFI0107"
+        >
+
+        <h3>
+            Passo 2 — Filtrar a chave de lançamento
+        </h3>
+
+        <p>
+            Na coluna <strong>Chave de Lançamento</strong>,
+            serão exibidos diferentes números.
+            Para localizar os lançamentos desejados,
+            clique no ícone de <strong>Funil</strong>.
+        </p>
+
+        <img
+            src="Imagens/Consulta F-44 em Aberto/2.png"
+            alt="Aplicar filtro na coluna Chave de Lançamento"
+        >
+
+        <h3>
+            Passo 3 — Informar o filtro
+        </h3>
+
+        <p>
+            Nas duas caixas de seleção do filtro,
+            informe o número <strong>21</strong>
+            e clique em <strong>Prosseguir</strong>.
+        </p>
+
+        <img
+            src="Imagens/Consulta F-44 em Aberto/3.png"
+            alt="Informar a chave de lançamento 21 no filtro"
+        >
+
+        <h3>
+            Passo 4 — Identificar os adiantamentos em aberto
+        </h3>
+
+        <p>
+            Após aplicar o filtro, serão exibidas as transações
+            com <strong>chave de lançamento 21</strong>.
+            Todos os lançamentos apresentados nessa consulta
+            devem ser tratados por meio da transação
+            <strong>F-44</strong>.
+        </p>
+
+        <img
+            src="Imagens/Consulta F-44 em Aberto/4.png"
+            alt="Resultado da consulta com chave de lançamento 21"
+        >
+
+        <div class="dica">
+
+            💡 <strong>Dica importante</strong>
+
+            <br><br>
+
+            Utilize essa consulta para identificar os
+            adiantamentos que ainda precisam ser compensados
+            por meio da transação <strong>F-44</strong>.
+
+            <br><br>
+
+            Confira os lançamentos apresentados antes de
+            realizar os procedimentos de compensação.
+
+        </div>
+
+        `
+    );
+
+}
 
 /* =========================================================
    PRESTAÇÃO DE CONTAS
@@ -1004,6 +1080,105 @@ else if (tipo === "reembolso") {
             Utilize esta opção para solicitar
             o reembolso de despesas quando não houver
             solicitação de adiantamento vinculada à viagem.
+
+        </div>
+
+        `
+    );
+
+}
+
+/* =========================================================
+   RECIBO AUTOMÁTICO
+========================================================= */
+
+else if (tipo === "recibo-automatico") {
+
+    mostrarProcedimento(
+        "Recibo Automático",
+        `
+
+        <h2>
+            🧾 Como lançar uma despesa utilizando o Recibo Automático
+        </h2>
+
+        <h3>
+            Passo 1 — Carregar recibos
+        </h3>
+
+        <p>
+            Clique em <strong>Carregar Recibos</strong>
+            para iniciar a inclusão do documento.
+        </p>
+
+        <img
+            src="Imagens/Recibo Automático/1.png"
+            alt="Carregar recibos"
+        >
+
+        <h3>
+            Passo 2 — Selecionar o recibo
+        </h3>
+
+        <p>
+            Selecione, em seu computador, o
+            <strong>recibo</strong> que deseja incluir
+            e clique em <strong>Abrir</strong>.
+        </p>
+
+        <img
+            src="Imagens/Recibo Automático/2.png"
+            alt="Selecionar recibo no computador"
+        >
+
+        <h3>
+            Passo 3 — Verificar a despesa
+        </h3>
+
+        <p>
+            Após a inclusão do recibo e a geração da despesa,
+            clique sobre ela para <strong>verificar as informações</strong>.
+        </p>
+
+        <img
+            src="Imagens/Recibo Automático/3.png"
+            alt="Verificar despesa incluída"
+        >
+
+        <h3>
+            Passo 4 — Conferir e salvar
+        </h3>
+
+        <p>
+            Confira atentamente a <strong>Data</strong>,
+            os <strong>Valores</strong> e os possíveis
+            <strong>Alertas</strong> apresentados pelo sistema.
+
+            Caso identifique alguma inconsistência,
+            faça os ajustes necessários e clique em
+            <strong>Salvar</strong>.
+        </p>
+
+        <img
+            src="Imagens/Recibo Automático/4.png"
+            alt="Conferir informações e salvar despesa"
+        >
+
+        <div class="dica">
+
+            💡 <strong>Dica importante</strong>
+
+            <br><br>
+
+            O <strong>Recibo Automático</strong> facilita
+            o lançamento das despesas, mas não elimina
+            a possibilidade de erros.
+
+            <br><br>
+
+            Por isso, confira sempre todas as informações
+            e certifique-se de que o lançamento está correto
+            antes de <strong>enviar a despesa</strong>.
 
         </div>
 
@@ -2673,7 +2848,16 @@ else if (tipo === "Rateio") {
             <strong>Salvar</strong>.
         </p>
 
+        <p>
+            Se não <strong>Encontrar</strong> o
+            <strong>Centro de Custo</strong>, tente
+            <strong>mudar</strong> o <strong>Objeto de Custo</strong>,
+            conforme as imagens.
+        </p>
+
         <img src="Imagens/Rateio/3.png">
+
+        <img src="Imagens/Rateio/4.png">
 
         <h3>Passo 4 — Incluir a porcentagem ou valor</h3>
 
@@ -2687,7 +2871,7 @@ else if (tipo === "Rateio") {
             histórico para futuros rateios.
         </p>
 
-        <img src="Imagens/Rateio/4.png">
+        <img src="Imagens/Rateio/5.png">
 
         <div class="dica">
 
@@ -2703,340 +2887,6 @@ else if (tipo === "Rateio") {
         `
     );
 }
-
-/* =========================================================
-   Delegar
-========================================================= */
-
-else if (tipo === "Delegar") {
-
-    mostrarProcedimento(
-        "Delegar",
-        `
-        <h2>👤 Como Delegar um Adiantamento/Reembolso para outra pessoa</h2>
-
-        <p>
-            Quando o colaborador precisa que outra pessoa, como o ASA ou Responsável,
-            realize a prestação de contas em seu nome, é necessário fazer a delegação de despesas.
-        </p>
-
-        <p>
-            <strong>Importante:</strong> se o próprio colaborador for realizar a sua prestação de contas,
-            não é necessário fazer a delegação.
-        </p>
-
-        <h3>Passo 1 – Acesse as configurações</h3>
-
-        <p>
-            Clique no ícone de usuário, localizado no canto superior direito,
-            e depois selecione <strong>Configurações</strong>.
-        </p>
-
-        <img src="Imagens/Delegar/1.png">
-
-        <h3>Passo 2 – Acesse Delegado de Despesas</h3>
-
-        <p>
-            Dentro das configurações, localize e clique em
-            <strong>Delegado de Despesas</strong>.
-        </p>
-
-        <img src="Imagens/Delegar/2.png">
-
-        <h3>Passo 3 – Adicione um delegado</h3>
-
-        <p>
-            Clique em <strong>Adicionar</strong> para incluir a pessoa que ficará responsável
-            pela realização das despesas.
-        </p>
-
-        <img src="Imagens/Delegar/3.png">
-
-        <h3>Passo 4 – Localize a pessoa</h3>
-
-        <p>
-            Pesquise a pessoa utilizando o <strong>NIF sem SN/SS</strong>,
-            o <strong>Nome</strong> ou o <strong>e-mail</strong>.
-        </p>
-
-        <img src="Imagens/Delegar/4.png">
-
-        <h3>Passo 5 – Selecione e salve</h3>
-
-        <p>
-            Selecione a pessoa desejada, marque os campos de delegação necessários
-            e clique em <strong>Salvar</strong>.
-        </p>
-
-        <img src="Imagens/Delegar/5.png">
-        `
-    );
-
-}
-
-/* =========================================================
-   Delegados
-========================================================= */
-else if (tipo === "Delegados") {
-    mostrarProcedimento(
-        "Delegados",
-        `
-        <h2>👤 Como Realizar um Adiantamento/Reembolso para alguém</h2>
-
-        <h3>Passo 1 — Acessar “Atuar como Outro Usuário”</h3>
-
-        <p>
-            Após receber uma <strong>delegação de acesso</strong> de um funcionário,
-            essa opção ficará habilitada para o usuário que irá realizar a
-            <strong>prestação de contas</strong> em nome dessa pessoa,
-            como o <strong>ASA ou Gestor da despesa</strong>.
-        </p>
-
-        <p>
-            No SAP Concur, clique na opção
-            <strong>“Atuar como Outro Usuário”</strong>.
-        </p>
-
-        <img src="Imagens/Delegados/1.png">
-
-        <h3>Passo 2 — Selecionar a opção</h3>
-
-        <p>
-            Na tela seguinte, selecione a <strong>segunda opção</strong>.
-        </p>
-
-        <p>
-            Em seguida, informe o <strong>Nome ou NIF</strong> da pessoa para a
-            qual deseja realizar a prestação de contas.
-        </p>
-
-        <img src="Imagens/Delegados/2.png">
-
-        <h3>Passo 3 — Selecionar a pessoa</h3>
-
-        <p>
-            Após localizar a pessoa desejada, clique sobre o
-            <strong>Nome dela</strong> para acessá-la.
-        </p>
-
-        <img src="Imagens/Delegados/3.png">
-
-        <h3>Passo 4 — Atuar em nome de outra pessoa</h3>
-
-        <p>
-            Assim que selecionar a pessoa, o SAP Concur será alterado e exibirá
-            a indicação <strong>“Atuando como”</strong>, seguida do nome da
-            pessoa selecionada.
-        </p>
-
-        <p>
-            A partir desse momento, você poderá realizar
-            <strong>Uma Trip em nome de outra pessoa</strong>.
-        </p>
-
-        <img src="Imagens/Delegados/4.png">
-
-        <div class="dica">
-            <strong>💡 DICA</strong>
-
-            <p>
-                Só é possível realizar a Prestação de Contas de outra pessoa
-                quando ela tiver <strong>delegado essa função a você</strong>.
-            </p>
-
-            <p>
-                A função <strong>Delegar</strong> permite que o funcionário
-                autorize outra pessoa a ser responsável por
-                <strong>Realizar a Trip e/ou executar a prestação de contas
-                em seu nome</strong>, conforme a permissão concedida.
-            </p>
-        </div>
-        `
-    );
-}
-
-/* =========================================================
-   VIAGEM INTERNACIONAL
-========================================================= */
-
-else if (tipo === "viagem-internacional") {
-
-    mostrarProcedimento(
-        "Viagem Internacional",
-        `
-
-        <h2>
-            🌎 Como criar um relatório de viagem internacional
-        </h2>
-
-        <h3>Valores de diária</h3>
-
-        <p>
-            A diária destinada ao funcionário em missão no exterior
-            contempla despesas com <strong>hospedagem, alimentação
-            e transporte local</strong>, conforme a localidade de destino.
-        </p>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Localidade</th>
-                    <th>Grupo Único</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Países da América Latina</td>
-                    <td><strong>US$ 320,00</strong></td>
-                </tr>
-                <tr>
-                    <td>Países da Zona do Euro</td>
-                    <td><strong>€ 310,00</strong></td>
-                </tr>
-                <tr>
-                    <td>Demais países</td>
-                    <td><strong>US$ 400,00</strong></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>Passo 1 – Criar relatório de despesa</h3>
-
-        <p>
-            Clique em <strong>Criar Relatório de Despesa</strong>
-            para iniciar o processo de prestação de contas
-            da viagem internacional.
-        </p>
-
-        <img
-            src="Imagens/Viagem Internacional/1.png"
-            alt="Criar relatório de despesa"
-        >
-
-        <h3>Passo 2 – Preencher os dados do relatório</h3>
-
-        <p>
-            Preencha todos os campos obrigatórios, como
-            <strong>Nome, Data, Internacional e Comentário</strong>.
-            No campo <strong>Ajuda de Custo</strong>,
-            selecione a opção <strong>Sim</strong>.
-        </p>
-
-        <img
-            src="Imagens/Viagem Internacional/2.png"
-            alt="Preencher os dados do relatório internacional"
-        >
-
-        <h3>Passo 3 – Informar os dados do deslocamento</h3>
-
-        <p>
-            Informe os dados do trajeto, preenchendo:
-        </p>
-
-        <ul>
-            <li><strong>Local de partida</strong>, data e horário;</li>
-            <li><strong>Local de chegada</strong>, data e horário;</li>
-            <li><strong>Local de destino</strong>, data e horário.</li>
-        </ul>
-
-        <p>
-            Após preencher todas as informações,
-            clique em <strong>Seguinte</strong>.
-        </p>
-
-        <img
-            src="Imagens/Viagem Internacional/3.png"
-            alt="Informar os dados do deslocamento"
-        >
-
-        <h3>Passo 4 – Informar hospedagem e refeição</h3>
-
-        <p>
-            Nesta etapa, serão apresentados os dias da viagem
-            e as opções de <strong>Hospedagem</strong> e
-            <strong>Refeição</strong>.
-        </p>
-
-        <p>
-            Marque as opções correspondentes, conforme o
-            alinhamento e as condições autorizadas para a viagem.
-            Em seguida, clique em <strong>Concluído</strong>.
-        </p>
-
-        <img
-            src="Imagens/Viagem Internacional/4.png"
-            alt="Selecionar hospedagem e refeição"
-        >
-
-        <h3>Passo 5 – Percentual de hospedagem</h3>
-
-        <p>
-            Ao selecionar a opção <strong>Hospedagem</strong>,
-            o sistema considera <strong>40% do valor da diária</strong>.
-        </p>
-
-        <img
-            src="Imagens/Viagem Internacional/5.png"
-            alt="Percentual de hospedagem"
-        >
-
-        <h3>Passo 6 – Percentual de refeição</h3>
-
-        <p>
-            Ao selecionar a opção <strong>Refeição</strong>,
-            o sistema considera <strong>20% do valor da diária</strong>.
-        </p>
-
-        <img
-            src="Imagens/Viagem Internacional/6.png"
-            alt="Percentual de refeição"
-        >
-
-        <h3>Passo 7 – Conferir os valores e enviar o relatório</h3>
-
-        <p>
-            Após o preenchimento, confira se os valores foram
-            apresentados em <strong>USD (dólar americano)</strong>,
-            conforme a moeda aplicável à viagem.
-        </p>
-
-        <p>
-            O <strong>alerta amarelo</strong> exibido pelo sistema
-            tem caráter informativo e serve apenas como lembrete.
-        </p>
-
-        <p>
-            Estando todas as informações corretas,
-            clique em <strong>Enviar o Relatório</strong>.
-        </p>
-
-        <img
-            src="Imagens/Viagem Internacional/7.png"
-            alt="Conferir valores e enviar relatório"
-        >
-
-        <div class="dica">
-
-            💡 <strong>Dicas importantes</strong>
-
-            <br><br>
-
-            Anexe a <strong>Autorização de Viagem</strong>,
-            conforme estabelecido na <strong>RC-04/2026</strong>.
-
-            <br><br>
-
-            Respeite os <strong>valores e as regras aplicáveis
-            às viagens internacionais</strong>, conforme
-            a <strong>RC-04/2026</strong>.
-
-        </div>
-
-        `
-    );
-
-}
-
 
 /* =========================================================
    VALORES FORA DA RC
@@ -3550,51 +3400,94 @@ function filtrarRC04() {
 }
 
 /* =========================================================
-   NÃO FECHAR AO CLICAR NA IMAGEM AMPLIADA
+   AMPLIAR TODAS AS IMAGENS DOS PROCEDIMENTOS
 ========================================================= */
 
-const imagemAmpliada =
-    document.getElementById(
-        "imagem-ampliada"
-    );
+const modalImagem = document.getElementById("modal-imagem");
+const imagemAmpliada = document.getElementById("imagem-ampliada");
+const fecharModalImagem = document.getElementById("fechar-imagem");
 
 
+/* ABRIR IMAGEM AO CLICAR */
 
-if (imagemAmpliada) {
+document.addEventListener("click", function(event) {
 
-    imagemAmpliada.addEventListener(
-        "click",
-        function(event) {
+    const imagem = event.target.closest("#conteudo-despesa img");
 
-            event.stopPropagation();
+    if (!imagem || !modalImagem || !imagemAmpliada) {
+        return;
+    }
 
-        }
-    );
+    imagemAmpliada.src = imagem.src;
+    imagemAmpliada.alt = imagem.alt || "Imagem ampliada";
+
+    modalImagem.style.display = "flex";
+    document.body.style.overflow = "hidden";
+
+});
+
+
+/* FECHAR PELO BOTÃO X */
+
+if (fecharModalImagem) {
+
+    fecharModalImagem.addEventListener("click", function(event) {
+
+        event.stopPropagation();
+
+        modalImagem.style.display = "none";
+        imagemAmpliada.src = "";
+
+        document.body.style.overflow = "";
+
+    });
 
 }
 
 
+/* NÃO FECHAR AO CLICAR NA IMAGEM AMPLIADA */
 
-/* =========================================================
-   FECHAR COM ESC
-========================================================= */
+if (imagemAmpliada) {
 
-document.addEventListener(
-    "keydown",
-    function(event) {
+    imagemAmpliada.addEventListener("click", function(event) {
 
-        if (
-            event.key === "Escape"
-        ) {
+        event.stopPropagation();
 
-            fecharImagem();
+    });
 
-        }
+}
+
+
+/* FECHAR AO CLICAR FORA DA IMAGEM */
+
+if (modalImagem) {
+
+    modalImagem.addEventListener("click", function() {
+
+        modalImagem.style.display = "none";
+        imagemAmpliada.src = "";
+
+        document.body.style.overflow = "";
+
+    });
+
+}
+
+
+/* FECHAR COM ESC */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape" && modalImagem) {
+
+        modalImagem.style.display = "none";
+        imagemAmpliada.src = "";
+
+        document.body.style.overflow = "";
 
     }
-);
 
-
+});
 
 /* =========================================================
    VOLTAR PARA O INÍCIO
