@@ -1569,3 +1569,15 @@ CELULAR
     font-weight: bold;
     margin-right: 8px;
 }
+
+/* =========================================================
+   IMAGENS CLICÁVEIS — INDICAÇÃO VISUAL
+========================================================= */
+
+#conteudo-despesa img {
+    cursor: zoom-in;
+}
+
+#conteudo-despesa img:hover {
+    transform: scale(1.01);
+}
