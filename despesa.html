@@ -425,7 +425,7 @@ else if (tipo === "adiantamento") {
         <h3>Passo 5</h3>
 
         <p>
-            Clique em <strong>Adicionar adiantamento</strong>.
+            Clique em <strong>Adicionar adiantamento</strong> e Clique em <strong>Salvar Solicitação</strong>.
         </p>
 
         <img
@@ -715,7 +715,7 @@ else if (tipo === "prestacao-contas") {
         </h3>
 
         <p>
-            Informe a <strong>data</strong> em que o depósito foi realizado
+            Informe a <strong>Data</strong> do <strong>último dia da viagem</strong>
             e o <strong>valor exato</strong> que está sendo devolvido.
         </p>
 
@@ -773,8 +773,8 @@ else if (tipo === "prestacao-contas") {
 
             <br><br>
 
-            Anexe sempre o comprovante do <strong>Depósito</strong>
-            e informe a data em que ele foi efetivamente realizado.
+            Anexe sempre o comprovante do <strong>Depósito</strong> e
+            informe a data do <strong>último dia da viagem</strong>.
 
         </div>
 
@@ -3235,36 +3235,9 @@ else if (tipo === "valores-fora-rc") {
             💱 Como lançar valores fora da RC
         </h2>
 
-        <h3>Valores de diária</h3>
-
         <p>
-            A diária destinada ao funcionário em missão no exterior
-            contempla despesas com <strong>hospedagem, alimentação
-            e transporte local</strong>, conforme a localidade de destino.
+            Viagens Internacionais com valores fora da RC, mediante autotização <strong>Da Alta Gestão</strong>.
         </p>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Localidade</th>
-                    <th>Grupo Único</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Países da América Latina</td>
-                    <td><strong>US$ 320,00</strong></td>
-                </tr>
-                <tr>
-                    <td>Países da Zona do Euro</td>
-                    <td><strong>€ 310,00</strong></td>
-                </tr>
-                <tr>
-                    <td>Demais países</td>
-                    <td><strong>US$ 400,00</strong></td>
-                </tr>
-            </tbody>
-        </table>
 
         <h3>Passo 1 – Criar relatório de despesa</h3>
 
@@ -3380,6 +3353,393 @@ else if (tipo === "valores-fora-rc") {
             Respeite os <strong>valores e as regras aplicáveis
             às viagens internacionais</strong>, conforme
             a <strong>RC-04/2026</strong>.
+
+        </div>
+
+        `
+    );
+
+}
+
+/* =========================================================
+   ADIANTAMENTO INTERNACIONAL
+========================================================= */
+
+else if (tipo === "adiantamento-internacional") {
+
+    mostrarProcedimento(
+        "Adiantamento Internacional",
+        `
+
+        <h2>
+            💷 Como solicitar um Adiantamento Internacional
+        </h2>
+
+        <h3>Passo 1 – Acessar Solicitações</h3>
+
+        <p>
+            Clique em <strong>Solicitações</strong>.
+        </p>
+
+        <img
+            src="Imagens/Adiantamento Internacional/1.png"
+            alt="Acessar Solicitações"
+        >
+
+        <h3>Passo 2 – Acessar a área de solicitações</h3>
+
+        <p>
+            Acesse a área de <strong>Solicitações</strong>.
+        </p>
+
+        <img
+            src="Imagens/Adiantamento Internacional/2.png"
+            alt="Área de solicitações"
+        >
+
+        <h3>Passo 3 – Criar solicitação</h3>
+
+        <p>
+            Clique em <strong>Criar solicitação</strong>
+            para iniciar uma nova solicitação de viagem.
+        </p>
+
+        <img
+            src="Imagens/Adiantamento Internacional/3.png"
+            alt="Criar solicitação"
+        >
+
+        <h3>Passo 4 – Preencher os dados da viagem</h3>
+
+        <p>
+            Preencha os campos obrigatórios, como
+            <strong>Nome, Datas, Motivo e Comentário</strong>.
+            Após preencher todas as informações,
+            clique em <strong>Criar solicitação</strong>.
+        </p>
+
+        <img
+            src="Imagens/Adiantamento Internacional/4.png"
+            alt="Preencher os dados da viagem"
+        >
+
+        <h3>Passo 5 – Adicionar adiantamento</h3>
+
+        <p>
+            Clique em <strong>Adicionar adiantamento</strong>
+            e, em seguida, clique em
+            <strong>Salvar Solicitação</strong>.
+        </p>
+
+        <img
+            src="Imagens/Adiantamento Internacional/5.png"
+            alt="Adicionar adiantamento"
+        >
+
+        <h3>Passo 6 – Informar o valor e a moeda</h3>
+
+        <p>
+            Informe o <strong>valor desejado</strong> e selecione
+            a <strong>moeda que será utilizada durante a viagem</strong>,
+            como dólar (USD), euro (EUR) ou outra moeda disponível.
+        </p>
+
+        <p>
+            <strong>Atenção:</strong> informe o valor na moeda
+            estrangeira, e não em reais. Por exemplo, se precisar
+            de <strong>US$ 50</strong>, selecione dólar e informe
+            o valor <strong>50</strong>.
+        </p>
+
+        <p>
+            Após preencher as informações, clique em
+            <strong>Salvar</strong>. O sistema realizará a
+            <strong>conversão do valor para reais</strong>,
+            que será utilizado para o crédito do adiantamento
+            na sua conta.
+        </p>
+
+        <img
+            src="Imagens/Adiantamento Internacional/6.png"
+            alt="Informar valor e selecionar moeda"
+        >
+
+        <h3>Passo 7 – Conferir e enviar a solicitação</h3>
+
+        <p>
+            Confira se o <strong>valor informado na moeda estrangeira</strong>
+            e o respectivo <strong>valor convertido para reais</strong>
+            estão corretos.
+        </p>
+
+        <p>
+            Após revisar todas as informações da solicitação,
+            clique em <strong>Enviar Solicitação</strong>
+            para encaminhar o adiantamento para aprovação.
+        </p>
+
+        <img
+            src="Imagens/Adiantamento Internacional/7.png"
+            alt="Conferir e enviar solicitação de adiantamento"
+        >
+
+        <div class="dica">
+
+            💡 <strong>Dica importante</strong>
+
+            <br><br>
+
+            Antes de enviar a solicitação, confira atentamente
+            a <strong>moeda selecionada e o valor solicitado</strong>,
+            garantindo que correspondam às necessidades da viagem.
+
+        </div>
+
+        `
+    );
+
+}
+
+/* =========================================================
+   PRESTAÇÃO DE CONTAS INTERNACIONAL
+========================================================= */
+
+else if (tipo === "prestacao-contas-internacional") {
+
+    mostrarProcedimento(
+        "Prestação de Contas Internacional",
+        `
+
+        <h2>
+            📜 Como realizar a Prestação de Contas Internacional
+        </h2>
+
+        <h3>Passo 1 – Acessar os relatórios</h3>
+
+        <p>
+            Clique em <strong>Solicitações</strong> e, em seguida,
+            em <strong>Gerenciar Solicitações</strong>.
+        </p>
+
+        <img
+            src="Imagens/Prestação de Contas Internacional/1.png"
+            alt="Acessar solicitações e gerenciar solicitações"
+        >
+
+        <h3>Passo 2 – Selecionar o adiantamento</h3>
+
+        <p>
+            Clique no <strong>card</strong> correspondente ao
+            adiantamento que deseja prestar contas.
+        </p>
+
+        <img
+            src="Imagens/Prestação de Contas Internacional/2.png"
+            alt="Selecionar adiantamento"
+        >
+
+        <h3>Passo 3 – Criar o relatório de despesas</h3>
+
+        <p>
+            <div style="
+            background-color: #F3F4F6;
+            border: 1px solid #D1D5DB;
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 20px 0 25px;
+            color: #344054;
+        ">
+
+            <p style="margin: 0; line-height: 1.6;">
+                <strong>⚠️ Atenção:</strong> não clique em
+                <strong>Fechar solicitação</strong>.
+                Utilize somente a opção
+                <strong>Criar relatório de despesa</strong>.
+            </p>
+
+        </div>
+        <img
+            src="Imagens/Prestação de Contas Internacional/3.png"
+            alt="Criar relatório de despesa"
+        >
+
+        <h3>Passo 4 – Adicionar as despesas</h3>
+
+        <p>
+            Observe que o adiantamento já estará vinculado
+            ao relatório. Clique em <strong>Adicionar despesas</strong>
+            para incluir os lançamentos da viagem.
+        </p>
+
+        <img
+            src="Imagens/Prestação de Contas Internacional/4.png"
+            alt="Adicionar despesas"
+        >
+
+        <h3>Passo 5 – Preencher os dados da despesa</h3>
+
+        <p>
+            Preencha os campos obrigatórios, como
+            <strong>Data, Comentários, Anexos</strong> e as demais
+            informações solicitadas.
+        </p>
+
+       
+<div style="
+    background-color: #F3F4F6;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 20px 0 25px;
+    color: #344054;
+">
+
+    <p style="margin: 0 0 12px; line-height: 1.6;">
+        <strong>⚠️ Atenção à moeda:</strong> lance cada despesa
+        na <strong>moeda efetivamente utilizada durante a viagem</strong>,
+        como dólar (USD), euro (EUR) ou libra esterlina (GBP).
+    </p>
+
+    <p style="margin: 0; line-height: 1.6;">
+        <strong>Não faça a conversão manualmente para reais!</strong>
+        O próprio <strong>SAP Concur realiza a conversão cambial
+        automaticamente</strong>, conforme a moeda e o valor
+        informados no lançamento.
+    </p>
+
+</div>
+
+
+        <p>
+            Após preencher todas as informações e anexar o
+            comprovante correspondente, clique em <strong>Salvar</strong>.
+        </p>
+
+        <img
+            src="Imagens/Prestação de Contas Internacional/5.png"
+            alt="Preencher os dados da despesa"
+        >
+
+        <h3>Passo 6 – Conferir a conversão cambial</h3>
+
+        <p>
+            Após salvar a despesa, confira se o lançamento foi
+            registrado corretamente e se o sistema realizou
+            a <strong>conversão cambial automaticamente</strong>,
+            conforme apresentado na tela.
+        </p>
+
+        <img
+            src="Imagens/Prestação de Contas Internacional/6.png"
+            alt="Conferir conversão cambial"
+        >
+
+        <h3>Passo 7 – Conferir o saldo do adiantamento</h3>
+
+        <p>
+            Após incluir todas as despesas da viagem,
+            confira se existe algum valor a ser devolvido à empresa.
+        </p>
+
+        <ul>
+            <li>
+                <strong>Se houver saldo a devolver:</strong>
+                será necessário adicionar a despesa
+                <strong>Devolução de adiantamento</strong>.
+            </li>
+            <li>
+                <strong>Se não houver valor a devolver:</strong>
+                basta enviar o relatório.
+            </li>
+        </ul>
+
+        <img
+            src="Imagens/Prestação de Contas Internacional/7.png"
+            alt="Conferir saldo do adiantamento"
+        >
+
+        <h3>Passo 8 – Adicionar a devolução de adiantamento</h3>
+
+        <p>
+            Clique em <strong>Adicionar despesa</strong> e procure
+            pela opção <strong>Devolução de adiantamento</strong>.
+        </p>
+
+        <p>
+            Essa opção fica habilitada somente quando há
+            necessidade de devolver valores à empresa.
+        </p>
+
+        <img
+            src="Imagens/Prestação de Contas Internacional/8.png"
+            alt="Adicionar devolução de adiantamento"
+        >
+
+        <h3>Passo 9 – Preencher os dados da devolução</h3>
+
+        <p>
+            Informe a <strong>data em que o depósito foi realizado</strong>
+            e o <strong>valor exato que está sendo devolvido</strong>.
+        </p>
+
+        <p>
+            O valor informado deve corresponder exatamente
+            ao saldo devido, sem diferenças para mais ou para menos.
+        </p>
+
+        <p>
+            Anexe o <strong>comprovante de depósito</strong>
+            e clique em <strong>Salvar</strong>.
+        </p>
+
+        <img
+            src="Imagens/Prestação de Contas Internacional/9.png"
+            alt="Preencher dados da devolução"
+        >
+
+        <h3>Passo 10 – Enviar o relatório</h3>
+
+        <p>
+            Após adicionar a devolução, clique em
+            <strong>Enviar relatório</strong>.
+        </p>
+
+        <img
+            src="Imagens/Prestação de Contas Internacional/10.png"
+            alt="Enviar relatório"
+        >
+
+        <h3>Passo 11 – Concluir o envio</h3>
+
+        <p>
+            Na tela seguinte, clique em <strong>Continuar</strong>
+            para finalizar o procedimento.
+        </p>
+
+        <img
+            src="Imagens/Prestação de Contas Internacional/11.png"
+            alt="Concluir envio do relatório"
+        >
+
+        <div class="dica">
+
+            💡 <strong>Dicas importantes</strong>
+
+            <br><br>
+
+            Realize a <strong>Prestação de Contas</strong>
+            o quanto antes.
+
+            <br><br>
+
+            Anexe sempre os <strong>comprovantes de todas as despesas</strong>,
+            o <strong>comprovante de depósito</strong>, quando houver
+            devolução, e informe a data do
+            <strong>último dia da viagem</strong>.
+
+            <br><br>
+
+            Anexe a <strong>Autorização de Viagem Internacional</strong>.
 
         </div>
 
