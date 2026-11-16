@@ -1708,3 +1708,10 @@ CELULAR
     font-weight: 600;
     margin-top: 2px;
 }
+
+/* ANIMAÇÃO DO BOTÃO DÚVIDAS JUNTO COM ACESSO */
+
+body.animar-entrada .ajuda-flutuante-cg {
+    opacity: 0;
+    animation: aparecerBotao 0.7s ease 2.3s forwards;
+}
