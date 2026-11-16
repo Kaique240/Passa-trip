@@ -1581,3 +1581,122 @@ CELULAR
 #conteudo-despesa img:hover {
     transform: scale(1.01);
 }
+
+
+/* =====================================================
+   BOTÃO AVULSO DE DÚVIDAS — CONCUR GUIDE
+===================================================== */
+
+.apresentacao-concurguide {
+    position: relative;
+}
+
+.ajuda-flutuante-cg {
+    position: absolute;
+    top: -150px;
+    right: 90px;
+    z-index: 9999;
+}
+
+/* BOTÃO REDONDO COM INTERROGAÇÃO */
+.ajuda-gatilho-cg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    background: transparent;
+    color: #000000;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    animation: girar-ajuda-cg 3s linear infinite;
+}
+
+@keyframes girar-ajuda-cg {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* CAIXINHA DE CONTATO */
+.ajuda-painel-cg {
+    position: absolute;
+    top: 55px;
+    right: 0;
+    width: 340px;
+    max-width: calc(100vw - 30px);
+    max-height: 70vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 48px 22px 24px;
+    background: #FFFFFF;
+    color: #222222;
+    border-radius: 10px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.20);
+    text-align: left;
+}
+
+.ajuda-painel-cg[hidden] {
+    display: none;
+}
+
+/* TÍTULO COM ESPAÇO DO X */
+.ajuda-painel-cg h3 {
+    margin: 0 0 20px;
+    padding: 0;
+}
+
+/* ESPAÇAMENTO DOS TEXTOS */
+.ajuda-painel-cg p {
+    margin: 0 0 16px;
+    line-height: 1.5;
+}
+
+/* SEPARAÇÃO DO FEEDBACK */
+.ajuda-painel-cg hr {
+    margin: 26px 0;
+    border: 0;
+    border-top: 1px solid #DDDDDD;
+}
+
+/* X NO CANTO SUPERIOR ESQUERDO */
+.ajuda-fechar-cg {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    right: auto;
+    display: block;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #333333;
+    font-size: 25px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+/* FECHAR — LADO ESQUERDO */
+.ajuda-fechar-cg {
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    right: auto;
+    border: none;
+    background: transparent;
+    color: #333333;
+    font-size: 25px;
+    cursor: pointer;
+}
