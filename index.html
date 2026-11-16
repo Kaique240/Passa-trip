@@ -33,6 +33,60 @@
     <p class="pergunta-animada">
         Encontre o que precisa em poucos cliques.
     </p>
+
+<!-- BOTÃO DE DÚVIDAS -->
+<div class="ajuda-flutuante-cg">
+
+    <button
+        class="ajuda-gatilho-cg"
+        onclick="document.getElementById('ajuda-painel-cg').hidden = !document.getElementById('ajuda-painel-cg').hidden"
+        title="Ficou com alguma dúvida?"
+        aria-label="Ficou com alguma dúvida?"
+    >
+        ?
+    </button>
+
+    <div id="ajuda-painel-cg" class="ajuda-painel-cg" hidden>
+
+        <button
+            class="ajuda-fechar-cg"
+            onclick="document.getElementById('ajuda-painel-cg').hidden = true"
+        >×</button>
+
+        <h3>Ficou com alguma dúvida?</h3>
+
+        <p>Entre em contato com a equipe da Prestação de Contas:</p>
+
+        <p>
+            <strong>E-mail:</strong><br>
+            <a href="mailto:contabilidadeprestacaodecontas@sesisenaisp.org.br">
+                contabilidadeprestacaodecontas@sesisenaisp.org.br
+            </a>
+        </p>
+
+        <p><strong>Ou procure um de nossos integrantes:</strong></p>
+
+        <ul>
+            <li>Kaique Albrechete Lopes Assunção</li>
+            <li>Eduardo André Diniz</li>
+            <li>Marcos Leandro Tasca</li>
+            <li>Jaqueline Neves Machado</li>
+            <li>Giovanna Sartori Garcia</li>
+            <li>Gustavo Rodrigues da Silva</li>
+        </ul>
+
+        <hr>
+
+        <p>
+            <strong>Feedback:</strong><br>
+            Encaminhe seu feedback positivo ou negativo para
+            <strong>Damiana Rafaelle Silva Souza</strong>.
+        </p>
+
+    </div>
+
+</div>
+
 </div>
 
 <!-- =====================================================
@@ -118,6 +172,9 @@
         <button onclick="abrirDespesa('combustivel')">
             ⛽ Combustível Automóvel Alugado
         </button>
+        <button onclick="abrirDespesa('combustivel-frota')">
+            🛻 Combustível - Carro da Frota
+       </button>
         <button onclick="abrirDespesa('conducao')">
             🚆 Condução Urbana
         </button>
@@ -139,6 +196,11 @@
         <button onclick="abrirDespesa('outras')">
             📦 Outras Despesas
         </button>
+
+        <button onclick="abrirDespesa('exposicao-congressos')">
+           🎟️ Exposição e Congressos
+        </button>
+
         <button onclick="abrirDespesa('pedagio')">
             🛣️ Pedágio
         </button>
