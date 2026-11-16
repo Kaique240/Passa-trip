@@ -1594,7 +1594,7 @@ CELULAR
 .ajuda-flutuante-cg {
     position: absolute;
     top: -150px;
-    right: 90px;
+    right: 220px;
     z-index: 9999;
 }
 
@@ -1614,7 +1614,6 @@ CELULAR
     font-weight: bold;
     line-height: 1;
     cursor: pointer;
-    animation: girar-ajuda-cg 3s linear infinite;
 }
 
 @keyframes girar-ajuda-cg {
