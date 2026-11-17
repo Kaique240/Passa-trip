@@ -2712,6 +2712,75 @@ else if (tipo === "passagem-rodoviaria") {
 }
 
 /* =========================================================
+   ALUNOS
+========================================================= */
+
+else if (tipo === "Alunos") {
+
+    document.title = "CONCUR GUIDE - Alunos";
+
+    conteudo.innerHTML = `
+
+        <h2>🎓 Como lançar uma despesa de Alunos</h2>
+
+        <h3>Passo 1</h3>
+        <p>Clique em <strong>Criação do Manual de Despesa</strong>.</p>
+        <img src="Imagens/Alunos/1.png" alt="Criação do Manual de Despesa">
+
+        <h3>Passo 2</h3>
+        <p>Pesquise por <strong>Refeição Atletas</strong> e selecione uma das opções exibidas.</p>
+        <img src="Imagens/Alunos/2.png" alt="Pesquisa da despesa">
+
+        <h3>Passo 3</h3>
+        <p>Selecione a categoria <strong>Aluno</strong>, informe a <strong>Data da transação</strong> e o <strong>Valor</strong>. Nos <strong>Comentários</strong>, informe qual o Motivo. Em seguida, clique em <strong>Participantes</strong>.</p>
+        <img src="Imagens/Alunos/3.png" alt="Preenchimento dos dados da despesa">
+
+        <h3>Passo 4</h3>
+        <p>Clique em <strong>Opções Avançadas</strong>.</p>
+        <img src="Imagens/Alunos/4.png" alt="Opções Avançadas">
+
+        <h3>Passo 5</h3>
+        <p>Selecione <strong>Funcionários Fora do Concur</strong>.</p>
+        <img src="Imagens/Alunos/5.png" alt="Funcionários Fora do Concur">
+
+        <h3>Passo 6</h3>
+        <p>Informe o <strong>Nome</strong>, <strong>Sobrenome</strong> do aluno e o <strong>Título do Participante</strong>. Depois, clique em <strong>Criar Participante</strong>.</p>
+        <img src="Imagens/Alunos/6.png" alt="Cadastro do participante">
+
+        <h3>Passo 7</h3>
+        <p>Confira as informações e clique em <strong>Criar Participante</strong>.</p>
+        <img src="Imagens/Alunos/7.png" alt="Confirmação do participante">
+
+        <h3>Passo 8</h3>
+        <p>Para adicionar outros participantes, repita o preenchimento dos dados e clique em <strong>Criar Participante</strong>. Caso não tenha mais participantes, clique em <strong>Cancelar</strong>.</p>
+        <img src="Imagens/Alunos/8.png" alt="Inclusão de outros participantes">
+
+        <h3>Passo 9</h3>
+        <p>Selecione a linha com o nome do <strong>Funcionário</strong> e remova-o da lista para que ele <strong>não participe do rateio</strong>. As refeições do <strong>Funcionário</strong> devem ser lançadas <strong>separadamente</strong>. Esta despesa deve ser exclusivamente para <strong>Alunos.</strong>
+        </p>
+        <img src="Imagens/Alunos/9.png" alt="Remoção do funcionário da lista">
+
+        <h3>Passo 10</h3>
+        <p>Após remover o funcionário, selecione os quadrados dos <strong>participantes</strong>. Caso o <strong>Funcionário</strong> realize viagens frequentes com os mesmos <strong>Alunos</strong>, clique em <strong>Criar Grupo</strong> para salvar os nomes e facilitar as próximas viagens. Caso contrário, clique em <strong>Salvar</strong>.</p>
+        <img src="Imagens/Alunos/10.png" alt="Seleção dos participantes">
+
+        <h3>Passo 11</h3>
+        <p>Confira as <strong>Datas</strong>, <strong>Valores</strong>, <strong>Comentários</strong> e a quantidade de participantes no canto superior. Anexe a <strong>Nota</strong> e clique em <strong>Salvar</strong>.</p>
+        <img src="Imagens/Alunos/11.png" alt="Conferência e salvamento da despesa">
+
+        <div class="dica">
+            💡 <strong>Dicas</strong>
+            <br><br>
+            Conforme a <strong>RC-04/2026</strong>, é necessário anexar <strong>comprovante fiscal</strong> para esta despesa.
+            <br><br>
+            Para <strong>Alunos</strong>, o mesmo método pode ser utilizado para as despesas de <strong>Bebidas Não Alcoólicas</strong> e <strong>Café da Manhã</strong>.
+            <br><br>
+            Os valores por aluno são iguais aos valores de funcionário: <strong>R$ 49,23 na Unidade</strong> e <strong>R$ 63,00 na SEDE</strong>. Esses valores podem ser diferentes mediante anexo de autorização por parte de Diretores/Gestores.
+        </div>
+    `;
+}
+
+/* =========================================================
    REFEIÇÃO DE ATLETAS
 ========================================================= */
 
@@ -2751,7 +2820,8 @@ else if (tipo === "Refeição Atletas") {
         <p>
             Selecione a <strong>Categoria do Atleta</strong>,
             informe a <strong>Data da transação</strong> e o
-            <strong>Valor</strong>. Em seguida, clique em
+            <strong>Valor</strong>. No campo <strong>Comentários</strong>,
+            informe de qual campeonato se trata. Em seguida, clique em
             <strong>Participantes</strong>.
         </p>
 
@@ -2763,8 +2833,8 @@ else if (tipo === "Refeição Atletas") {
         <h3>Passo 4</h3>
 
         <p>
-            Selecione <strong>Opções Avançadas</strong> para
-            cadastrar os participantes.
+            Clique em <strong>Opções Avançadas</strong> para
+            realizar o cadastro dos participantes.
         </p>
 
         <img
@@ -2775,7 +2845,7 @@ else if (tipo === "Refeição Atletas") {
         <h3>Passo 5</h3>
 
         <p>
-            Selecione <strong>Funcionários Fora do Concur</strong>.
+            Selecione a opção <strong>Funcionários Fora do Concur</strong>.
         </p>
 
         <img
@@ -2786,9 +2856,9 @@ else if (tipo === "Refeição Atletas") {
         <h3>Passo 6</h3>
 
         <p>
-            Digite o <strong>Nome</strong>, <strong>Sobrenome</strong>
+            Informe o <strong>Nome</strong>, o <strong>Sobrenome</strong>
             do atleta e o <strong>Título do Participante</strong>.
-            Após isso, clique em <strong>Criar Participante</strong>.
+            Em seguida, clique em <strong>Criar Participante</strong>.
         </p>
 
         <img
@@ -2799,43 +2869,83 @@ else if (tipo === "Refeição Atletas") {
         <h3>Passo 7</h3>
 
         <p>
-            Clique em <strong>Criar Participante</strong> e repita
-            o procedimento para <strong>todos os atletas</strong>
-            incluídos na despesa.
+            Confira as <strong>informações cadastradas</strong> e clique
+            em <strong>Criar Participante</strong> para confirmar.
         </p>
 
         <img
             src="Imagens/Refeição Atletas/7.png"
-            alt="Criar participantes para todos os atletas"
+            alt="Conferir informações e criar participante"
         >
 
         <h3>Passo 8</h3>
 
         <p>
-            <strong>Selecione no quadrado à esquerda</strong> os
-            participantes que estiverem na despesa e clique em
-            <strong>Salvar</strong>.
-             </p>
-
-            A opção <strong>Criar Grupo</strong> permite deixar salvo os nomes dos atletas para utilização em <strong>viagens recorrentes com a mesma equipe</strong>.
+            Caso queira cadastrar <strong>outro(s) participante(s)</strong>,
+            informe novamente os dados e clique em
+            <strong>Criar Participante</strong>. Caso não queira adicionar
+            mais participantes, clique em <strong>Cancelar</strong>.
         </p>
 
         <img
             src="Imagens/Refeição Atletas/8.png"
-            alt="Selecionar participantes e salvar"
+            alt="Cadastrar outros participantes ou cancelar"
         >
 
         <h3>Passo 9</h3>
 
         <p>
-            Verifique os <strong>valores</strong> e a
-            <strong>data</strong>. No campo <strong>Comentários</strong>,
-            informe qual é a despesa.
+            Selecione a linha que contém o nome do funcionário e
+            <strong>remova seu nome da lista de participantes</strong>,
+            para que ele não participe do rateio.
+        </p>
+
+        <p>
+            As refeições do funcionário devem ser lançadas separadamente.
+            Esta despesa é destinada <strong>exclusivamente aos atletas</strong>.
         </p>
 
         <img
             src="Imagens/Refeição Atletas/9.png"
-            alt="Verificar valores, data e informar a despesa nos comentários"
+            alt="Remover funcionário da lista de participantes"
+        >
+
+        <h3>Passo 10</h3>
+
+        <p>
+            Após remover o funcionário, selecione os quadrados
+            correspondentes aos <strong>participantes</strong>.
+        </p>
+
+        <p>
+            Caso esses participantes realizem <strong>viagens frequentes
+            com o funcionário</strong>, clique em <strong>Criar Grupo</strong>
+            para salvar os nomes e facilitar a utilização em viagens futuras.
+            Caso contrário, clique em <strong>Salvar</strong>.
+        </p>
+
+        <img
+            src="Imagens/Refeição Atletas/10.png"
+            alt="Selecionar participantes e criar grupo ou salvar"
+        >
+
+        <h3>Passo 11</h3>
+
+        <p>
+            Confira novamente as <strong>Datas</strong>, os
+            <strong>Valores</strong> e os <strong>Comentários</strong>.
+            Verifique também a quantidade de participantes, exibida no
+            canto superior da tela.
+        </p>
+
+        <p>
+            Por fim, <strong>anexe a Nota</strong> e clique em
+            <strong>Salvar</strong>.
+        </p>
+
+        <img
+            src="Imagens/Refeição Atletas/11.png"
+            alt="Conferir informações, anexar nota e salvar despesa"
         >
 
         <div class="dica">
