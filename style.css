@@ -1025,168 +1025,6 @@ DICAS
 
 }
 
-
-/* =========================================================
-FORMULÁRIO
-========================================================= */
-
-#formulario-duvida {
-
-    margin-top: 25px;
-
-}
-
-
-#formulario-duvida label {
-
-    display: block;
-
-    color: #101828;
-
-    font-weight: 600;
-
-    margin-top: 20px;
-
-    margin-bottom: 10px;
-
-}
-
-
-/* =========================================================
-CAMPO DE E-MAIL
-========================================================= */
-
-#formulario-duvida input[type="email"] {
-
-    display: block;
-
-    width: 100%;
-
-    box-sizing: border-box;
-
-    background-color: #FFFFFF;
-
-    color: #101828;
-
-    border: 2px solid #E4E7EC;
-
-    border-radius: 10px;
-
-    padding: 15px;
-
-    font-family: "Inter", sans-serif;
-
-    font-size: 16px;
-
-    margin-bottom: 25px;
-
-}
-
-
-#formulario-duvida input[type="email"]:focus {
-
-    outline: none;
-
-    border-color: #2563EB;
-
-}
-
-/* =========================================================
-CAMPO DA DÚVIDA
-========================================================= */
-
-#formulario-duvida textarea {
-
-    display: block;
-
-    width: 100%;
-
-    box-sizing: border-box;
-
-    background-color: #FFFFFF;
-
-    color: #101828;
-
-    border: 2px solid #E4E7EC;
-
-    border-radius: 10px;
-
-    padding: 15px;
-
-    font-family: "Inter", sans-serif;
-
-    font-size: 16px;
-
-    resize: vertical;
-
-}
-
-
-#formulario-duvida textarea:focus {
-
-    outline: none;
-
-    border-color: #2563EB;
-
-}
-
-
-/* =========================================================
-BOTÃO ENVIAR
-========================================================= */
-
-.botao-enviar {
-
-    display: inline-block;
-
-    width: auto !important;
-
-    min-width: 85px;
-
-    padding: 10px 16px;
-
-    margin-top: 18px;
-
-    background-color: #DC2626;
-
-    color: #FFFFFF;
-
-    border: none;
-
-    border-radius: 8px;
-
-    font-size: 14px;
-
-    font-weight: 600;
-
-    line-height: 1;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 4px 10px rgba(16, 24, 40, 0.15);
-
-    transition: 0.2s;
-
-}
-
-
-.botao-enviar:hover {
-
-    background-color: #B91C1C;
-
-    color: #FFFFFF;
-
-    border-color: #B91C1C;
-
-    transform: translateY(-1px);
-
-    box-shadow:
-        0 8px 18px rgba(16, 24, 40, 0.15);
-
-}
-
-
 /* =========================================================
 LOGO
 ========================================================= */
@@ -1584,6 +1422,7 @@ CELULAR
 ===================================================== */
 
 .cabecalho-linha {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1591,12 +1430,13 @@ CELULAR
 }
 
 .cabecalho-linha .ajuda-flutuante-cg {
-    position: relative;
-    top: auto;
+    position: absolute;
+    top: 50%;
+    left: calc(50% + 290px);
     right: auto;
-    left: auto;
     z-index: 9999;
     flex-shrink: 0;
+    transform: translateY(-50%);
 }
 
 /* BOTÃO REDONDO COM INTERROGAÇÃO */
@@ -1716,3 +1556,4 @@ body.animar-entrada .ajuda-flutuante-cg {
     opacity: 0;
     animation: aparecerBotao 0.7s ease 2.3s forwards;
 }
+
