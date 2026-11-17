@@ -89,14 +89,10 @@ main h2 {
 APRESENTAÇÃO DO PASSA TRIP
 ========================================================= */
 
-.apresentacao-passatrip {
-
+.apresentacao-concurguide {
     text-align: center;
-
     margin-bottom: 30px;
-
 }
-
 
 /* =========================================================
 MÃO
@@ -1587,15 +1583,20 @@ CELULAR
    BOTÃO AVULSO DE DÚVIDAS — CONCUR GUIDE
 ===================================================== */
 
-.apresentacao-concurguide {
-    position: relative;
+.cabecalho-linha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
-.ajuda-flutuante-cg {
-    position: absolute;
-    top: -150px;
-    right: 20px;
+.cabecalho-linha .ajuda-flutuante-cg {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
     z-index: 9999;
+    flex-shrink: 0;
 }
 
 /* BOTÃO REDONDO COM INTERROGAÇÃO */
